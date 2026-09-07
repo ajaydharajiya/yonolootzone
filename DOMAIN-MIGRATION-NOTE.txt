@@ -1,0 +1,7 @@
+YonoLootZone domain update
+
+The website brand is now YonoLootZone and the production domain is https://yonolootzone.com/.
+
+All canonical URLs, sitemap URLs, Open Graph URLs, structured-data URLs, security.txt contact URL, and absolute asset URLs should use yonolootzone.com.
+
+After deployment, verify HTTPS is active and submit https://yonolootzone.com/sitemap.xml in Google Search Console.

@@ -1,4 +1,4 @@
-YONOLOOTZONE — SEO SETUP
+YONO GAMES HUB — SEO SETUP
 
 Generated: 2026-09-07
 Current configured public URL: https://yonolootzone.com
@@ -11,7 +11,9 @@ Included:
 - WebSite/Organization/WebPage/BreadcrumbList structured data
 - SoftwareApplication structured data on dedicated game pages
 - mobile/performance image attributes (lazy loading where appropriate, async decoding)
-- stronger internal navigation through the shared header and game collection
+- stronger internal navigation through the shared header, footer and game collection
+- editorial/listing policy page for transparency
+- removal of synthetic player-count and unsupported bonus claims
 
 IMPORTANT BEFORE LAUNCH:
 1. If the real domain is not https://yonolootzone.com, replace the BASE URL in sitemap.xml, robots.txt, page canonicals/OG URLs and assets/app.js settings.canonicalUrl before publishing.

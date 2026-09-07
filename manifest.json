@@ -7,9 +7,9 @@
   "theme_color": "#e00068",
   "icons": [
     {
-      "src": "assets/all-yono-header.png",
+      "src": "assets/all-yono-header.webp",
       "sizes": "any",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     }
   ]

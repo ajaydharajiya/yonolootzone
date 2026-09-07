@@ -945,7 +945,7 @@ header .logo,.top .logo,.brand .logo,.logo{
 .brand-link .logo{display:block}
 
 
-/* ===== YONOLOOTZONE — FINAL HEADER UPDATE ===== */
+/* ===== YONO GAMES HUB — FINAL HEADER UPDATE ===== */
 .top{
   height:70px!important;
   padding:0 2.4% 0 2.1%!important;
@@ -1013,270 +1013,41 @@ header .logo,.top .logo,.brand .logo,.logo{
 }
 @media(max-width:430px){.site-name{font-size:17px!important}.search-wrap{width:105px!important}.header-tools{gap:5px!important}}
 
-/* ===== MOBILE RESPONSIVE + SPEED PASS ===== */
-/* Keep every logo, but reduce rendering work on small screens. */
+/* SEO browse pages */
+.seo-browse{max-width:1200px;margin:32px auto;padding:28px 20px;border-radius:22px;background:rgba(255,255,255,.04)}
+.seo-browse h2{margin:0 0 8px}.seo-browse p{margin:0 0 20px;opacity:.82}.seo-link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}.seo-link-grid a{display:block;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.06);text-decoration:none}.seo-link-grid a:hover{transform:translateY(-1px)}
+.seo-page{max-width:1200px;margin:32px auto;padding:28px 20px}.seo-page .seo-intro{max-width:850px;opacity:.86}.seo-page h1{margin-bottom:10px}.seo-page h2{margin-top:30px}.seo-page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:18px}.seo-page-grid article{padding:16px;border-radius:16px;background:rgba(255,255,255,.05)}.seo-page-grid a{font-weight:700;text-decoration:none}.seo-page-grid p{font-size:.9rem;opacity:.78;margin:.45rem 0 0}.breadcrumb{font-size:.9rem;margin-bottom:18px;opacity:.75}.seo-note{margin-top:28px;padding:16px;border-left:3px solid var(--accent,#087d0c);background:rgba(255,255,255,.04);border-radius:10px}
+
+/* Step 4 performance and stability enhancements */
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.ambient i{animation:none!important}.game,.download{transition:none!important}}
+.games-section,.seo-page,.about-section,.detail-section,.guide-content{content-visibility:auto;contain-intrinsic-size:700px;}
+img{max-width:100%;}
+
+
+/* ===== MOBILE HEADER + GAME LIST VISIBILITY FINAL OVERRIDE ===== */
 @media (max-width:700px){
-  html{scroll-behavior:auto}
-  body{overflow-x:hidden;-webkit-text-size-adjust:100%}
-  .ambient i{display:none!important}
-  .ambient{display:none!important}
-  body:after{display:none!important}
-  .top{
-    position:sticky!important;top:0!important;z-index:1000!important;
-    height:auto!important;min-height:108px!important;
-    display:grid!important;grid-template-columns:1fr auto!important;
-    grid-template-rows:58px 42px!important;
-    align-items:center!important;gap:6px 8px!important;
-    padding:6px 10px!important;
-    background:rgba(255,255,255,.985)!important;
-    backdrop-filter:blur(10px)!important;
-    -webkit-backdrop-filter:blur(10px)!important;
-    box-shadow:0 5px 18px rgba(25,30,45,.10)!important;
-  }
-  .brand{
-    grid-column:1/-1!important;grid-row:1!important;
-    min-width:0!important;width:100%!important;gap:9px!important;
-  }
-  .brand-link,.logo{
-    width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important;flex:0 0 46px!important;
-  }
-  .brand .site-name{
-    display:block!important;min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;
-    font-size:18px!important;line-height:1!important;letter-spacing:-.35px!important;
-    color:#202633!important;text-shadow:none!important;white-space:nowrap!important;
-  }
-  .header-nav{display:none!important}
-  .header-tools{
-    grid-column:1/-1!important;grid-row:2!important;
-    width:100%!important;min-width:0!important;display:flex!important;align-items:center!important;
-    gap:7px!important;
-  }
-  .search-wrap{
-    flex:1 1 auto!important;width:auto!important;min-width:0!important;height:40px!important;
-    padding:0 12px!important;border-radius:999px!important;box-shadow:0 2px 8px rgba(40,46,60,.05)!important;
-  }
-  .search-wrap span{font-size:19px!important;flex:none!important}
-  .search-wrap input{font-size:13px!important;min-width:0!important}
-  .theme-pill{flex:0 0 76px!important;width:76px!important;min-width:76px!important;height:38px!important;padding:4px!important}
-  .theme-dot{width:27px!important;height:27px!important;font-size:12px!important}
-  .header-tools select{flex:0 0 40px!important;width:40px!important;min-width:40px!important;height:38px!important;padding:0!important;font-size:0!important}
-  .header-tools select option{font-size:13px!important}
-
-  /* Game cards become a stable two-column layout; nothing can overflow the phone. */
-  .games-section{width:calc(100% - 16px)!important;max-width:none!important;margin:0 auto 30px!important}
-  .games{gap:10px!important}
-  .game{
-    width:100%!important;min-width:0!important;min-height:0!important;height:auto!important;
-    display:grid!important;grid-template-columns:72px minmax(0,1fr) 92px!important;
-    align-items:center!important;gap:9px!important;padding:10px!important;
-    border-radius:20px!important;outline:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
-    box-shadow:0 6px 18px rgba(55,30,60,.07)!important;
-  }
-  .game:before{display:none!important}
-  .rank{display:none!important}
-  .game-icon{width:72px!important;height:72px!important;border-radius:18px!important;box-shadow:0 4px 12px rgba(0,0,0,.12)!important}
-  .game-info{padding:0!important;min-width:0!important;overflow:hidden!important}
-  .game-name{display:block!important;max-width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;font-size:18px!important;line-height:1.15!important;margin:0 0 5px!important}
-  .game-info .line{font-size:11px!important;line-height:1.25!important;margin:3px 0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
-  .game-info .symbol{width:21px!important}
-  .download{width:92px!important;min-width:92px!important;height:43px!important;margin:0!important;border:0!important;border-radius:13px!important;font-size:13px!important;white-space:nowrap!important;box-shadow:0 5px 12px rgba(216,0,102,.20)!important}
-  .download:hover{transform:none!important}
-
-  /* Telegram and other content fit the viewport exactly. */
-  .telegram-banner{width:calc(100% - 16px)!important;min-width:0!important;margin:0 auto 26px!important;padding:0 12px!important;gap:10px!important;border-radius:22px!important}
-  .telegram-banner-copy{min-width:0!important;flex:1!important}
-  .telegram-banner-copy strong{font-size:17px!important}
-  .telegram-banner-copy span{font-size:10px!important}
-  .telegram-banner-btn{flex:none!important;padding:10px 13px!important;font-size:12px!important}
-}
-@media (max-width:390px){
-  .top{padding-left:8px!important;padding-right:8px!important}
-  .brand .site-name{font-size:17px!important}
-  .game{grid-template-columns:64px minmax(0,1fr) 82px!important;gap:7px!important;padding:8px!important;border-radius:18px!important}
-  .game-icon{width:64px!important;height:64px!important;border-radius:16px!important}
-  .download{width:82px!important;min-width:82px!important;height:40px!important;font-size:12px!important}
-  .game-name{font-size:16px!important}
-  .game-info .line{font-size:10px!important}
-  .telegram-banner-icon{width:42px!important;height:42px!important;font-size:20px!important}
-  .telegram-banner-btn{padding:9px 10px!important}
-}
-@media (max-width:330px){
-  .brand .site-name{font-size:16px!important}
-  .game{grid-template-columns:58px minmax(0,1fr) 76px!important}
-  .game-icon{width:58px!important;height:58px!important;border-radius:14px!important}
-  .download{width:76px!important;min-width:76px!important;font-size:11px!important}
-}
-
-/* Desktop/tablet cards also reserve image space and avoid unnecessary blur work. */
-.game-icon{aspect-ratio:1/1;contain:layout paint}
-@media (min-width:701px){
-  .game{content-visibility:auto;contain-intrinsic-size:116px}
-}
-
-/* Search filtering must not force mobile cards back to flex layout. */
-[hidden]{display:none!important}
-@media (max-width:700px){
-  .game{content-visibility:auto!important;contain-intrinsic-size:100px}
-}
-
-
-/* ===== YONOLOOTZONE MOBILE HEADER + SPEED FIX ===== */
-.mobile-menu-toggle{display:none}
-.mobile-menu{display:none}
-@media (max-width:700px){
-  header#header{position:relative;z-index:2000}
-  .top{
-    position:sticky!important;top:0!important;z-index:2001!important;
-    display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;
-    grid-template-rows:58px 42px!important;
-    min-height:108px!important;height:108px!important;
-    padding:5px 9px!important;gap:5px 8px!important;
-    backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
-    background:#fff!important;
-  }
-  .brand{
-    grid-column:1!important;grid-row:1!important;width:auto!important;min-width:0!important;
-    display:flex!important;align-items:center!important;gap:8px!important;
-  }
-  .brand-link,.logo{width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important;flex:0 0 46px!important}
-  .logo{border-radius:12px!important}
-  .brand .site-name{
-    display:block!important;visibility:visible!important;opacity:1!important;
-    flex:1 1 auto!important;min-width:0!important;width:auto!important;
-    overflow:visible!important;text-overflow:clip!important;white-space:nowrap!important;
-    font-size:19px!important;line-height:1!important;font-weight:900!important;
-    letter-spacing:-.35px!important;color:#20232b!important;
-  }
-  .mobile-menu-toggle{
-    display:flex!important;grid-column:2!important;grid-row:1!important;
-    width:44px!important;height:44px!important;align-items:center!important;justify-content:center!important;
-    flex-direction:column!important;gap:5px!important;border:1px solid #dfe3e9!important;
-    border-radius:12px!important;background:#f6f7f9!important;color:#20232b!important;
-    cursor:pointer!important;box-shadow:0 2px 8px rgba(20,25,35,.08)!important;
-  }
-  .mobile-menu-toggle span{display:block!important;width:20px!important;height:2px!important;border-radius:2px!important;background:#20232b!important;transition:.18s ease!important}
-  .mobile-menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}
-  .mobile-menu-toggle.open span:nth-child(2){opacity:0!important}
-  .mobile-menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
-  .header-nav{display:none!important}
-  .header-tools{
-    grid-column:1/-1!important;grid-row:2!important;width:100%!important;min-width:0!important;
-    display:flex!important;align-items:center!important;gap:6px!important;
-  }
-  .search-wrap{flex:1 1 auto!important;width:auto!important;min-width:0!important;height:38px!important}
-  .search-wrap input{font-size:13px!important}
-  .theme-pill{min-width:58px!important;width:58px!important;height:36px!important;backdrop-filter:none!important}
-  .header-tools select{width:40px!important;min-width:40px!important;height:36px!important;font-size:0!important;padding:0!important}
-  .mobile-menu{
-    display:block;position:absolute;left:8px;right:8px;top:108px;z-index:2005;
-    padding:8px;background:rgba(255,255,255,.99);border:1px solid #e2e5ea;border-radius:14px;
-    box-shadow:0 14px 35px rgba(20,25,35,.16);transform-origin:top center;
-  }
-  .mobile-menu[hidden]{display:none!important}
-  .mobile-menu nav{display:grid!important;grid-template-columns:1fr 1fr!important;gap:5px!important}
-  .mobile-menu a{display:block!important;padding:12px 13px!important;border-radius:10px!important;color:#333944!important;background:#f5f6f8!important;text-decoration:none!important;font-size:14px!important;font-weight:800!important}
-  .mobile-menu a.active{color:#c51f38!important;background:#fff0f2!important}
-  body.menu-open{overflow:hidden}
-  /* Mobile speed: remove expensive visual effects and large shadows. */
-  .ambient,.ambient i,.particles,body:after{display:none!important}
-  .game,.telegram-banner,.about-card,.contact-card,.disclaimer-card{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-  .game{box-shadow:0 6px 18px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.08)!important}
-  .game:hover{transform:none!important}
-  .top,.hero-strip{box-shadow:0 4px 14px rgba(20,25,35,.10)!important}
-}
-@media (max-width:390px){
-  .brand .site-name{font-size:17px!important}
-  .brand-link,.logo{width:43px!important;height:43px!important;min-width:43px!important;min-height:43px!important;flex-basis:43px!important}
-  .mobile-menu-toggle{width:42px!important;height:42px!important}
-  .search-wrap{height:36px!important}
-  .theme-pill{min-width:54px!important;width:54px!important}
-}
-
-
-/* ===== FINAL MOBILE HEADER OVERRIDE v2 ===== */
-@media (max-width:700px){
-  header#header{display:block!important;position:relative!important;z-index:3000!important}
-  #header .top{
-    display:grid!important;
-    grid-template-columns:minmax(0,1fr) 44px!important;
-    grid-template-rows:56px 42px!important;
-    width:100%!important;
-    min-height:106px!important;
-    height:106px!important;
-    box-sizing:border-box!important;
-    padding:5px 10px!important;
-    gap:4px 8px!important;
-    position:sticky!important;
-    top:0!important;
-    z-index:3001!important;
-    background:#fff!important;
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;
-  }
-  #header .brand{
-    grid-column:1!important;grid-row:1!important;
-    display:flex!important;align-items:center!important;
-    min-width:0!important;width:100%!important;gap:8px!important;
-    overflow:visible!important;
-  }
-  #header .brand-link,#header .brand .logo{
-    display:flex!important;flex:0 0 44px!important;
-    width:44px!important;height:44px!important;
-    min-width:44px!important;min-height:44px!important;
-  }
-  #header .brand .site-name{
-    display:block!important;visibility:visible!important;opacity:1!important;
-    width:auto!important;min-width:0!important;max-width:calc(100vw - 110px)!important;
-    flex:1 1 auto!important;
-    overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
-    font-size:18px!important;line-height:1.05!important;font-weight:900!important;
-    letter-spacing:-.3px!important;color:#20232b!important;
-  }
-  #header .mobile-menu-toggle{
-    display:flex!important;grid-column:2!important;grid-row:1!important;
-    width:44px!important;height:44px!important;
-    margin:0!important;padding:0!important;
-    align-items:center!important;justify-content:center!important;
-    flex-direction:column!important;gap:5px!important;
-    border:1px solid #dfe3e9!important;border-radius:12px!important;
-    background:#f6f7f9!important;color:#20232b!important;
-    visibility:visible!important;opacity:1!important;
-    position:relative!important;z-index:3005!important;
-  }
-  #header .mobile-menu-toggle span{
-    display:block!important;width:20px!important;height:2px!important;
-    border-radius:2px!important;background:#20232b!important;
-  }
+  #header{display:block!important;position:relative!important;z-index:3000!important}
+  #header .top{height:auto!important;min-height:106px!important;padding:6px 10px!important;display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;grid-template-rows:56px 42px!important;gap:2px 8px!important;background:#fff!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  #header .brand{grid-column:1!important;grid-row:1!important;display:flex!important;align-items:center!important;gap:8px!important;min-width:0!important;overflow:visible!important}
+  #header .brand-link,#header .logo{display:flex!important;flex:0 0 44px!important;width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important}
+  #header .site-name{display:block!important;visibility:visible!important;opacity:1!important;flex:1 1 auto!important;min-width:0!important;max-width:calc(100vw - 115px)!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;font-size:19px!important;line-height:1!important;font-weight:900!important;color:#20232b!important;text-shadow:none!important}
   #header .header-nav{display:none!important}
-  #header .header-tools{
-    grid-column:1/-1!important;grid-row:2!important;
-    display:flex!important;align-items:center!important;width:100%!important;
-    min-width:0!important;gap:6px!important;
-  }
-  #header .search-wrap{
-    flex:1 1 auto!important;width:auto!important;min-width:0!important;
-    height:38px!important;
-  }
-  #header .search-wrap input{
-    min-width:0!important;width:100%!important;font-size:13px!important;
-  }
-  #header .theme-pill{
-    flex:0 0 58px!important;width:58px!important;min-width:58px!important;
-    height:36px!important;backdrop-filter:none!important;
-  }
-  #header .header-tools select{
-    flex:0 0 40px!important;width:40px!important;min-width:40px!important;
-    height:36px!important;font-size:0!important;padding:0!important;
-  }
-  #header .mobile-menu{
-    display:block!important;position:absolute!important;
-    left:8px!important;right:8px!important;top:106px!important;
-    z-index:3010!important;
-  }
+  #header .header-tools{grid-column:1/-1!important;grid-row:2!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;gap:6px!important}
+  #header .search-wrap{flex:1 1 auto!important;width:auto!important;min-width:0!important;height:38px!important}
+  #header .search-wrap input{width:100%!important;min-width:0!important;font-size:13px!important}
+  #header .theme-pill{flex:0 0 58px!important;width:58px!important;min-width:58px!important;height:36px!important;backdrop-filter:none!important}
+  #header #languageSelect{flex:0 0 40px!important;width:40px!important;min-width:40px!important;height:36px!important;font-size:0!important;padding:0!important}
+  #header .mobile-menu-toggle{grid-column:2!important;grid-row:1!important;display:flex!important;width:44px!important;height:44px!important;margin:0!important;padding:0!important;align-items:center!important;justify-content:center!important;flex-direction:column!important;gap:5px!important;border:1px solid #dfe3e9!important;border-radius:12px!important;background:#f6f7f9!important;color:#20232b!important;visibility:visible!important;opacity:1!important;z-index:3010!important}
+  #header .mobile-menu-toggle span{display:block!important;width:20px!important;height:2px!important;border-radius:2px!important;background:#20232b!important}
+  #header .mobile-menu{display:block!important;position:absolute!important;left:8px!important;right:8px!important;top:106px!important;z-index:3020!important;background:#fff!important;border:1px solid #e7e7e7!important;border-radius:14px!important;box-shadow:0 18px 45px #0003!important;overflow:hidden!important}
   #header .mobile-menu[hidden]{display:none!important}
+  #header .mobile-menu nav{display:flex!important;flex-direction:column!important;padding:6px!important}
+  #header .mobile-menu a{display:block!important;padding:13px 14px!important;border-radius:9px!important;color:#20232b!important;text-decoration:none!important;font-weight:800!important}
+  #header .mobile-menu a.active{background:#fff0f3!important;color:#d91d45!important}
+  .games-section{display:block!important;visibility:visible!important;opacity:1!important;width:96%!important;min-height:100px!important}
+  .games{display:flex!important;visibility:visible!important;opacity:1!important}
 }
 @media (max-width:390px){
-  #header .brand .site-name{font-size:17px!important}
-  #header .brand-link,#header .brand .logo{width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;flex-basis:42px!important}
-  #header .mobile-menu-toggle{width:42px!important;height:42px!important}
+  #header .site-name{font-size:17px!important}
+  #header .brand-link,#header .logo,#header .mobile-menu-toggle{width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;flex-basis:42px!important}
 }

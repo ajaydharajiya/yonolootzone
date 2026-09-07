@@ -1,5 +1,18 @@
-YonoLootZone SEO package
+YonoLootZone SEO - STEP 3
 
-This package adds technical SEO foundations: sitemap, robots, canonical URLs, metadata, social previews, structured data, breadcrumbs, a 404 page and image decoding/lazy-loading improvements.
+Added a people-first editorial resource hub and six original guides covering listing review, download-link checks, installation safety, search/navigation, dedicated game pages, and privacy/permissions.
 
-Ranking is not guaranteed. After publishing, use Google Search Console to verify the site, submit sitemap.xml, inspect important URLs, and monitor indexing and Core Web Vitals.
+Google SEO notes:
+- Avoid keyword stuffing, copied content, doorway pages, paid ranking links and mass-produced low-value pages.
+- Keep claims supportable and clearly label third-party destinations.
+- Submit /sitemap.xml in Google Search Console after deployment.
+- Review indexing and performance regularly.
+
+New URLs:
+/guides.html
+/guides/how-we-review-game-listings.html
+/guides/safe-app-installation-checklist.html
+/guides/how-to-check-a-download-link.html
+/guides/yono-games-search-guide.html
+/guides/game-page-explained.html
+/guides/privacy-and-permissions-guide.html
