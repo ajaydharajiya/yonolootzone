@@ -1,0 +1,7 @@
+services:
+  yonolootzone:
+    build: .
+    container_name: yonolootzone
+    ports:
+      - "8080:80"
+    restart: unless-stopped

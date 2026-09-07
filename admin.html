@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard — YonoLootZone</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" as="image" href="assets/all-yono-header.webp" fetchpriority="high"><link rel="stylesheet" href="assets/admin.css">
+<style id="slider-admin-disabled">[data-page="slider"],#page-slider{display:none!important}</style>
+<link rel="icon" href="assets/all-yono-header.webp" type="image/png" sizes="225x225">
+<link rel="apple-touch-icon" href="assets/all-yono-header.webp">
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="admin-brand"><img src="assets/logo.svg" decoding="async"><div><b>MY GAME</b><small>CONTROL PANEL</small></div></div>
+    <nav>
+      <button class="side active" data-page="dashboard">▦ <span>Dashboard</span></button>
+      <button class="side" data-page="games">🎮 <span>Games</span></button>
+      <button class="side" data-page="categories">▤ <span>Categories</span></button><button class="side" data-page="slider">▰ <span>Slider</span></button>
+      <button class="side" data-page="appearance">◈ <span>Appearance</span></button>
+      <button class="side" data-page="seo">⌕ <span>SEO</span></button>
+      <button class="side" data-page="backup">⇅ <span>Backup</span></button><button class="side" data-page="tools">⚙ <span>Site Tools</span></button>
+    </nav>
+    <div class="side-bottom"><a href="index.html">↗ View Website</a></div>
+  </aside>
+
+  <section class="workspace">
+    <header class="topbar">
+      <button class="hamb" id="hamb">☰</button>
+      <div><span class="crumb">ADMIN /</span> <b id="pageName">Dashboard</b></div>
+      <div class="top-actions"><span class="live-dot">● Live</span><a href="index.html" target="_blank">Open Site ↗</a></div>
+    </header>
+
+    <main class="content">
+      <!-- DASHBOARD -->
+      <section class="page" id="page-dashboard">
+        <div class="page-title"><div><span class="eyebrow">OVERVIEW</span><h1>Dashboard</h1><p>Manage your games, links, categories and website settings.</p></div><button class="primary" data-open-add>＋ Add Game</button></div>
+        <div class="stat-grid">
+          <div class="stat"><span>🎮</span><b id="statGames">0</b><small>Total Games</small></div>
+          <div class="stat"><span>🔗</span><b id="statLinks">0</b><small>Game Links</small></div>
+          <div class="stat"><span>▤</span><b id="statCats">0</b><small>Categories</small></div>
+          <div class="stat"><span>●</span><b id="statEnabled">0</b><small>Active Games</small></div>
+        </div>
+        <div class="two-col">
+          <div class="card"><div class="card-head"><h2>Recent Games</h2><button class="text-btn" data-page-jump="games">View all</button></div><div id="recentGames"></div></div>
+          <div class="card"><div class="card-head"><h2>Quick Actions</h2></div><div class="quick-grid">
+            <button data-open-add>＋<b>Add Game</b><small>Create a new game</small></button>
+            <button data-page-jump="categories">▤<b>Categories</b><small>Manage categories</small></button>
+            <button data-page-jump="appearance">◈<b>Design</b><small>Change website UI</small></button>
+            <button data-page-jump="seo">⌕<b>SEO</b><small>Optimize search settings</small></button>
+          </div></div>
+        </div>
+      </section>
+
+      <!-- GAMES -->
+      <section class="page hidden" id="page-games">
+        <div class="page-title"><div><span class="eyebrow">CONTENT</span><h1>Game Manager</h1><p>Add, edit, remove and change game links.</p></div><button class="primary" data-open-add>＋ Add Game</button></div>
+        <div class="card">
+          <div class="toolbar"><input id="gameSearch" placeholder="⌕  Search games..."><select id="gameFilter"><option value="all">All Games</option></select><button class="outline" id="exportGames">Export</button></div>
+          <div class="table-wrap"><table><thead><tr><th>Game</th><th>Category</th><th>Game / Download Link</th><th>Status</th><th>Actions</th></tr></thead><tbody id="gamesTable"></tbody></table></div>
+        </div>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section class="page hidden" id="page-categories">
+        <div class="page-title"><div><span class="eyebrow">ORGANIZE</span><h1>Categories</h1><p>Create categories and control how games are grouped.</p></div><button class="primary" id="addCategory">＋ Add Category</button></div>
+        <div class="card"><div id="categoryManager"></div></div>
+      </section>
+
+      
+<section class="page hidden" id="page-slider">
+<div class="page-title"><div><span class="eyebrow">FEATURED CONTENT</span><h1>Slider Manager</h1><p>Control the homepage featured slider without removing your existing games or categories.</p></div><button class="primary" id="addSlide">＋ Add Slide</button></div>
+<div class="card"><div class="slider-admin-note">Recommended: use wide images around <b>1200 × 520</b>. You can use a URL or a local file path supported by your hosting setup.</div><div id="sliderManager"></div></div>
+</section>
+
+      <!-- APPEARANCE -->
+      <section class="page hidden" id="page-appearance">
+        <div class="page-title"><div><span class="eyebrow">DESIGN</span><h1>Appearance</h1><p>Customize your website without changing the code.</p></div><button class="primary" id="saveAppearance">Save Changes</button></div>
+        <div class="card"><h2>Branding</h2><div class="form-grid">
+          <label>Website Name<input id="siteName"></label><label>Search Placeholder<input id="searchPlaceholder"></label><label>Languages (comma separated)<input id="languages" placeholder="English, Hindi, Gujarati"></label><label>Page Title<input id="pageTitleInput"></label><label class="wide">Page Intro<textarea id="pageIntro"></textarea></label><label class="wide">Logo URL<input id="logoUrl"></label>
+        </div></div>
+        <div class="card"><h2>Colors</h2><div class="color-grid">
+          <label>Header<input id="headerColor" type="color"></label><label>Accent<input id="accentColor" type="color"></label><label>Title Bar<input id="titleColor" type="color"></label><label>Download Button<input id="buttonColor" type="color"></label><label>Default Mode<select id="defaultMode"><option value="light">Light</option><option value="dark">Dark</option></select></label>
+        </div></div>
+      </section>
+
+      <!-- SEO -->
+      <section class="page hidden" id="page-seo">
+        <div class="page-title"><div><span class="eyebrow">SEARCH</span><h1>SEO Center</h1><p>Manage search metadata and social sharing information.</p></div><button class="primary" id="saveSeo">Save SEO</button></div>
+        <div class="card"><h2>Search Metadata</h2><div class="form-grid">
+          <label class="wide">SEO Title <small>Recommended: concise and unique</small><input id="seoTitle" maxlength="60"></label>
+          <label class="wide">Meta Description <small>Describe the actual page; avoid keyword stuffing.</small><textarea id="metaDescription" maxlength="160"></textarea></label>
+          <label>Canonical URL<input id="canonicalUrl" placeholder="https://yourdomain.com/"></label><label>OG Image URL<input id="ogImage"></label>
+          <label>Robots<select id="robots"><option>index,follow</option><option>noindex,nofollow</option></select></label><label>Twitter Card<select id="twitterCard"><option>summary_large_image</option><option>summary</option></select></label>
+        </div></div>
+        <div class="seo-check"><b>SEO checklist</b><span>✓ Sitemap included</span><span>✓ Robots file included</span><span>✓ Canonical support</span><span>✓ Open Graph support</span><span>✓ Structured data support</span></div>
+      </section>
+
+      <!-- BACKUP -->
+      <section class="page hidden" id="page-backup">
+        <div class="page-title"><div><span class="eyebrow">DATA</span><h1>Backup & Restore</h1><p>Export your website settings and games before making changes.</p></div></div>
+        <div class="card backup-card"><h2>Backup</h2><p>Download a JSON backup of your current games, categories and settings.</p><button class="primary" id="backup">Download Backup</button><hr><h2>Restore</h2><p>Restore a previous JSON backup. This replaces the current browser data.</p><input type="file" id="restoreFile" accept=".json"><button class="outline" id="restore">Restore Backup</button></div>
+      </section>
+    </main>
+  </section>
+</div>
+
+
+<section class="page hidden" id="page-tools">
+<div class="page-title"><div><span class="eyebrow">MAINTENANCE</span><h1>Site Tools</h1><p>Useful checks and controls for keeping the website healthy.</p></div></div>
+<div class="stat-grid">
+  <div class="stat"><span>⚡</span><b id="healthGames">0</b><small>Published Games</small></div>
+  <div class="stat"><span>🖼️</span><b id="healthImages">0</b><small>Games With Images</small></div>
+  <div class="stat"><span>🔎</span><b id="healthSeo">0</b><small>SEO Ready</small></div>
+  <div class="stat"><span>🔗</span><b id="healthLinks">0</b><small>Valid Links</small></div>
+</div>
+<div class="card"><h2>Site Health</h2><div id="healthChecklist" class="health-list"></div></div>
+<div class="card"><h2>Quick Maintenance</h2><div class="maintenance-actions">
+<button class="outline" id="previewSite">Open Website ↗</button>
+<button class="outline" id="resetPrivacy">Reset Privacy Notice</button>
+<button class="outline" id="clearSearchState">Clear Saved Preferences</button>
+</div></div>
+</section>
+
+<div class="modal hidden" id="slideModal"><div class="modal-box"><div class="modal-head"><div><span class="eyebrow">FEATURED SLIDE</span><h2 id="slideModalTitle">Add Slide</h2></div><button class="x" data-close>×</button></div><input type="hidden" id="slideId"><div class="form-grid"><label>Badge / Tag<input id="slideTag" value="FEATURED"></label><label>Button Text<input id="slideButton" value="Install"></label><label>Slide Title<input id="slideTitle" placeholder="Yono 777"></label><label>Rating<input id="slideRating" value="4.5"></label><label class="wide">Description<textarea id="slideDescription"></textarea></label><label>Plays Text<input id="slidePlays" value="400K+ plays"></label><label class="wide">Image URL<input id="slideImage" placeholder="assets/slide-1.svg"></label><label class="wide">Button Link<input id="slideUrl" placeholder="#games"></label></div><div class="modal-actions"><button class="outline" data-close>Cancel</button><button class="primary" id="saveSlide">Save Slide</button></div></div></div>
+
+<!-- GAME MODAL -->
+<div class="modal hidden" id="gameModal"><div class="modal-box">
+  <div class="modal-head"><div><span class="eyebrow">GAME</span><h2 id="gameModalTitle">Add Game</h2></div><button class="x" data-close>×</button></div>
+  <input type="hidden" id="gameId">
+  <div class="form-grid">
+    <label>Game Name<input id="gameName" placeholder="Game name"></label>
+    <label>Category<select id="gameCategory"></select></label>
+    <label>Bonus Text<input id="bonus" value="Bonus Up to ₹101"></label>
+    <label>Withdraw Text<input id="withdraw" value="Min. Withdraw ₹100"></label>
+    <label class="wide">Game Icon URL<input id="gameImage" placeholder="https://.../icon.png"></label>
+    <label class="wide">Game / Download Link<input id="gameUrl" placeholder="https://your-game-link.com"></label>
+    <label class="wide">SEO Page Title<input id="gameSeoTitle" maxlength="60" placeholder="Game title for Google"></label>
+    <label class="wide">SEO Meta Description<textarea id="gameMetaDescription" maxlength="160" placeholder="Useful description of this game"></textarea></label>
+    <label>SEO Slug<input id="gameSlug" placeholder="game-name"></label>
+    <label>OG Image URL<input id="gameOgImage" placeholder="https://..."></label>
+    <label class="wide">Game Description<textarea id="gameDescription" placeholder="Original useful information about the game"></textarea></label>
+    <label class="wide">FAQ (Question | Answer, one per line)<textarea id="gameFaq" placeholder="What is this game? | Your answer"></textarea></label>
+    <label>Button Text<input id="buttonText" value="Download"></label>
+    <label>Status<select id="gameStatus"><option value="true">Active</option><option value="false">Disabled</option></select></label>
+    <label>Featured<select id="featured"><option value="false">No</option><option value="true">Yes</option></select></label>
+    <label>Popular<select id="popular"><option value="false">No</option><option value="true">Yes</option></select></label>
+  </div>
+  <div class="modal-actions"><button class="outline" data-close>Cancel</button><button class="primary" id="saveGame">Save Game</button></div>
+</div></div>
+
+<script src="assets/admin-pro.js"></script>
+</body></html>

@@ -1,0 +1,109 @@
+const KEY='mygame_list_v1';
+const DEFAULT={settings:{siteName:'My Game',pageTitle:'All Game',pageIntro:'Explore our latest games, bonuses and direct download links.',logoUrl:'assets/logo.svg',headerColor:'#ff0808',accentColor:'#087d0c',titleColor:'#ff3f45',buttonColor:'#ff1010',buttonTextColor:'#ffffff',seoTitle:'My Game — Latest Games, Bonuses & Download Links',metaDescription:'Discover games, bonuses and direct download links in one simple gaming portal.',canonicalUrl:'https://example.com/',ogImage:'https://example.com/assets/logo.svg',twitterCard:'summary_large_image',robots:'index,follow'},categories:['All Games','Popular','New','Featured'],games:[{id:'jaiho-777',name:'Jaiho 777',category:'Popular',bonus:'Bonus Up to ₹100',withdraw:'Fast withdrawal',image:'assets/jaiho-777.jpeg',url:'https://jaiho77790.com/?code=GC2815EEHMJ&t=1787409362',seoTitle:'Jaiho 777 Game — Features & Download',metaDescription:'Learn about Jaiho 777, its games and download information.',slug:'jaiho-777',ogImage:'assets/jaiho-777.jpeg',description:'Jaiho 777 is a featured game portal. Visit the provided link for the latest game information.',faq:[],button:'Download',status:true,featured:true,popular:true,{id:'top-rummy',name:'TOP RUMMY',category:'Popular',bonus:'Bonus information',withdraw:'Withdrawal information',image:'assets/top-rummy.jpeg',url:'https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258',seoTitle:'TOP RUMMY — Game Information & Download',metaDescription:'TOP RUMMY game information, features and the provided access link.',slug:'top-rummy',ogImage:'assets/top-rummy.jpeg',description:'TOP RUMMY game listing with the image and access link provided by the site owner.',faq:[],button:'Download',status:true,featured:false,popular:true}]};
+function data(){let x=localStorage.getItem(KEY);let d=x?JSON.parse(x):JSON.parse(JSON.stringify(DEFAULT));d.settings={...DEFAULT.settings,...(d.settings||{})};d.categories=d.categories||DEFAULT.categories;d.games=d.games||[];if(!d.games.some(g=>g.id==='jaiho-777')){d.games.push(JSON.parse(JSON.stringify(DEFAULT.games[0])));save(d)}return d}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+const $=id=>document.getElementById(id);
+
+function navigate(page){
+ document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));
+ $('page-'+page).classList.remove('hidden');
+ document.querySelectorAll('.side').forEach(x=>x.classList.toggle('active',x.dataset.page===page));
+ $('pageName').textContent=page[0].toUpperCase()+page.slice(1);
+ if(window.innerWidth<701)$('sidebar').classList.remove('open');
+ if(page==='dashboard')renderDashboard();
+ if(page==='games')renderGames();
+ if(page==='categories')renderCategories(); if(page==='slider')renderSlider();
+ if(page==='appearance')fillAppearance();
+ if(page==='seo')fillSEO(); if(page==='tools')renderTools();
+}
+document.querySelectorAll('.side').forEach(b=>b.onclick=()=>navigate(b.dataset.page));
+document.querySelectorAll('[data-page-jump]').forEach(b=>b.onclick=()=>navigate(b.dataset.pageJump));
+$('hamb').onclick=()=>$('sidebar').classList.toggle('open');
+
+
+function renderTools(){
+ const d=data(),games=d.games||[];
+ $('healthGames').textContent=games.filter(g=>g.status!==false).length;
+ $('healthImages').textContent=games.filter(g=>g.image).length;
+ $('healthSeo').textContent=games.filter(g=>g.seoTitle&&g.metaDescription&&g.slug).length;
+ $('healthLinks').textContent=games.filter(g=>/^https?:\/\//i.test(g.url||'')).length;
+ const checks=[
+  [d.categories.length>0,'At least one category exists'],
+  [games.length>0,'Games have been added'],
+  [games.every(g=>g.status===false||g.url),'Active games have a link'],
+  [games.filter(g=>g.status!==false).every(g=>g.seoTitle&&g.metaDescription&&g.slug),'Published games have SEO fields'],
+  [location.protocol!=='file:','Site is being viewed over a web server (recommended for production)']
+ ];
+ $('healthChecklist').innerHTML=checks.map(x=>`<div class="health-item"><span>${x[0]?'✓':'!'}</span><b>${esc(x[1])}</b><small>${x[0]?'OK':'Needs attention'}</small></div>`).join('');
+}
+$('previewSite').onclick=()=>window.open('index.html','_blank');
+$('resetPrivacy').onclick=()=>{localStorage.removeItem('mygame_privacy_ack');alert('Privacy notice will show again on the website.')};
+$('clearSearchState').onclick=()=>{localStorage.removeItem('mygame_lang');localStorage.removeItem('mygame_theme');localStorage.removeItem('mygame_announcement_closed');alert('Saved visitor preferences cleared.')};
+
+function renderDashboard(){
+ const d=data();
+ $('statGames').textContent=d.games.length;
+ $('statLinks').textContent=d.games.filter(g=>g.url).length;
+ $('statCats').textContent=d.categories.length;
+ $('statEnabled').textContent=d.games.filter(g=>g.status!==false).length;
+ $('recentGames').innerHTML=d.games.slice(-6).reverse().map(g=>`<div class="recent"><img src="${esc(g.image||'assets/logo.svg')}" onerror="this.src='assets/logo.svg'"><div><b>${esc(g.name)}</b><small>${esc(g.category||'All Games')} · ${esc(g.url||'No link')}</small></div></div>`).join('')||'<p style="color:#888">No games yet.</p>';
+}
+
+function populateFilter(){
+ const d=data(),f=$('gameFilter'),current=f.value;
+ f.innerHTML='<option value="all">All Games</option>'+d.categories.filter(c=>!['All Games'].includes(c)).map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+ if([...f.options].some(o=>o.value===current))f.value=current;
+}
+function renderGames(){
+ const d=data();populateFilter();
+ const q=($('gameSearch').value||'').toLowerCase(),filter=$('gameFilter').value;
+ const list=d.games.filter(g=>(!q||g.name.toLowerCase().includes(q)||(g.url||'').toLowerCase().includes(q))&&(filter==='all'||g.category===filter));
+ $('gamesTable').innerHTML=list.map(g=>`<tr><td><div class="table-game"><img src="${esc(g.image||'assets/logo.svg')}" onerror="this.src='assets/logo.svg'"><div><b>${esc(g.name)}</b><small>${esc(g.bonus||'')}</small></div></div></td><td>${esc(g.category||'All Games')}</td><td><span class="badge ${g.seoTitle||g.metaDescription||g.description?'on':'off'}">${g.seoTitle||g.metaDescription||g.description?'SEO Ready':'Needs SEO'}</span></td><td><div class="link-cell" title="${esc(g.url)}">${esc(g.url)}</div></td><td><span class="badge ${g.status!==false?'on':'off'}">${g.status!==false?'Active':'Disabled'}</span></td><td><div class="row-actions"><button class="icon-btn" onclick="editGame('${esc(g.id)}')">✎</button><button class="icon-btn del" onclick="deleteGame('${esc(g.id)}')">🗑</button></div></td></tr>`).join('')||'<tr><td colspan="6" style="text-align:center;color:#888;padding:35px">No games found.</td></tr>';
+}
+$('gameSearch').oninput=renderGames;$('gameFilter').onchange=renderGames;
+
+function slugify(s){return String(s||'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80)}
+function fillCategorySelect(selected){
+ const d=data();$('gameCategory').innerHTML=d.categories.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+ if(selected&&[...$('gameCategory').options].some(o=>o.value===selected))$('gameCategory').value=selected;
+}
+function clearGame(){['gameId','gameName','gameImage','gameUrl','gameSeoTitle','gameMetaDescription','gameSlug','gameOgImage','gameDescription','gameFaq'].forEach(id=>$(id).value='');$('bonus').value='Bonus Up to ₹101';$('withdraw').value='Min. Withdraw ₹100';$('buttonText').value='Download';$('gameStatus').value='true';$('featured').value='false';$('popular').value='false';fillCategorySelect('All Games')}
+function openAdd(){clearGame();$('gameModalTitle').textContent='Add New Game';$('gameModal').classList.remove('hidden');$('gameName').focus()}
+document.querySelectorAll('[data-open-add]').forEach(b=>b.onclick=openAdd);
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.closest('.modal').id).classList.add('hidden'));
+window.editGame=function(id){const g=data().games.find(x=>x.id===id);if(!g)return;fillCategorySelect(g.category||'All Games');$('gameId').value=g.id;$('gameName').value=g.name;$('bonus').value=g.bonus||'';$('withdraw').value=g.withdraw||'';$('gameImage').value=g.image||'';$('gameUrl').value=g.url||'';$('gameSeoTitle').value=g.seoTitle||'';$('gameMetaDescription').value=g.metaDescription||'';$('gameSlug').value=g.slug||slugify(g.name);$('gameOgImage').value=g.ogImage||'';$('gameDescription').value=g.description||'';$('gameFaq').value=(g.faq||[]).map(x=>x.q+' | '+x.a).join('\n');$('buttonText').value=g.button||'Download';$('gameStatus').value=String(g.status!==false);$('featured').value=String(!!g.featured);$('popular').value=String(!!g.popular);$('gameModalTitle').textContent='Edit Game';$('gameModal').classList.remove('hidden')};
+window.deleteGame=function(id){const d=data(),g=d.games.find(x=>x.id===id);if(g&&confirm(`Remove "${g.name}"?`)){d.games=d.games.filter(x=>x.id!==id);save(d);renderGames();renderDashboard()}};
+$('saveGame').onclick=()=>{const d=data(),id=$('gameId').value,g={id:id||Date.now().toString(),name:$('gameName').value.trim(),category:$('gameCategory').value||'All Games',bonus:$('bonus').value.trim(),withdraw:$('withdraw').value.trim(),image:$('gameImage').value.trim()||'assets/logo.svg',url:$('gameUrl').value.trim(),seoTitle:$('gameSeoTitle').value.trim(),metaDescription:$('gameMetaDescription').value.trim(),slug:slugify($('gameSlug').value.trim()||$('gameName').value),ogImage:$('gameOgImage').value.trim()||$('gameImage').value.trim(),description:$('gameDescription').value.trim(),faq:$('gameFaq').value.split('\n').map(line=>{let p=line.split('|');return p.length>=2?{q:p[0].trim(),a:p.slice(1).join('|').trim()}:null}).filter(Boolean),button:$('buttonText').value.trim()||'Download',status:$('gameStatus').value==='true',featured:$('featured').value==='true',popular:$('popular').value==='true'};if(!g.name||!g.url){alert('Game Name and Game/Download Link are required.');return}const i=d.games.findIndex(x=>x.id===id);if(i>=0)d.games[i]=g;else d.games.push(g);save(d);$('gameModal').classList.add('hidden');renderGames();renderDashboard()};
+
+function renderCategories(){
+ const d=data();
+ $('categoryManager').innerHTML=d.categories.map((c,i)=>{const count=d.games.filter(g=>g.category===c).length;return `<div class="cat-item"><div class="cat-meta"><b>${esc(c)}</b><span class="cat-count">${count} game${count===1?'':'s'}</span></div><div class="row-actions">${i===0?'':'<button class="icon-btn" onclick="renameCategory('+i+')">✎</button><button class="icon-btn del" onclick="deleteCategory('+i+')">🗑</button>'}</div></div>`}).join('');
+}
+$('addCategory').onclick=()=>{const d=data(),n=prompt('Enter new category name:');if(!n||!n.trim())return;const name=n.trim();if(d.categories.includes(name)){alert('Category already exists.');return}d.categories.push(name);save(d);renderCategories()};
+window.renameCategory=i=>{const d=data(),old=d.categories[i],n=prompt('Rename category:',old);if(!n||!n.trim())return;const name=n.trim();if(d.categories.includes(name)){alert('Category already exists.');return}d.categories[i]=name;d.games.forEach(g=>{if(g.category===old)g.category=name});save(d);renderCategories()};
+window.deleteCategory=i=>{const d=data(),name=d.categories[i];if(i===0){alert('All Games cannot be removed.');return}if(confirm(`Delete "${name}"? Games will move to All Games.`)){d.categories.splice(i,1);d.games.forEach(g=>{if(g.category===name)g.category='All Games'});save(d);renderCategories();renderGames()}};
+
+function fillAppearance(){const s=data().settings;siteName.value=s.siteName;searchPlaceholder.value=s.searchPlaceholder||'Search games...';languages.value=(s.languages||['English','Hindi','Gujarati']).join(', ');pageTitleInput.value=s.pageTitle;pageIntro.value=s.pageIntro||'';logoUrl.value=s.logoUrl;headerColor.value=s.headerColor;accentColor.value=s.accentColor;titleColor.value=s.titleColor;buttonColor.value=s.buttonColor;defaultMode.value=s.defaultMode||'light'}
+$('saveAppearance').onclick=()=>{const d=data();d.settings={...d.settings,siteName:siteName.value.trim()||'My Game',searchPlaceholder:searchPlaceholder.value.trim()||'Search games...',languages:languages.value.split(',').map(x=>x.trim()).filter(Boolean),defaultMode:defaultMode.value,pageTitle:pageTitleInput.value.trim()||'All Game',pageIntro:pageIntro.value.trim(),logoUrl:logoUrl.value.trim()||'assets/logo.svg',headerColor:headerColor.value,accentColor:accentColor.value,titleColor:titleColor.value,buttonColor:buttonColor.value};save(d);alert('Appearance saved.')};
+
+function fillSEO(){const s=data().settings;seoTitle.value=s.seoTitle||'';metaDescription.value=s.metaDescription||'';canonicalUrl.value=s.canonicalUrl||'';ogImage.value=s.ogImage||'';robots.value=s.robots||'index,follow';twitterCard.value=s.twitterCard||'summary_large_image'}
+$('saveSeo').onclick=()=>{const d=data();d.settings={...d.settings,seoTitle:seoTitle.value.trim(),metaDescription:metaDescription.value.trim(),canonicalUrl:canonicalUrl.value.trim(),ogImage:ogImage.value.trim(),robots:robots.value,twitterCard:twitterCard.value};save(d);alert('SEO settings saved.')};
+
+function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+$('backup').onclick=()=>download('my-game-backup.json',JSON.stringify(data(),null,2),'application/json');
+$('restore').onclick=()=>{const f=$('restoreFile').files[0];if(!f){alert('Choose a JSON backup first.');return}const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!x.games||!x.settings)throw 0;save(x);alert('Backup restored.');location.reload()}catch(e){alert('Invalid backup file.')}};r.readAsText(f)};
+$('exportGames').onclick=()=>download('my-game-games.json',JSON.stringify(data().games,null,2),'application/json');
+
+
+function renderSlider(){
+ const d=data();d.slides=d.slides||[];
+ $('sliderManager').innerHTML=d.slides.map((s,i)=>`<div class="slider-admin-row"><div class="slide-thumb" style="background-image:url('${esc(s.image||'assets/slide-1.svg')}')"><span>${i+1}</span></div><div><b>${esc(s.title)}</b><small>${esc(s.tag||'FEATURED')} · ${esc(s.rating||'')} · ${esc(s.plays||'')}</small><p>${esc(s.description||'')}</p></div><div class="row-actions"><button class="icon-btn" onclick="editSlide('${esc(s.id)}')">✎</button><button class="icon-btn del" onclick="deleteSlide('${esc(s.id)}')">🗑</button></div></div>`).join('')||'<div class="empty">No slides yet. Add your first featured slide.</div>';
+}
+function clearSlide(){$('slideId').value='';$('slideTag').value='FEATURED';$('slideButton').value='Install';$('slideTitle').value='';$('slideRating').value='4.5';$('slideDescription').value='';$('slidePlays').value='400K+ plays';$('slideImage').value='';$('slideUrl').value='#games'}
+$('addSlide').onclick=()=>{clearSlide();$('slideModalTitle').textContent='Add Slide';$('slideModal').classList.remove('hidden')};
+window.editSlide=id=>{const s=data().slides.find(x=>x.id===id);if(!s)return;$('slideId').value=s.id;$('slideTag').value=s.tag||'';$('slideButton').value=s.button||'Install';$('slideTitle').value=s.title||'';$('slideRating').value=s.rating||'';$('slideDescription').value=s.description||'';$('slidePlays').value=s.plays||'';$('slideImage').value=s.image||'';$('slideUrl').value=s.url||'#games';$('slideModalTitle').textContent='Edit Slide';$('slideModal').classList.remove('hidden')};
+window.deleteSlide=id=>{const d=data(),s=d.slides.find(x=>x.id===id);if(s&&confirm(`Remove "${s.title}" from the slider?`)){d.slides=d.slides.filter(x=>x.id!==id);save(d);renderSlider()}};
+$('saveSlide').onclick=()=>{const d=data();d.slides=d.slides||[];const id=$('slideId').value,s={id:id||Date.now().toString(),tag:$('slideTag').value.trim()||'FEATURED',button:$('slideButton').value.trim()||'Install',title:$('slideTitle').value.trim(),rating:$('slideRating').value.trim()||'4.5',description:$('slideDescription').value.trim(),plays:$('slidePlays').value.trim(),image:$('slideImage').value.trim()||'assets/slide-1.svg',url:$('slideUrl').value.trim()||'#games'};if(!s.title){alert('Slide title is required.');return}const i=d.slides.findIndex(x=>x.id===id);if(i>=0)d.slides[i]=s;else d.slides.push(s);save(d);$('slideModal').classList.add('hidden');renderSlider()};
+
+renderDashboard();renderGames();renderCategories();renderSlider();fillAppearance();fillSEO();renderTools();

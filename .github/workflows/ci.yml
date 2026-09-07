@@ -1,0 +1,49 @@
+name: YonoLootZone CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Validate required files
+        shell: bash
+        run: |
+          set -e
+          test -f index.html
+          test -f robots.txt
+          test -f sitemap.xml
+          echo "Required files OK"
+
+      - name: Check old domain/brand references
+        shell: bash
+        run: |
+          set -e
+          if grep -RniE 'yonolooters\.com|Yono Games Hub|YonoLooters'             --exclude-dir=.git --exclude='*.webp' --exclude='*.png' --exclude='*.jpg' .; then
+            echo "ERROR: Old domain/brand reference found."
+            exit 1
+          fi
+          echo "Brand/domain check OK"
+
+      - name: Validate sitemap
+        shell: bash
+        run: |
+          set -e
+          grep -q '<urlset' sitemap.xml
+          grep -q 'https://yonolootzone.com/' sitemap.xml
+          test "$(grep -o '<loc>' sitemap.xml | wc -l)" -gt 1
+          echo "Sitemap check OK"
+
+      - name: Validate robots.txt
+        shell: bash
+        run: |
+          set -e
+          grep -qi 'Sitemap: https://yonolootzone.com/sitemap.xml' robots.txt
+          echo "robots.txt check OK"

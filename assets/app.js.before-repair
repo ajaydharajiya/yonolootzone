@@ -1,0 +1,114 @@
+const KEY='mygame_list_v1';
+const DEFAULT={slides:[{id:'s1',tag:'FEATURED',title:'Yono 777',description:'A slots-first game with classic 777 reels and quick rounds.',rating:'4.5',plays:'400K+ plays',button:'Install',url:'#games',image:'assets/slide-1.svg'},{id:'s2',tag:'TRENDING',title:'Featured Game',description:'Discover the latest games and explore new experiences.',rating:'4.6',plays:'250K+ plays',button:'Install',url:'#games',image:'assets/slide-2.svg'},{id:'s3',tag:'NEW',title:'New Games',description:'Fresh additions, quick access and a premium gaming experience.',rating:'4.4',plays:'180K+ plays',button:'Install',url:'#games',image:'assets/slide-3.svg'}],categories:['All Games','Popular','New','Featured'],settings:{
+siteName:'My Game',searchPlaceholder:'Search games...',languages:['English','Hindi','Gujarati'],pageTitle:'All Game',pageIntro:'Explore our latest games, bonuses and direct download links.',
+logoUrl:'assets/logo.svg',headerColor:'#ff0808',accentColor:'#087d0c',titleColor:'#ff3f45',buttonColor:'#ff1010',
+seoTitle:'My Game — Latest Games, Bonuses & Download Links',metaDescription:'Discover games, bonuses and direct download links in one simple gaming portal.',
+canonicalUrl:'https://example.com/',ogImage:'https://example.com/assets/logo.svg',twitterCard:'summary_large_image',robots:'index,follow'
+},games:[{id:'jaiho-777',name:'Jaiho 777',category:'Popular',bonus:'Bonus Up to ₹100',withdraw:'Fast withdrawal',image:'assets/jaiho-777.jpeg',url:'https://jaiho77790.com/?code=GC2815EEHMJ&t=1787409362',seoTitle:'Jaiho 777 Game — Features & Download',metaDescription:'Learn about Jaiho 777, its games and download information.',slug:'jaiho-777',ogImage:'assets/jaiho-777.jpeg',description:'Jaiho 777 is a featured game portal. Visit the provided link for the latest game information.',faq:[],button:'Download',status:true,featured:true,popular:true,{id:'top-rummy',name:'TOP RUMMY',category:'Popular',bonus:'Bonus information',withdraw:'Withdrawal information',image:'assets/top-rummy.jpeg',url:'https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258',seoTitle:'TOP RUMMY — Game Information & Download',metaDescription:'TOP RUMMY game information, features and the provided access link.',slug:'top-rummy',ogImage:'assets/top-rummy.jpeg',description:'TOP RUMMY game listing with the image and access link provided by the site owner.',faq:[],button:'Download',status:true,featured:false,popular:true}]};
+function get(){let x=localStorage.getItem(KEY);if(x){let d=JSON.parse(x);d.categories=d.categories||['All Games','Popular','New','Featured'];d.slides=d.slides||[];d.games=d.games||[];if(!d.games.some(g=>g.id==='jaiho-777')){d.games.push(JSON.parse(JSON.stringify(DEFAULT.games[0])));localStorage.setItem(KEY,JSON.stringify(d));}if(!d.games.some(g=>g.id==='top-rummy')){d.games.push(JSON.parse(JSON.stringify(DEFAULT.games[1])));localStorage.setItem(KEY,JSON.stringify(d));}return d;}localStorage.setItem(KEY,JSON.stringify(DEFAULT));return JSON.parse(JSON.stringify(DEFAULT))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function setup(){const d=get(),s=d.settings;document.documentElement.style.setProperty('--header',s.headerColor);document.documentElement.style.setProperty('--accent',s.accentColor);document.documentElement.style.setProperty('--title',s.titleColor);document.documentElement.style.setProperty('--button',s.buttonColor);
+const h=document.getElementById('header');if(h)h.innerHTML=`<div class="top"><div class="brand"><img class="logo" src="${esc(s.logoUrl)}" onerror="this.src='assets/logo.svg'"><div class="site-name">${esc(s.siteName)}</div></div><div class="header-tools"><div class="search-wrap"><span>⌕</span><input id="siteSearch" type="search" placeholder="${esc(s.searchPlaceholder||'Search games...')}" aria-label="Search games"></div><select id="languageSelect" aria-label="Language">${(s.languages||['English','Hindi','Gujarati']).map(l=>`<option>${esc(l)}</option>`).join('')}</select><button class="mode-btn" id="modeToggle" type="button" aria-label="Toggle dark mode">☾</button><a class="admin-link" href="admin.html">Admin</a></div></div>`;
+const mode=localStorage.getItem('mygame_theme')||'light';document.body.classList.toggle('dark-mode',mode==='dark');const mt=document.getElementById('modeToggle');if(mt){mt.textContent=mode==='dark'?'☀':'☾';mt.onclick=()=>{const dark=!document.body.classList.contains('dark-mode');document.body.classList.toggle('dark-mode',dark);localStorage.setItem('mygame_theme',dark?'dark':'light');mt.textContent=dark?'☀':'☾'}}const lang=document.getElementById('languageSelect');if(lang)lang.onchange=()=>{localStorage.setItem('mygame_lang',lang.value);applyLanguage(lang.value)};const savedLang=localStorage.getItem('mygame_lang');if(lang&&savedLang&&[...lang.options].some(o=>o.textContent===savedLang))lang.value=savedLang;const p=document.getElementById('pageTitle');if(p)p.textContent=s.pageTitle;const intro=document.getElementById('pageIntro');if(intro)intro.textContent=s.pageIntro;
+document.title=s.seoTitle||s.pageTitle;
+let desc=document.querySelector('meta[name="description"]');if(desc)desc.content=s.metaDescription||'';
+let canon=document.querySelector('link[rel="canonical"]');if(canon)canon.href=s.canonicalUrl||location.href;
+let robots=document.querySelector('meta[name="robots"]');if(robots)robots.content=s.robots||'index,follow';
+let ogTitle=document.querySelector('meta[property="og:title"]');if(ogTitle)ogTitle.content=s.seoTitle||s.pageTitle;
+let ogDesc=document.querySelector('meta[property="og:description"]');if(ogDesc)ogDesc.content=s.metaDescription||'';
+let ogUrl=document.querySelector('meta[property="og:url"]');if(ogUrl)ogUrl.content=s.canonicalUrl||location.href;
+let ogImg=document.querySelector('meta[property="og:image"]');if(ogImg)ogImg.content=s.ogImage||s.logoUrl;
+let tw=document.querySelector('meta[name="twitter:card"]');if(tw)tw.content=s.twitterCard||'summary_large_image';
+let schema=document.getElementById('siteSchema');if(schema)schema.textContent=JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":s.siteName,"url":s.canonicalUrl,"description":s.metaDescription});
+const f=document.getElementById('footer');if(f)f.innerHTML=`<div class="share-box"><div class="share-label"><span class="share-icon">↗</span> Share with Friends</div><button class="share-btn" onclick="shareSite()">♣&nbsp; Click here to Share</button></div><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Disclaimer</a><a href="#">Contact Us</a></div><div class="trending">Trending Spin Game</div><a class="footer-download" href="#games">⇩&nbsp; Download Now</a><a class="telegram" href="#" onclick="return false">✈&nbsp; Join Telegram Channel</a><div class="copyright">Copyright © ${new Date().getFullYear()} ${esc(s.siteName)} All Rights Reserved</div>`}
+
+function renderGameDetail(){
+ const hash=location.hash||'';if(!hash.startsWith('#game/'))return false;
+ const slug=decodeURIComponent(hash.slice(6));const d=get();const g=d.games.find(x=>(x.slug||'')===slug);
+ if(!g)return false;
+ document.querySelector('main').innerHTML=`<section class="game-detail-page"><a class="back-games" href="index.html#games">← All Games</a><article class="detail-card"><div class="detail-top"><img src="${esc(g.image||'assets/logo.svg')}" alt="${esc(g.name)}"><div><span class="detail-cat">${esc(g.category||'Game')}</span><h1>${esc(g.name)}</h1><p>${esc(g.bonus||'')}</p><p>${esc(g.withdraw||'')}</p><a class="detail-download" href="${esc(g.url||'#')}" target="_blank" rel="noopener noreferrer">${esc(g.button||'Download')}</a></div></div><div class="detail-content"><h2>About ${esc(g.name)}</h2><p>${esc(g.description||'Learn more about this game, its features and download information.')}</p>${(g.faq||[]).length?'<h2>Frequently Asked Questions</h2>'+g.faq.map(f=>`<div class="faq"><h3>${esc(f.q)}</h3><p>${esc(f.a)}</p></div>`).join(''):''}</div></article></section>`;
+ document.title=g.seoTitle||`${g.name} — Game Information & Download`;
+ let desc=document.querySelector('meta[name="description"]');if(desc)desc.content=g.metaDescription||g.description||'';
+ let canon=document.querySelector('link[rel="canonical"]');if(canon)canon.href=(d.settings.canonicalUrl||location.origin+'/')+'games/'+encodeURIComponent(g.slug||slug)+'/';
+ let ogt=document.querySelector('meta[property="og:title"]');if(ogt)ogt.content=g.seoTitle||g.name;
+ let ogd=document.querySelector('meta[property="og:description"]');if(ogd)ogd.content=g.metaDescription||g.description||'';
+ let ogi=document.querySelector('meta[property="og:image"]');if(ogi)ogi.content=g.ogImage||g.image||'';
+ let schema=document.getElementById('siteSchema');if(schema)schema.textContent=JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":g.name,"description":g.description||g.metaDescription||g.name,"image":g.ogImage||g.image,"applicationCategory":"Game","operatingSystem":"Android"});
+ return true;
+}
+window.addEventListener('hashchange',()=>{if(location.hash.startsWith('#game/'))renderGameDetail();else location.reload()});
+
+function applyLanguage(lang){const map={Hindi:{home:'होम',all:'सभी गेम',latest:'नवीनतम गेम',download:'डाउनलोड'},Gujarati:{home:'હોમ',all:'બધી ગેમ્સ',latest:'નવી ગેમ્સ',download:'ડાઉનલોડ'},English:{home:'Home',all:'All Games',latest:'Latest Games',download:'Download'}};const m=map[lang]||map.English;const links=document.querySelectorAll('.nav a');if(links[0])links[0].textContent=m.home;if(links[1])links[1].textContent=m.all;const sh=document.querySelector('.section-head h2');if(sh)sh.textContent=m.latest;document.querySelectorAll('.download').forEach(b=>{if(b.dataset.custom!=='1')b.innerHTML='⇩ '+m.download})}
+function bindSearch(){const q=document.getElementById('siteSearch');if(!q)return;q.oninput=()=>{const term=q.value.trim().toLowerCase();document.querySelectorAll('#gamesList .game').forEach(card=>{const text=card.textContent.toLowerCase();card.style.display=(!term||text.includes(term))?'flex':'none'})}}
+
+let sliderTimer=null;
+function renderSlider(){
+ const d=get(),el=document.getElementById('featuredSlider');if(!el)return;
+ const slides=d.slides||[];
+ if(!slides.length){el.innerHTML='';return}
+ let active=0;
+ const draw=()=>{
+   const s=slides[active];
+   el.innerHTML=`<div class="slide-stage"><div class="slide-copy"><span class="slide-tag">${esc(s.tag||'FEATURED')}</span><h2>${esc(s.title||'Featured Game')}</h2><p>${esc(s.description||'Discover a featured game.')}</p><div class="slide-meta"><a class="slide-install" href="${esc(s.url||'#games')}">${esc(s.button||'Install')}</a><span class="stars">★★★★★</span><span>${esc(s.rating||'4.5')}</span><span>·</span><span>${esc(s.plays||'400K+ plays')}</span></div></div><div class="slide-art" style="background-image:url('${esc(s.image||'assets/slide-1.svg')}')"></div><div class="slide-shade"></div></div><div class="slide-dots">${slides.map((x,i)=>`<button class="${i===active?'active':''}" data-slide="${i}" aria-label="Slide ${i+1}"></button>`).join('')}</div>`;
+   el.querySelectorAll('[data-slide]').forEach(b=>b.onclick=()=>{active=Number(b.dataset.slide);draw();restart()});
+ };
+ const restart=()=>{clearInterval(sliderTimer);sliderTimer=setInterval(()=>{active=(active+1)%slides.length;draw()},5000)};
+ draw();restart();
+}
+function render(){
+ const d=get(),el=document.getElementById('gamesList');if(!el)return;
+ const count=document.getElementById('gameCount');
+ const cats=document.createElement('div');cats.className='category-bar';
+ const all=[...(d.categories||['All Games'])];
+ cats.innerHTML=all.map((c,i)=>`<button class="category ${i===0?'active':''}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+ el.parentElement.insertBefore(cats,el);
+ let active=all[0]||'All Games';
+ const draw=()=>{
+   let games=d.games||[];
+   if(active==='Popular')games=games.filter(g=>g.popular);
+   else if(active==='New')games=games.filter(g=>g.new_game);
+   else if(active==='Featured')games=games.filter(g=>g.featured);
+   else if(active!=='All Games')games=games.filter(g=>g.category===active);
+   if(count)count.textContent=`${games.length} games`;
+   el.innerHTML=games.map((g,i)=>`<article class="game"><div class="rank">${String(i+1).padStart(2,'0')}</div><img class="game-icon" src="${esc(g.image||'assets/logo.svg')}" onerror="this.src='assets/logo.svg'" loading="lazy" alt="${esc(g.name)} icon"><div class="game-info"><a class="game-name game-detail-link" href="#game/${encodeURIComponent(g.slug||String(g.name).toLowerCase().replace(/[^a-z0-9]+/g,"-"))}">${esc(g.name)}</a><div class="line bonus"><span class="symbol">🎁</span>${esc(g.bonus||'Bonus available')}</div><div class="line withdraw"><span class="symbol">▣</span>${esc(g.withdraw||'Fast withdrawal')}</div></div><button class="download" onclick="go('${esc(g.id)}')">⇩ ${esc(g.button||'Download')}</button></article>`).join('')||'<div class="empty-public">No games available in this category.</div>';
+ };
+ cats.querySelectorAll('.category').forEach(b=>b.onclick=()=>{cats.querySelectorAll('.category').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.cat;draw()});
+ draw();
+}
+function go(id){const g=get().games.find(x=>x.id===id);if(g&&g.url)window.open(g.url,'_blank','noopener,noreferrer')}
+function shareSite(){if(navigator.share)navigator.share({title:document.title,url:location.href}).catch(()=>{});else{navigator.clipboard?.writeText(location.href);alert('Website link copied.')}}
+
+function addParticles(){
+ const c=document.createElement('div');c.className='particles';
+ for(let i=0;i<28;i++){const p=document.createElement('i');p.style.left=(Math.random()*100)+'%';p.style.top=(Math.random()*100)+'%';p.style.animationDelay=(-Math.random()*12)+'s';p.style.animationDuration=(8+Math.random()*14)+'s';c.appendChild(p)}
+ document.body.prepend(c)
+}
+addParticles();
+setup();if(!renderGameDetail()){renderSlider();render();bindSearch();applyLanguage(localStorage.getItem('mygame_lang')||'English');
+}
+
+/* ===== QUALITY-OF-LIFE ENHANCEMENTS ===== */
+function initSiteEnhancements(){
+ const progress=document.getElementById('scrollProgress'),topBtn=document.getElementById('backTop');
+ const update=()=>{
+   const h=document.documentElement.scrollHeight-innerHeight;
+   if(progress)progress.style.width=(h>0?(scrollY/h)*100:0)+'%';
+   if(topBtn)topBtn.classList.toggle('show',scrollY>500);
+ };
+ addEventListener('scroll',update,{passive:true});update();
+ if(topBtn)topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+ const notice=document.getElementById('privacyNotice'),ok=document.getElementById('privacyOk');
+ if(notice&&!localStorage.getItem('mygame_privacy_ack'))notice.classList.add('show');
+ if(ok)ok.onclick=()=>{localStorage.setItem('mygame_privacy_ack','1');notice.classList.remove('show')};
+ const ann=document.getElementById('siteAnnouncement'),close=document.getElementById('closeAnnouncement');
+ if(close)close.onclick=()=>{ann.style.display='none';localStorage.setItem('mygame_announcement_closed','1')};
+ if(ann&&localStorage.getItem('mygame_announcement_closed')==='1')ann.style.display='none';
+ const q=new URLSearchParams(location.search).get('q');
+ const search=document.getElementById('siteSearch');
+ if(search&&q){search.value=q;search.dispatchEvent(new Event('input'))}
+}
+
+
+try{initSiteEnhancements()}catch(e){console.warn('Enhancement init:',e)}
+
+if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}

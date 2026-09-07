@@ -1,0 +1,23 @@
+YONOLOOTZONE — SEO SETUP
+
+Generated: 2026-09-07
+Current configured public URL: https://yonolootzone.com
+
+Included:
+- sitemap.xml with homepage, utility pages and all 51 game pages
+- robots.txt with sitemap declaration and admin crawl block
+- custom 404.html
+- unique title/meta description/canonical/Open Graph/Twitter tags on all public pages
+- WebSite/Organization/WebPage/BreadcrumbList structured data
+- SoftwareApplication structured data on dedicated game pages
+- mobile/performance image attributes (lazy loading where appropriate, async decoding)
+- stronger internal navigation through the shared header and game collection
+
+IMPORTANT BEFORE LAUNCH:
+1. If the real domain is not https://yonolootzone.com, replace the BASE URL in sitemap.xml, robots.txt, page canonicals/OG URLs and assets/app.js settings.canonicalUrl before publishing.
+2. Publish over HTTPS.
+3. Add the domain to Google Search Console and submit /sitemap.xml.
+4. Request indexing for the homepage and important game pages after deployment.
+5. Keep game-page text genuinely useful and updated; do not mass-generate thin pages just to target keywords.
+6. Build legitimate, relevant mentions/backlinks; avoid automated or purchased link schemes.
+7. Keep business/legal information accurate and clearly distinguish third-party game providers from YonoLootZone.

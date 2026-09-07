@@ -1,0 +1,1 @@
+Open index.html for the website. Open admin.html for the admin panel. Change every game's Download/Game URL from the admin panel. This demo stores data in browser localStorage; use a real backend/database and secure authentication before production deployment.

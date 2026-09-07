@@ -1,0 +1,27 @@
+const KEY='mygame_list_v1';function get(){let d=JSON.parse(localStorage.getItem(KEY)||'null')||{settings:{},games:[]};d.categories=d.categories||['All Games','Popular','New','Featured'];return d}function save(x){localStorage.setItem(KEY,JSON.stringify(x))}const d=get();function fill(){let s=d.settings;siteName.value=s.siteName||'';pageTitleInput.value=s.pageTitle||'';pageIntro.value=s.pageIntro||'';logoUrl.value=s.logoUrl||'assets/logo.svg';headerColor.value=s.headerColor||'#ff0808';accentColor.value=s.accentColor||'#087d0c';titleColor.value=s.titleColor||'#ff3f45';buttonColor.value=s.buttonColor||'#ff1010';seoTitle.value=s.seoTitle||'';metaDescription.value=s.metaDescription||'';canonicalUrl.value=s.canonicalUrl||'';ogImage.value=s.ogImage||'';twitterCard.value=s.twitterCard||'summary_large_image';robots.value=s.robots||'index,follow'}function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function renderCategories(){
+ const x=get();
+ categoryRows.innerHTML=x.categories.map((c,i)=>`<div class="cat-admin-row"><b>${esc(c)}</b><span>${i===0?'Default category':''}</span>${i===0?'':'<button class="edit" onclick="renameCategory('+i+')">✎ Rename</button><button class="delete" onclick="deleteCategory('+i+')">🗑 Remove</button>'}</div>`).join('');
+ const current=gameCategory.value;
+ gameCategory.innerHTML=x.categories.filter(c=>c!=='Popular'&&c!=='New'&&c!=='Featured').map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+ if(current && [...gameCategory.options].some(o=>o.value===current))gameCategory.value=current;
+}
+window.renameCategory=function(i){
+ const x=get(),old=x.categories[i],n=prompt('New category name:',old);
+ if(!n||!n.trim())return;
+ const name=n.trim();if(x.categories.includes(name)){alert('Category already exists.');return;}
+ x.categories[i]=name;x.games.forEach(g=>{if(g.category===old)g.category=name});save(x);renderCategories();render();
+};
+window.deleteCategory=function(i){
+ const x=get(),name=x.categories[i];
+ if(name==='All Games')return;
+ if(!confirm(`Remove "${name}"? Games in this category will be moved to All Games.`))return;
+ x.categories.splice(i,1);x.games.forEach(g=>{if(g.category===name)g.category='All Games'});save(x);renderCategories();render();
+};
+addCategory.onclick=()=>{
+ const x=get(),n=prompt('Category name:');
+ if(!n||!n.trim())return;
+ const name=n.trim();if(x.categories.includes(name)){alert('Category already exists.');return;}
+ x.categories.push(name);save(x);renderCategories();
+};
+function render(){let x=get();totalGames.textContent=x.games.length;totalLinks.textContent=x.games.filter(g=>g.url).length;gameRows.innerHTML=x.games.length?x.games.map(g=>`<div class="game-row"><img src="${esc(g.image)}" onerror="this.src='assets/logo.svg'"><div class="game-row-name"><b>${esc(g.name)}</b><small>${esc(g.bonus)}</small></div><div class="url"><b>Game Link:</b><br>${esc(g.url)}</div><button class="edit" onclick="editGame('${esc(g.id)}')">✎ Edit</button><button class="delete" onclick="deleteGame('${esc(g.id)}')">🗑 Remove</button></div>`).join(''):'<div class="empty">No games added yet.</div>'}function clearForm(){gameId.value='';gameName.value='';renderCategories();gameCategory.value='All Games';bonus.value='Bonus Up to ₹101';withdraw.value='Min. Withdraw ₹100';gameImage.value='';gameUrl.value='';buttonText.value='Download'}addGame.onclick=()=>{clearForm();modalTitle.textContent='Add New Game';modal.classList.remove('hidden');gameName.focus()};function closeModal(){modal.classList.add('hidden')}close.onclick=closeModal;cancel.onclick=closeModal;window.editGame=id=>{let g=get().games.find(x=>x.id===id);if(!g)return;gameId.value=g.id;gameName.value=g.name;renderCategories();gameCategory.value=g.category||'All Games';bonus.value=g.bonus||'';withdraw.value=g.withdraw||'';gameImage.value=g.image||'';gameUrl.value=g.url||'';buttonText.value=g.button||'Download';modalTitle.textContent='Edit Game';modal.classList.remove('hidden')};window.deleteGame=id=>{let x=get(),g=x.games.find(a=>a.id===id);if(g&&confirm(`Remove "${g.name}"?`)){x.games=x.games.filter(a=>a.id!==id);save(x);render()}};saveGame.onclick=()=>{let x=get(),id=gameId.value.trim(),g={id:id||Date.now().toString(),name:gameName.value.trim(),bonus:bonus.value.trim()||'Bonus Up to ₹101',withdraw:withdraw.value.trim()||'Min. Withdraw ₹100',image:gameImage.value.trim()||'assets/logo.svg',url:gameUrl.value.trim(),button:buttonText.value.trim()||'Download'};if(!g.name||!g.url){alert('Game Name and Game/Download Link are required.');return}let i=x.games.findIndex(a=>a.id===id);if(i>=0)x.games[i]=g;else x.games.push(g);save(x);closeModal();render()};saveSettings.onclick=()=>{let x=get();x.settings={...x.settings,siteName:siteName.value.trim()||'YonoLootZone',pageTitle:pageTitleInput.value.trim()||'All Game',pageIntro:pageIntro.value.trim(),logoUrl:logoUrl.value.trim()||'assets/logo.svg',headerColor:headerColor.value,accentColor:accentColor.value,titleColor:titleColor.value,buttonColor:buttonColor.value};save(x);alert('Design saved.')};saveSeo.onclick=()=>{let x=get();x.settings={...x.settings,seoTitle:seoTitle.value.trim(),metaDescription:metaDescription.value.trim(),canonicalUrl:canonicalUrl.value.trim(),ogImage:ogImage.value.trim(),twitterCard:twitterCard.value,robots:robots.value};save(x);alert('SEO settings saved. Note: static hosting cannot make crawler-visible HTML change from localStorage; use server/database rendering for production SEO.')};fill();renderCategories();render();

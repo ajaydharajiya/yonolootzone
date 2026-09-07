@@ -1,0 +1,1 @@
+Download buttons on the homepage and All Games list open the selected game's dedicated in-site detail page first. The dedicated page's Download Now button opens the game's existing supplied external link.

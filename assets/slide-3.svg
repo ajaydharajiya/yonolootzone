@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+<defs>
+ <radialGradient id="g"><stop stop-color="#ffdb7a"/><stop offset=".32" stop-color="#ff7a2f"/><stop offset="1" stop-color="#12001d"/></radialGradient>
+ <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#fff2a8"/><stop offset=".5" stop-color="#ffc62e"/><stop offset="1" stop-color="#fff1a0"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="20"/></filter>
+</defs>
+<rect width="1200" height="520" fill="#12001d"/>
+<circle cx="850" cy="250" r="270" fill="url(#g)" opacity=".9"/>
+<circle cx="1020" cy="110" r="90" fill="#ffcc55" opacity=".25" filter="url(#blur)"/>
+<circle cx="770" cy="410" r="120" fill="#ff4b2e" opacity=".25" filter="url(#blur)"/>
+<g fill="#fff3a1" opacity=".85">
+ <circle cx="760" cy="110" r="7"/><circle cx="910" cy="90" r="5"/><circle cx="1070" cy="190" r="8"/><circle cx="820" cy="430" r="6"/><circle cx="1110" cy="360" r="5"/>
+</g>
+<g transform="translate(790 115)">
+ <rect width="310" height="260" rx="28" fill="#6f270f" stroke="url(#gold)" stroke-width="13"/>
+ <rect x="22" y="22" width="266" height="216" rx="18" fill="#fff8e7"/>
+ <g fill="#b33b21" stroke="#e8a62b" stroke-width="4" font-family="Arial" font-weight="900" font-size="74" text-anchor="middle">
+  <text x="75" y="145">P</text><text x="155" y="145">L</text><text x="235" y="145">A</text>
+ </g>
+ <rect y="105" width="310" height="7" fill="#e6b24b" opacity=".55"/>
+</g>
+<text x="1030" y="470" fill="#ffd45c" font-family="Arial" font-size="32" font-weight="900" text-anchor="middle">◆</text>
+</svg>

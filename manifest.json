@@ -1,0 +1,16 @@
+{
+  "name": "YonoLootZone",
+  "short_name": "YonoLootZone",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff1f7",
+  "theme_color": "#e00068",
+  "icons": [
+    {
+      "src": "assets/all-yono-header.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
