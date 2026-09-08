@@ -505,7 +505,7 @@ renderDashboard();renderGames();renderCategories();renderSlider();fillAppearance
     const d=raw?JSON.parse(raw):JSON.parse(JSON.stringify(DEFAULT));
     if(!Array.isArray(d.games))d.games=[];
     if(!d.games.some(g=>g&&g.id==='101z-new')){
-      d.games.push({"id":"101z-new","name":"101 Z","category":"Popular","bonus":"Game information","withdraw":"Check current terms","image":"assets/101z.webp","url":"https://101zvip0.com/?code=398GYBNEZK6&t=1788292027","seoTitle":"101 Z — Game Information","metaDescription":"101 Z game listing with image and access link.","slug":"101z-new","ogImage":"assets/101z.webp","description":"101 Z game listing with the supplied image and access link.","faq":[],"button":"Download","status":true,"featured":false,"popular":true});
+      d.games.push({"id":"101z-new","name":"101 Z","category":"Popular","bonus":"Game information","withdraw":"Check current terms","image":"assets/101z.webp","url":"https://101zvip0.com/?code=398GYBNEZK6&t=1788855511","seoTitle":"101 Z — Game Information","metaDescription":"101 Z game listing with image and access link.","slug":"101z-new","ogImage":"assets/101z.webp","description":"101 Z game listing with the supplied image and access link.","faq":[],"button":"Download","status":true,"featured":false,"popular":true});
       localStorage.setItem(KEY,JSON.stringify(d));
     }
   }catch(e){}
