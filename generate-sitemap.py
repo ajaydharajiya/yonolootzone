@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
-"""Generate a clean XML sitemap for the Yono Games Directory static site.
+"""Generate the canonical XML sitemap for YonoLootZone.
 
-Usage:
-    python generate-sitemap.py [BASE_URL]
-
-The script discovers public HTML pages and /games/*/index.html pages directly
-from the site folder. It intentionally excludes admin.html and other utility
-files that should not be indexed.
+Includes public HTML pages and all dedicated game pages; excludes admin, 404,
+source/control files and duplicate URLs.
 """
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -17,17 +13,18 @@ base=(sys.argv[1] if len(sys.argv)>1 else "https://yonolootzone.com").rstrip("/"
 root=Path(__file__).resolve().parent
 today=date.today().isoformat()
 
-urls=[("/", "weekly", "1.0")]
-for name in ["about.html","contact.html","privacy.html","disclaimer.html","telegram.html","editorial-policy.html"]:
-    if (root/name).exists():
-        urls.append((f"/{name}", "monthly", "0.5"))
-
+exclude={"admin.html","404.html"}
+urls=[("/","weekly","1.0")]
+for page in sorted(root.glob("*.html")):
+    if page.name in exclude or page.name=="index.html":
+        continue
+    urls.append((f"/{page.name}","monthly","0.6"))
+for page in sorted((root/"guides").glob("*.html")):
+    urls.append((f"/guides/{page.name}","monthly","0.6"))
 for page in sorted((root/"games").glob("*/index.html")):
-    slug=page.parent.name
-    urls.append((f"/games/{slug}/", "weekly", "0.8"))
+    urls.append((f"/games/{page.parent.name}/","weekly","0.8"))
 
-seen=set()
-rows=[]
+seen=set(); rows=[]
 for path,freq,priority in urls:
     loc=base+path
     if loc in seen: continue
@@ -36,4 +33,4 @@ for path,freq,priority in urls:
 
 xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"\n".join(rows)+'\n</urlset>\n'
 (root/"sitemap.xml").write_text(xml,encoding="utf-8")
-print(f"Generated {len(rows)} clean URLs")
+print(f"Generated {len(rows)} canonical public URLs")

@@ -16,3 +16,6 @@ New URLs:
 /guides/yono-games-search-guide.html
 /guides/game-page-explained.html
 /guides/privacy-and-permissions-guide.html
+
+
+V4 technical SEO pass: canonical sitemap, admin/404 noindex, stronger crawlable game summaries, author/OG metadata. All 51 game listings retained.
