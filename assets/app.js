@@ -890,3 +890,24 @@ setTimeout(forceAllYonoHeaderLogo,300);
     localStorage.setItem(KEY,JSON.stringify(d));
   }catch(e){}
 })();
+
+
+/* YONO LIVE DOWNLOAD FIX v1 */
+(function(){
+  function fixLiveDownloadButtons(){
+    try{
+      var buttons=document.querySelectorAll('[data-download], .download-now, .download-btn, a[href="#download"]');
+      buttons.forEach(function(btn){
+        var href=btn.getAttribute('data-download') || btn.getAttribute('data-url') || btn.getAttribute('href');
+        if(href && href!=="#download" && href!=="#"){
+          btn.setAttribute('href',href);
+          btn.setAttribute('target','_blank');
+          btn.setAttribute('rel','noopener noreferrer');
+        }
+      });
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded',fixLiveDownloadButtons);
+  setTimeout(fixLiveDownloadButtons,300);
+  setTimeout(fixLiveDownloadButtons,1000);
+})();
