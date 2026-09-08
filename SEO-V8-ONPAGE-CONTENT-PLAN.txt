@@ -1,0 +1,14 @@
+YonoLootZone SEO V8 — On-Page Content & Canonical Quality
+
+Changes:
+- Added unique, category-aware static summaries to all 51 game pages.
+- Added a dedicated, category-aware game-app overview section with relevant guide and directory links.
+- Tightened game-page titles and meta descriptions around the actual game entity and search intent.
+- Corrected canonical and og:url URLs for the four topical Yono guide pages.
+- Bumped app.js and service-worker cache versions to v17 to prevent stale SEO templates.
+- Preserved all 51 games and all supplied external destination URLs.
+
+Quality goals:
+- Improve useful page content and differentiation without keyword stuffing.
+- Strengthen topical relationships between game pages, guides and the 51-game directory.
+- Keep third-party claims clearly qualified and avoid unsupported promises.

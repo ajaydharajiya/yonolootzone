@@ -1,5 +1,5 @@
-const CACHE='yonolootzone-v14';
-const CORE=['./','./index.html','./assets/style.css?v=15','./assets/app.js?v=14','./assets/all-yono-header.webp'];
+const CACHE='yonolootzone-v18';
+const CORE=['./','./index.html','./assets/style.css?v=18','./assets/app.js?v=18','./assets/all-yono-header.webp'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{

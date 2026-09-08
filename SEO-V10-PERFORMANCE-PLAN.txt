@@ -1,0 +1,22 @@
+YonoLootZone V10 — Core Web Vitals + Performance SEO
+
+Scope:
+- Preserve all 51 game pages and existing game destination links.
+- Reduce transfer/rendering work without changing the site's visual design.
+- Improve caching/compression behavior on Apache/Hostinger.
+- Improve image loading priority and prevent unnecessary offscreen rendering.
+
+Implemented:
+1. Minified the existing stylesheet while preserving its rules.
+2. Added reduced-motion support for accessibility and lower animation work.
+3. Added content-visibility for large below-the-fold sections on wider screens.
+4. Kept card images lazy-loaded with explicit dimensions to reduce layout shifts.
+5. Added lazy loading/dimensions to non-primary detail imagery and high priority to the primary detail logo.
+6. Bumped CSS/JS asset versions and service-worker cache to v18 so new assets are fetched.
+7. Added conservative Apache compression and cache headers for static assets.
+8. HTML/XML receive short revalidation caching so content changes are picked up quickly.
+
+Google context:
+- INP is a Core Web Vital alongside LCP and CLS.
+- Performance is part of page experience, but good Core Web Vitals do not guarantee high rankings.
+- The site should be tested with real PageSpeed Insights/Chrome data after deployment because lab metrics cannot be truthfully invented from static files alone.

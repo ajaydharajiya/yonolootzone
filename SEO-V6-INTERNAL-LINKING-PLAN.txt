@@ -1,0 +1,14 @@
+YonoLootZone SEO V6 — Internal Linking + Topic Guide Optimization
+
+Changes:
+- Added contextual related-game links to all 51 dedicated game pages.
+- Added category/topic guide links from game pages where relevant.
+- Expanded the four core topical guides with original, practical comparison/checklist content.
+- Added cross-links between the four topical guides and the main directory/category hubs.
+- Added contextual resource links to guides.html and categories.html.
+- Bumped CSS cache version to v16 and service-worker cache to yonolootzone-v15.
+- Preserved all 51 game pages and existing supplied game destination URLs.
+- Sitemap remains 71 public URLs; no new indexable URL was added by this pass.
+
+SEO principle:
+Internal links are descriptive and contextual. No keyword stuffing, fake claims, guaranteed winnings, or unsupported official-status claims were added.

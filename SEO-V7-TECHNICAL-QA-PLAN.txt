@@ -1,0 +1,11 @@
+YonoLootZone SEO V7 — Technical Crawlability QA
+
+Changes:
+- Fixed broken relative links from game pages to the four topical guides (../../guides/...).
+- Fixed two homepage guide links that pointed to nonexistent files; they now point to existing game-listing-review.html and check-download-link.html resources.
+- Re-ran a local internal-link crawl: 0 broken internal HTML links.
+- Kept all 51 game pages and all existing supplied game destination URLs.
+- Kept sitemap at 71 URLs.
+- Bumped service-worker cache to yonolootzone-v16.
+
+This pass is intended to improve crawlability and internal-link equity without adding doorway pages or keyword stuffing.

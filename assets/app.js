@@ -121,6 +121,9 @@ function renderGameDetail(){
  const image=esc(gameImagePath(g));
  const url=esc(g.url||'#');
  const category=esc(g.category||'Game');
+ const guideMap=(String(g.category||'')+' '+String(g.name||'')).toLowerCase();
+ const guideName=guideMap.includes('rummy')?'Yono Rummy Games Guide':guideMap.includes('slot')||guideMap.includes('777')?'Yono Slots Games Guide':guideMap.includes('spin')?'Yono Spin Games Guide':guideMap.includes('arcade')?'Yono Arcade Games Guide':'Game App Installation Safety Checklist';
+ const guideHref=guideMap.includes('rummy')?'../../guides/yono-rummy-games-guide.html':guideMap.includes('slot')||guideMap.includes('777')?'../../guides/yono-slots-games-guide.html':guideMap.includes('spin')?'../../guides/yono-spin-games-guide.html':guideMap.includes('arcade')?'../../guides/yono-arcade-games-guide.html':'../../guides/safe-app-installation-checklist.html';
  const description=esc(g.description||`Explore ${g.name} and review the supplied access link, available information and current terms before use.`);
  const bonus=esc(g.bonus||'Game information');
  const withdraw=esc(g.withdraw||'Check current terms');
@@ -148,7 +151,7 @@ function renderGameDetail(){
        <div class="premium-actions"><a class="premium-download" href="${url}" target="_blank" rel="noopener noreferrer"><span>Download Now</span><b>↓</b></a><a class="premium-secondary" href="https://t.me/+jMDOLURgOQc1ODU1">Join Telegram <span>→</span></a></div>
        <div class="hero-trust"><span>✓ Listing information</span><span>✓ Direct destination</span><span>✓ Responsive page</span></div>
      </div>
-     <div class="premium-hero-art"><div class="art-ring art-ring-one"></div><div class="art-ring art-ring-two"></div><div class="art-card"><img src="${image}" onerror="this.src=assetPath('assets/logo.svg')" alt="${name} logo" decoding="async"></div><div class="art-label"><b>${name}</b><span>Game App</span></div></div>
+     <div class="premium-hero-art"><div class="art-ring art-ring-one"></div><div class="art-ring art-ring-two"></div><div class="art-card"><img src="${image}" onerror="this.src=assetPath('assets/logo.svg')" alt="${name} logo" loading="lazy" decoding="async" width="180" height="180"></div><div class="art-label"><b>${name}</b><span>Game App</span></div></div>
    </section>
 
    <section class="quick-stats" aria-label="Quick game details">
@@ -158,7 +161,9 @@ function renderGameDetail(){
      <div><span class="stat-icon">🌐</span><b>24/7</b><small>Page access</small></div>
    </section>
 
-   <section id="about" class="detail-section intro-panel"><div class="section-eyebrow">GAME OVERVIEW</div><div class="detail-logo-heading"><div class="detail-logo-mini"><img src="${image}" onerror="this.src=assetPath('assets/logo.svg')" alt="${name} logo" loading="eager" width="96" height="96"></div><div><h2>${name} Game Information</h2><p>${description}</p></div></div><p>This page is an independent listing for <strong>${name}</strong>. It brings the supplied game name, category, artwork, access destination and basic installation guidance together so visitors can review the information before continuing.</p><p><strong>Important:</strong> bonuses, payment options, supported regions, app versions and availability can change. We do not guarantee winnings, withdrawals, returns, bonuses or uninterrupted service. Always verify current terms with the third-party provider and follow the laws and age requirements that apply to you.</p></section>
+   <section id="about" class="detail-section intro-panel"><div class="section-eyebrow">GAME OVERVIEW</div><div class="detail-logo-heading"><div class="detail-logo-mini"><img src="${image}" onerror="this.src=assetPath('assets/logo.svg')" alt="${name} logo" loading="eager" decoding="async" fetchpriority="high" width="96" height="96"></div><div><h2>${name} Game Information</h2><p>${description}</p></div></div><p>This page is an independent listing for <strong>${name}</strong>. It brings the supplied game name, category, artwork, access destination and basic installation guidance together so visitors can review the information before continuing.</p><p><strong>Important:</strong> bonuses, payment options, supported regions, app versions and availability can change. We do not guarantee winnings, withdrawals, returns, bonuses or uninterrupted service. Always verify current terms with the third-party provider and follow the laws and age requirements that apply to you.</p></section>
+
+   <section class="detail-section seo-intent-panel"><div class="section-eyebrow">SEARCH &amp; DISCOVERY\</div><div class="detail-heading-row"><div><h2>${name} Game App Overview</h2><p>Useful context for visitors researching this ${category.toLowerCase()} listing.</p></div><span class="heading-mark">⌕</span></div><p><strong>${name}</strong> is listed here as a ${category.toLowerCase()} game entry. Visitors can use this dedicated page to review the title, artwork, listing information and the supplied access destination before deciding whether to continue.</p><p>For related information, read the <a href="${guideHref}">${guideName}</a> or browse the <a href="../../all-games.html">full 51-game directory</a>. These resources are designed to help visitors compare listings and understand what information should be checked before installing or registering with a third-party service.</p></section>
 
    <section class="detail-section about-panel">
      <div class="section-eyebrow">ABOUT THIS LISTING</div><div class="detail-heading-row"><div><h2>Everything you need at a glance</h2><p>A cleaner way to review the listing before you continue.</p></div><span class="heading-mark">✦</span></div>

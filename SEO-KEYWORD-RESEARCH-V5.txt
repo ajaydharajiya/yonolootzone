@@ -1,0 +1,20 @@
+SEO KEYWORD RESEARCH — V5
+
+Date: 2026-09-08
+
+Research basis
+- Google Search results reviewed for Yono Games, Yono Rummy, Yono Slots, Yono 777, 101 Z and 777 Game.
+- Competitor directory structures reviewed for search-intent patterns.
+- Google Keyword Planner remains the best source for account-specific monthly search estimates; this package does not invent search-volume numbers.
+
+Primary strategy
+1. Homepage targets the broad brand/discovery phrase: “yono games”.
+2. All Games targets “yono games list”.
+3. Category guides target rummy/slots/spin/arcade discovery terms.
+4. Each game page targets the exact game name + “game app”, with “download” and “game” as secondary variants.
+5. Keep claims factual. Do not invent bonuses, player counts, winnings, “official” status, security certifications, or guaranteed outcomes.
+6. Use internal links between the homepage, All Games, categories, guides and the 51 game pages.
+
+Important
+- Search volume and ranking position are not guaranteed.
+- Validate the final keyword priority with Google Keyword Planner and later with Search Console query data.
