@@ -370,7 +370,7 @@ function initSiteEnhancements(){
 
 try{initSiteEnhancements()}catch(e){console.warn('Enhancement init:',e)}
 
-if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
+if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=12',{updateViaCache:'none'}).catch(()=>{}))}
 
 (function hindi777Migration(){try{const raw=localStorage.getItem(KEY);if(!raw)return;const d=JSON.parse(raw);if(Array.isArray(d.games)&&!d.games.some(g=>g&&g.id==='hindi-777')){d.games.push({"id":"hindi-777","name":"Hindi 777","category":"Popular","bonus":"Game information","withdraw":"Check current terms","image":"assets/hindi777.webp","url":"https://www.hindi777agent5.com/?code=7LFVESBD2VS&t=1787411840","seoTitle":"Hindi 777 — Game Information","metaDescription":"Hindi 777 game listing with image and access link. Check current terms and eligibility before using any third-party gaming service.","slug":"hindi-777","ogImage":"assets/hindi777.webp","description":"Hindi 777 game listing. Verify current terms, availability and local eligibility before using any third-party gaming service.","faq":[],"button":"Download","status":true,"featured":false,"popular":true});localStorage.setItem(KEY,JSON.stringify(d));}}catch(e){}})();
 
