@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a clean XML sitemap for the YonoLootZone static site.
+"""Generate a clean XML sitemap for the Yono Games Directory static site.
 
 Usage:
     python generate-sitemap.py [BASE_URL]
