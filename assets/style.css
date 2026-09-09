@@ -3,3 +3,19 @@
 /* V10 performance: reduce offscreen rendering work without changing layout. */
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 @media (min-width:651px){.seo-page,.seo-browse,.about-section,.contact-section,.disclaimer-section,#footer{content-visibility:auto;contain-intrinsic-size:600px}}
+
+
+/* Responsive Header Polish */
+.header-nav { gap: clamp(10px, 1.8vw, 24px) !important; margin-left: 10px !important; }
+.header-nav a { font-size: clamp(14px, 1.1vw, 16px) !important; }
+.search-wrap { width: clamp(130px, 16vw, 210px) !important; }
+
+@media (max-width: 992px) and (min-width: 701px) {
+  .top { padding: 0 12px !important; gap: 10px !important; }
+  .brand { gap: 6px !important; }
+  .site-name { font-size: 17px !important; }
+  .header-nav { gap: 8px !important; margin-left: 6px !important; }
+  .header-nav a { font-size: 13.5px !important; }
+  .search-wrap { width: 130px !important; }
+  .header-tools select { padding: 0 6px !important; font-size: 12px !important; }
+}

@@ -313,9 +313,18 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; margin:
   .related-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
   .mobile-sticky-bar { display: flex !important; }
 }
+
+/* Responsive Enhancements for Mobile & Desktop */
+@media (max-width: 768px) {
+  .game-specs-table th, .game-specs-table td { padding: 9px 10px !important; font-size: 13px !important; }
+  .game-specs-table th { width: 38% !important; }
+  .step-card-item { padding: 12px 14px !important; gap: 12px !important; }
+  .step-num { width: 28px !important; height: 28px !important; font-size: 13px !important; }
+}
+
 </style>
 </head>
-<body data-game-page="true">
+<body data-game-page="true" data-game-slug="money-rummy">
 <header id="header"></header>
 
 <main class="game-landing-wrap">
