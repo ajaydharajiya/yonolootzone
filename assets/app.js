@@ -39,7 +39,7 @@ function isSubPage(){
     if(document.body.dataset.gameSlug || document.body.dataset.gamePage) return true;
   }
   if(typeof window !== 'undefined' && window.location && window.location.pathname){
-    const p = window.location.pathname.replace(/\/g, '/');
+    const p = window.location.pathname.replace(/\\/g, '/');
     if(p.includes('/games/') || p.includes('/guides/')) return true;
   }
   if(typeof document !== 'undefined'){
