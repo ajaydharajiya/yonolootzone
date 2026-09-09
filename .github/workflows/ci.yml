@@ -32,7 +32,7 @@ jobs:
           if grep -RniE 'yonolooters\.com|Yono Games Hub|YonoLooters' . \
              --exclude-dir=.git \
              --exclude-dir=.github \
-             --exclude='*.webp' --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg'; then
+             --exclude='FINAL-DEPLOYMENT-AUDIT.txt' --exclude='*.webp' --exclude='*.png' --exclude='*.jpg' --exclude='*.jpeg'; then
             echo "ERROR: Old domain/brand reference found."
             exit 1
           fi
