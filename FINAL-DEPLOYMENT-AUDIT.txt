@@ -11,7 +11,7 @@ FINAL QA RESULTS
 - Internal local HTML links: 0 broken: PASS
 - Self-referencing canonical URLs checked: PASS
 - admin.html and 404.html use noindex: PASS
-- Legacy branding / old-domain references in website content: 0: PASS
+- Old YonoLooters / Yono Games Hub / old domain references in website content: 0: PASS
 - Existing game destination links preserved from V10: PASS
 - CI workflow retained: PASS
 - robots.txt points to https://yonolootzone.com/sitemap.xml: PASS
