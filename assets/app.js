@@ -235,7 +235,39 @@ function renderGameDetail(){
 window.addEventListener('hashchange',()=>{if(location.hash.startsWith('#game/'))renderGameDetail();else location.reload()});
 
 function applyLanguage(lang){const map={Hindi:{home:'होम',about:'हमारे बारे में',contact:'संपर्क',disclaimer:'अस्वीकरण',telegram:'टेलीग्राम',latest:'नवीनतम गेम',download:'डाउनलोड'},Gujarati:{home:'હોમ',about:'અમારા વિશે',contact:'સંપર્ક',disclaimer:'ડિસક્લેમર',telegram:'ટેલિગ્રામ',latest:'નવી ગેમ્સ',download:'ડાઉનલોડ'},English:{home:'Home',about:'About',guides:'Guides',contact:'Contact',disclaimer:'Disclaimer',telegram:'Telegram',latest:'Latest Games',download:'Download'}};const m=map[lang]||map.English;const links=document.querySelectorAll('.header-nav a');if(links[0])links[0].textContent=m.home;if(links[1])links[1].textContent=m.about;if(links[2])links[2].textContent=m.guides||'Guides';if(links[3])links[3].textContent=m.contact;if(links[4])links[4].textContent=m.disclaimer;if(links[5])links[5].textContent=m.telegram;const sh=document.querySelector('.section-head h2');if(sh)sh.textContent=m.latest;document.querySelectorAll('.download').forEach(b=>{if(b.dataset.custom!=='1')b.innerHTML='⇩ '+m.download})}
-function bindSearch(){const q=document.getElementById('siteSearch');if(!q)return;q.oninput=()=>{const term=q.value.trim().toLowerCase();document.querySelectorAll('#gamesList .game').forEach(card=>{const text=card.textContent.toLowerCase();card.style.display=(!term||text.includes(term))?'flex':'none'})}}
+function bindSearch(){
+  const q=document.getElementById('siteSearch');
+  if(!q)return;
+  const onSearch=()=>{
+    const term=q.value.trim().toLowerCase();
+    
+    // 1. Filter mobile cards
+    document.querySelectorAll('.mobile-cards-container .m-game-card').forEach(card=>{
+      const title=(card.querySelector('.m-game-title')?.textContent||'').toLowerCase();
+      const meta=card.textContent.toLowerCase();
+      const match=!term||title.includes(term)||meta.includes(term);
+      card.style.display=match?'flex':'none';
+    });
+
+    // 2. Filter desktop table rows
+    document.querySelectorAll('.desktop-table-container .dt-table-row').forEach(row=>{
+      const title=(row.querySelector('.dt-title')?.textContent||'').toLowerCase();
+      const meta=row.textContent.toLowerCase();
+      const match=!term||title.includes(term)||meta.includes(term);
+      row.style.display=match?'':'none';
+    });
+
+    // 3. Filter dynamic #gamesList cards
+    document.querySelectorAll('#gamesList .game').forEach(card=>{
+      const text=card.textContent.toLowerCase();
+      card.style.display=(!term||text.includes(term))?'flex':'none';
+    });
+  };
+
+  q.addEventListener('input',onSearch);
+  q.addEventListener('keyup',onSearch);
+  q.addEventListener('search',onSearch);
+}
 
 let sliderTimer=null;
 function renderSlider(){
