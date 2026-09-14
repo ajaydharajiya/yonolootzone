@@ -4746,7 +4746,7 @@ body.dark-mode .m-btn-info-outline{background:#1a1a28!important;border-color:#ff
 .m-star-count{color:#999;font-size:.7rem;margin-left:2px}
 </style>
 
-<div id="ann-overlay" class="ann-hidden" style="display:none">
+<div id="ann-overlay" class="ann-hidden">
   <div id="ann-box">
     <!-- Header -->
     <div id="ann-header">
@@ -4806,7 +4806,10 @@ var annClosed = false;
 setTimeout(function(){
   if(!annClosed){
     var el = document.getElementById('ann-overlay');
-    if(el){ el.classList.remove('ann-hidden'); el.style.display='flex'; }
+    if(el){
+      el.classList.remove('ann-hidden');
+      el.style.cssText = 'display:flex!important;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:99999;align-items:center;justify-content:center;padding:16px;';
+    }
   }
 }, 1500);
 
@@ -4816,7 +4819,11 @@ function closeAnnouncement(){
   if(el){
     el.style.transition='opacity .25s';
     el.style.opacity='0';
-    setTimeout(function(){ el.classList.add('ann-hidden'); el.style.opacity=''; }, 250);
+    setTimeout(function(){
+      el.style.display='none';
+      el.style.opacity='';
+      el.style.transition='';
+    }, 250);
   }
 }, 250);
   }
