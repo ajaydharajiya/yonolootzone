@@ -4746,7 +4746,7 @@ body.dark-mode .m-btn-info-outline{background:#1a1a28!important;border-color:#ff
 .m-star-count{color:#999;font-size:.7rem;margin-left:2px}
 </style>
 
-<div id="ann-overlay">
+<div id="ann-overlay" class="ann-hidden" style="display:none">
   <div id="ann-box">
     <!-- Header -->
     <div id="ann-header">
@@ -4802,28 +4802,29 @@ body.dark-mode .m-btn-info-outline{background:#1a1a28!important;border-color:#ff
 
 <script>
 // Announcement Popup Logic
-(function(){
-  if(sessionStorage.getItem('ann_seen')){
-    document.getElementById('ann-overlay').classList.add('ann-hidden');
-    return;
-  }
-  setTimeout(function(){
+var annClosed = false;
+setTimeout(function(){
+  if(!annClosed){
     var el = document.getElementById('ann-overlay');
-    if(el) el.style.display = 'flex';
-  }, 1500);
-})();
+    if(el){ el.classList.remove('ann-hidden'); el.style.display='flex'; }
+  }
+}, 1500);
 
-function closeAnnouncement(){sessionStorage.setItem('ann_seen','1');
+function closeAnnouncement(){
+  annClosed = true;
   var el = document.getElementById('ann-overlay');
   if(el){
-    el.style.animation = 'ann-fade-out .25s ease forwards';
-    el.style.opacity = '0';
-    setTimeout(function(){ el.classList.add('ann-hidden'); el.style.opacity = ''; }, 250);
+    el.style.transition='opacity .25s';
+    el.style.opacity='0';
+    setTimeout(function(){ el.classList.add('ann-hidden'); el.style.opacity=''; }, 250);
+  }
+}, 250);
   }
 }
 
 function dontShowAgain(){
-  sessionStorage.setItem('ann_seen','1');
+  annClosed = true;
+  closeAnnouncement();
 }
 
 function copyCode(el, code){
