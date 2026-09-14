@@ -4803,19 +4803,17 @@ body.dark-mode .m-btn-info-outline{background:#1a1a28!important;border-color:#ff
 <script>
 // Announcement Popup Logic
 (function(){
-  var key = 'ann_closed_' + new Date().toDateString();
-  if(localStorage.getItem(key)){
+  if(sessionStorage.getItem('ann_seen')){
     document.getElementById('ann-overlay').classList.add('ann-hidden');
     return;
   }
-  // Show after 1.5 seconds
   setTimeout(function(){
     var el = document.getElementById('ann-overlay');
     if(el) el.style.display = 'flex';
   }, 1500);
 })();
 
-function closeAnnouncement(){
+function closeAnnouncement(){sessionStorage.setItem('ann_seen','1');
   var el = document.getElementById('ann-overlay');
   if(el){
     el.style.animation = 'ann-fade-out .25s ease forwards';
@@ -4825,8 +4823,7 @@ function closeAnnouncement(){
 }
 
 function dontShowAgain(){
-  var key = 'ann_closed_' + new Date().toDateString();
-  localStorage.setItem(key, '1');
+  sessionStorage.setItem('ann_seen','1');
 }
 
 function copyCode(el, code){
