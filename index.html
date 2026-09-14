@@ -4702,5 +4702,150 @@ body.dark-mode .m-btn-info-outline{background:#1a1a28!important;border-color:#ff
 <footer id="footer"></footer>
 <script src="assets/app.js?v=19"></script>
 <button aria-label="Back to top" id="backTop">↑</button><div class="privacy-notice" id="privacyNotice"><span>This site uses essential browser storage for preferences and admin data.</span><button id="privacyOk">OK</button></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ANNOUNCEMENT POPUP (SafeBetIn style)        -->
+<!-- ═══════════════════════════════════════════ -->
+<style>
+/* ── Announcement Overlay ── */
+#ann-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px);animation:ann-fade-in .3s ease}
+@keyframes ann-fade-in{from{opacity:0}to{opacity:1}}
+#ann-overlay.ann-hidden{display:none}
+#ann-box{background:#1a1a2e;border-radius:20px;width:100%;max-width:480px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6);border:2px solid rgba(255,39,140,.4);animation:ann-slide-up .35s ease;position:relative;max-height:90vh;overflow-y:auto}
+@keyframes ann-slide-up{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+#ann-header{background:linear-gradient(135deg,#0f3460,#1a1a2e);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,39,140,.3)}
+#ann-header h3{color:#fff;font-size:1rem;font-weight:800;letter-spacing:.05em}
+#ann-close{background:rgba(255,255,255,.1);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+#ann-close:hover{background:rgba(255,39,140,.4)}
+/* ── Banner Slide ── */
+#ann-banner{background:linear-gradient(135deg,#0d0d2b 0%,#1a0533 50%,#0d1a3d 100%);padding:24px 20px 16px;text-align:center;position:relative;overflow:hidden}
+#ann-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,215,0,.15) 0%,transparent 70%)}
+.ann-fire-title{font-size:1.8rem;font-weight:900;color:#ffd700;text-shadow:0 0 20px rgba(255,215,0,.6),0 2px 0 #b8860b;letter-spacing:.05em;margin-bottom:4px;line-height:1.1}
+.ann-sub-title{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:16px;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+/* ── Promo Code Box ── */
+#ann-promo-box{background:rgba(0,0,0,.4);border:1px solid rgba(255,215,0,.3);border-radius:14px;padding:16px;margin:0 20px 16px;text-align:left}
+.ann-promo-title{color:#ffd700;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.ann-promo-list{display:flex;flex-direction:column;gap:7px}
+.ann-promo-item{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.06);border-radius:8px;padding:8px 12px;border:1px solid rgba(255,255,255,.08)}
+.ann-promo-game{color:#b0b8d1;font-size:.8rem;font-weight:600}
+.ann-promo-code-badge{background:linear-gradient(90deg,#ff278c,#e00068);color:#fff;border-radius:6px;padding:3px 10px;font-size:.78rem;font-weight:900;letter-spacing:.05em;cursor:pointer;transition:opacity .2s}
+.ann-promo-code-badge:hover{opacity:.85}
+/* ── CTA Buttons ── */
+#ann-btns{padding:0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.ann-btn-telegram{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(90deg,#0088cc,#006aad);color:#fff;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1rem;transition:opacity .2s;border:none;cursor:pointer}
+.ann-btn-telegram:hover{opacity:.88}
+.ann-btn-telegram svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+.ann-btn-games{display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#ff278c,#e00068);color:#fff;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:800;font-size:.9rem;transition:opacity .2s}
+.ann-btn-games:hover{opacity:.88}
+.ann-skip{text-align:center;padding:0 0 16px;color:#666;font-size:.78rem;cursor:pointer}
+.ann-skip:hover{color:#ff278c}
+/* ── Mobile UI Improvements ── */
+.m-game-card{transition:transform .2s,box-shadow .2s!important}
+.m-game-card:active{transform:scale(.98)!important}
+.m-star-rating{color:#f59e0b;font-size:.72rem;letter-spacing:-.02em}
+.m-star-count{color:#999;font-size:.7rem;margin-left:2px}
+</style>
+
+<div id="ann-overlay">
+  <div id="ann-box">
+    <!-- Header -->
+    <div id="ann-header">
+      <h3>📢 Announcement</h3>
+      <button id="ann-close" onclick="closeAnnouncement()" aria-label="Close">✕</button>
+    </div>
+    <!-- Banner -->
+    <div id="ann-banner">
+      <div class="ann-fire-title">🔥 FREE PROMO CODE</div>
+      <div class="ann-sub-title">🎁 ₹550 Bonus on All Games!</div>
+      <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+        <span style="background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#ffd700;padding:4px 12px;border-radius:20px;font-size:.78rem;font-weight:700">✅ 72+ Games</span>
+        <span style="background:rgba(0,136,204,.15);border:1px solid rgba(0,136,204,.4);color:#4fc3f7;padding:4px 12px;border-radius:20px;font-size:.78rem;font-weight:700">⚡ Instant UPI</span>
+        <span style="background:rgba(255,39,140,.15);border:1px solid rgba(255,39,140,.4);color:#ff80ab;padding:4px 12px;border-radius:20px;font-size:.78rem;font-weight:700">🔒 100% Safe</span>
+      </div>
+    </div>
+    <!-- Promo Codes -->
+    <div id="ann-promo-box">
+      <div class="ann-promo-title">🏷️ Today's Exclusive Promo Codes</div>
+      <div class="ann-promo-list">
+        <div class="ann-promo-item">
+          <span class="ann-promo-game">🃏 Rummy 91</span>
+          <span class="ann-promo-code-badge" onclick="copyCode(this,'YONO550')" title="Click to copy">YONO550</span>
+        </div>
+        <div class="ann-promo-item">
+          <span class="ann-promo-game">🎰 789 Jackpots</span>
+          <span class="ann-promo-code-badge" onclick="copyCode(this,'JACKPOT550')" title="Click to copy">JACKPOT550</span>
+        </div>
+        <div class="ann-promo-item">
+          <span class="ann-promo-game">💰 Yono Rummy</span>
+          <span class="ann-promo-code-badge" onclick="copyCode(this,'YONORUMMY550')" title="Click to copy">YONORUMMY550</span>
+        </div>
+        <div class="ann-promo-item">
+          <span class="ann-promo-game">🎮 All Yono Games</span>
+          <span class="ann-promo-code-badge" onclick="copyCode(this,'YONO2026')" title="Click to copy">YONO2026</span>
+        </div>
+      </div>
+      <div style="color:#666;font-size:.72rem;text-align:center;margin-top:10px">👆 Tap any code to copy it!</div>
+    </div>
+    <!-- Buttons -->
+    <div id="ann-btns">
+      <a href="https://t.me/+jMDOLURgOQc1ODU1" target="_blank" class="ann-btn-telegram" onclick="closeAnnouncement()">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.01 9.47c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.873.75z"/></svg>
+        Join Telegram — Get Codes Daily!
+      </a>
+      <a href="/all-games.html" class="ann-btn-games" onclick="closeAnnouncement()">
+        🎮 Browse 72+ Games & Download APK
+      </a>
+    </div>
+    <div class="ann-skip" onclick="closeAnnouncement(); dontShowAgain()">✕ Don't show again today</div>
+  </div>
+</div>
+
+<script>
+// Announcement Popup Logic
+(function(){
+  var key = 'ann_closed_' + new Date().toDateString();
+  if(localStorage.getItem(key)){
+    document.getElementById('ann-overlay').classList.add('ann-hidden');
+    return;
+  }
+  // Show after 1.5 seconds
+  setTimeout(function(){
+    var el = document.getElementById('ann-overlay');
+    if(el) el.style.display = 'flex';
+  }, 1500);
+})();
+
+function closeAnnouncement(){
+  var el = document.getElementById('ann-overlay');
+  if(el){
+    el.style.animation = 'ann-fade-out .25s ease forwards';
+    el.style.opacity = '0';
+    setTimeout(function(){ el.classList.add('ann-hidden'); el.style.opacity = ''; }, 250);
+  }
+}
+
+function dontShowAgain(){
+  var key = 'ann_closed_' + new Date().toDateString();
+  localStorage.setItem(key, '1');
+}
+
+function copyCode(el, code){
+  navigator.clipboard ? navigator.clipboard.writeText(code) : (function(){
+    var t = document.createElement('textarea');
+    t.value = code; document.body.appendChild(t); t.select();
+    document.execCommand('copy'); document.body.removeChild(t);
+  })();
+  var orig = el.textContent;
+  el.textContent = '✅ Copied!';
+  el.style.background = 'linear-gradient(90deg,#22c55e,#16a34a)';
+  setTimeout(function(){ el.textContent = orig; el.style.background = ''; }, 2000);
+}
+
+// Close on overlay click
+document.getElementById('ann-overlay').addEventListener('click', function(e){
+  if(e.target === this) closeAnnouncement();
+});
+</script>
+
 </body>
 </html>
