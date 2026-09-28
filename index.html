@@ -24,7 +24,7 @@
 <meta name="twitter:image" content="https://yonolootzone.com/assets/all-yono-header.webp" />
 
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
-<meta name="theme-color" content="#0d0e1a" />
+<meta name="theme-color" content="#e60026" />
 
 <!-- Structured Data Schemas -->
 <script type="application/ld+json">
@@ -529,7 +529,7 @@
 </script>
 
 <style>
-/* ── Reset & Strict Mobile-First No-Overflow ── */
+/* ── Reset & White + Red + Pink Color Palette ── */
 *, *::before, *::after {
   box-sizing: border-box !important;
   margin: 0;
@@ -539,8 +539,8 @@ html, body {
   width: 100% !important;
   max-width: 100% !important;
   overflow-x: hidden !important;
-  background: #0d0e1a !important;
-  color: #e2e8f0;
+  background: #fdf5f7 !important; /* Soft white/pink tint */
+  color: #1e293b;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.4;
   -webkit-text-size-adjust: 100%;
@@ -548,16 +548,16 @@ html, body {
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; }
 
-/* ── Sticky Mobile Header ── */
+/* ── Top Header Bar (Crimson Red to Pink Gradient) ── */
 .app-header {
   position: sticky;
   top: 0;
   z-index: 9999;
-  background: rgba(13, 14, 26, 0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 8px 12px;
+  background: linear-gradient(135deg, #e60026 0%, #ff1475 100%);
+  border-bottom: 2px solid #b3001e;
+  padding: 10px 14px;
   width: 100%;
+  box-shadow: 0 4px 15px rgba(230, 0, 38, 0.25);
 }
 .header-inner {
   max-width: 800px;
@@ -570,66 +570,73 @@ img { display: block; max-width: 100%; height: auto; }
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 900;
-  color: #fff;
+  color: #ffffff;
 }
 .logo-wrap span {
-  background: linear-gradient(135deg, #ff2d88, #ff6b9d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 .logo-tag {
-  background: linear-gradient(90deg, #ff2d88, #e00068);
-  color: #fff;
+  background: #ffd700;
+  color: #8a0015;
   font-size: 0.65rem;
-  font-weight: 800;
-  padding: 1px 6px;
+  font-weight: 900;
+  padding: 2px 7px;
   border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 .btn-tg {
-  background: linear-gradient(90deg, #0088cc, #006aad);
-  color: #fff !important;
+  background: #ffffff;
+  color: #e60026 !important;
   font-size: 0.78rem;
-  font-weight: 800;
-  padding: 6px 12px;
+  font-weight: 900;
+  padding: 6px 14px;
   border-radius: 18px;
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform .2s;
+}
+.btn-tg:hover {
+  transform: scale(1.03);
 }
 
-/* ── Hero Banner ── */
+/* ── Hero Banner (Rich Pink-Red Gradient Card) ── */
 .hero-wrapper {
   width: 100%;
   max-width: 800px;
-  margin: 10px auto 0;
+  margin: 12px auto 0;
   padding: 0 12px;
 }
 .hero-box {
-  background: linear-gradient(135deg, #1d1a38 0%, #2a1533 60%, #15172d 100%);
-  border-radius: 14px;
-  padding: 14px 12px;
-  border: 1px solid rgba(255, 45, 136, 0.25);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #d60021 0%, #ff2a7a 50%, #ff5e9c 100%);
+  border-radius: 16px;
+  padding: 16px 14px;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(230, 0, 38, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 .hero-box h1 {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 900;
-  color: #fff;
+  color: #ffffff;
   line-height: 1.35;
   margin-bottom: 6px;
 }
 .hero-box h1 span {
-  background: linear-gradient(90deg, #ffd700, #ff9500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffe600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 .hero-box p {
-  color: #a0aec0;
-  font-size: 0.78rem;
+  color: #fff0f5;
+  font-size: 0.8rem;
   line-height: 1.45;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .hero-highlights {
   display: flex;
@@ -637,16 +644,17 @@ img { display: block; max-width: 100%; height: auto; }
   flex-wrap: wrap;
 }
 .hl-item {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffd700;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 14px;
+  backdrop-filter: blur(4px);
 }
 
-/* ── Search Bar ── */
+/* ── Search Bar (Clean White with Pink Glow) ── */
 .search-container {
   width: 100%;
   max-width: 800px;
@@ -659,37 +667,41 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .search-bar input {
   width: 100%;
-  background: #16182c;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 10px 12px 10px 38px;
-  color: #fff;
-  font-size: 0.88rem;
+  background: #ffffff;
+  border: 2px solid #f9c2d1;
+  border-radius: 14px;
+  padding: 11px 12px 11px 40px;
+  color: #1e293b;
+  font-size: 0.9rem;
+  font-weight: 600;
   outline: none;
+  box-shadow: 0 3px 12px rgba(255, 42, 122, 0.08);
+  transition: all .2s;
 }
 .search-bar input:focus {
-  border-color: #ff2d88;
+  border-color: #ff1475;
+  box-shadow: 0 4px 16px rgba(255, 20, 117, 0.2);
 }
 .search-icon {
   position: absolute;
-  left: 12px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: #718096;
-  font-size: 0.9rem;
+  color: #ff2a7a;
+  font-size: 1rem;
 }
 
-/* ── Category Chips Horizontal Scroll ── */
+/* ── Category Chips (White & Red Gradient) ── */
 .cat-chips-wrap {
   width: 100%;
   max-width: 800px;
-  margin: 8px auto 0;
+  margin: 10px auto 0;
   padding: 0 12px;
   overflow: hidden;
 }
 .cat-chips {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   overflow-x: auto;
   padding-bottom: 4px;
   scrollbar-width: none;
@@ -697,21 +709,24 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .cat-chips::-webkit-scrollbar { display: none; }
 .chip {
-  background: #16182c;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 0.76rem;
-  font-weight: 700;
+  background: #ffffff;
+  border: 1.5px solid #ffd0dc;
+  color: #8a0024;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
   white-space: nowrap;
   cursor: pointer;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(255, 42, 122, 0.06);
+  transition: all .2s;
 }
-.chip.active {
-  background: linear-gradient(90deg, #ff2d88, #e00068);
-  border-color: #ff2d88;
-  color: #fff;
+.chip.active, .chip:hover {
+  background: linear-gradient(90deg, #e60026, #ff1475);
+  border-color: #e60026;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(230, 0, 38, 0.3);
 }
 
 /* ── Content Area ── */
@@ -719,42 +734,64 @@ img { display: block; max-width: 100%; height: auto; }
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 10px 12px 30px;
+  padding: 10px 12px 36px;
   flex: 1;
 }
 .list-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 12px 0 8px;
+  margin: 14px 0 10px;
 }
 .list-title {
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   font-weight: 900;
-  color: #fff;
+  color: #99001a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.list-title::before {
+  content: "";
+  width: 4px;
+  height: 16px;
+  background: linear-gradient(180deg, #e60026, #ff1475);
+  border-radius: 4px;
+  display: inline-block;
 }
 .list-count {
-  font-size: 0.72rem;
-  color: #718096;
+  font-size: 0.76rem;
+  color: #8a0024;
+  font-weight: 700;
+  background: #ffe4ec;
+  padding: 2px 8px;
+  border-radius: 10px;
 }
 
-/* ── Mobile Compact Game Cards ── */
+/* ── Pure White Cards with Pink/Red Accents ── */
 .games-list-grid {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
   width: 100%;
 }
 .m-game-card {
-  background: #15172b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid #ffccd8;
+  border-radius: 14px;
+  padding: 9px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
+  box-shadow: 0 3px 10px rgba(230, 0, 38, 0.05);
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.m-game-card:hover {
+  transform: translateY(-2px);
+  border-color: #ff1475;
+  box-shadow: 0 6px 18px rgba(255, 20, 117, 0.15);
 }
 .m-card-left {
   display: flex;
@@ -765,70 +802,76 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .m-icon-wrap {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
 }
 .m-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   object-fit: cover;
-  background: #242749;
+  background: #fff0f5;
+  border: 1px solid #ffd0dc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 .r-tag {
   position: absolute;
-  top: -3px;
-  left: -3px;
-  background: #242749;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #cbd5e1;
-  font-size: 0.58rem;
+  top: -4px;
+  left: -4px;
+  background: #ffffff;
+  border: 1px solid #ffccd8;
+  color: #8a0024;
+  font-size: 0.6rem;
   font-weight: 900;
-  padding: 0 4px;
-  border-radius: 6px;
+  padding: 0 5px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 .r-tag.r-top {
-  background: linear-gradient(90deg, #ffd700, #ff9500);
+  background: linear-gradient(90deg, #ff1475, #e60026);
   border: none;
-  color: #000;
+  color: #ffffff;
 }
 .m-info {
   flex: 1;
   min-width: 0;
 }
 .m-title {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #1e293b;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 2px;
 }
+.m-title a:hover {
+  color: #e60026;
+}
 .m-badge-row {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 .m-bonus {
-  background: rgba(0, 230, 118, 0.12);
-  color: #00e676;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 0 5px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 230, 118, 0.25);
+  background: #e8f8f0;
+  color: #008a44;
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 5px;
+  border: 1px solid #b7edd1;
 }
 .m-star {
-  color: #ffd700;
-  font-size: 0.68rem;
-  font-weight: 700;
+  color: #f59e0b;
+  font-size: 0.7rem;
+  font-weight: 800;
 }
 .m-subtitle {
-  font-size: 0.65rem;
-  color: #718096;
+  font-size: 0.68rem;
+  color: #64748b;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -836,36 +879,43 @@ img { display: block; max-width: 100%; height: auto; }
 .m-card-right {
   flex-shrink: 0;
 }
+
+/* ── Hot Pink / Red Download Button ── */
 .m-btn-down {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: linear-gradient(90deg, #ff2d88, #e00068);
-  color: #fff !important;
-  font-size: 0.74rem;
-  font-weight: 800;
-  padding: 7px 12px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(255, 45, 136, 0.3);
+  background: linear-gradient(90deg, #e60026 0%, #ff1475 100%);
+  color: #ffffff !important;
+  font-size: 0.76rem;
+  font-weight: 900;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(230, 0, 38, 0.35);
   white-space: nowrap;
+  transition: transform .2s, opacity .2s;
+}
+.m-btn-down:hover {
+  opacity: 0.92;
+  transform: scale(1.03);
 }
 
-/* ── Leaderboard Table (Horizontal Scroll on Mobile) ── */
+/* ── Leaderboard Card (White & Pink Accent) ── */
 .table-card {
-  background: #15172b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  margin: 20px 0;
+  background: #ffffff;
+  border: 1px solid #ffccd8;
+  border-radius: 14px;
+  margin: 24px 0;
   overflow: hidden;
   width: 100%;
+  box-shadow: 0 4px 14px rgba(230, 0, 38, 0.06);
 }
 .table-head-bar {
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: 0.88rem;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, #e60026, #ff1475);
+  font-size: 0.92rem;
   font-weight: 900;
-  color: #ffd700;
+  color: #ffffff;
 }
 .tbl-scroll-wrap {
   width: 100%;
@@ -876,38 +926,44 @@ img { display: block; max-width: 100%; height: auto; }
   width: 100%;
   min-width: 480px;
   border-collapse: collapse;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   text-align: left;
 }
 .leaderboard-tbl th {
-  background: rgba(255, 255, 255, 0.02);
-  padding: 8px 10px;
-  color: #718096;
-  font-weight: 700;
-  font-size: 0.72rem;
+  background: #fff5f8;
+  padding: 9px 12px;
+  color: #8a0024;
+  font-weight: 800;
+  font-size: 0.74rem;
+  border-bottom: 1px solid #ffd0dc;
 }
 .leaderboard-tbl td {
-  padding: 8px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 10px 12px;
+  border-bottom: 1px solid #fce4ec;
+  color: #334155;
+}
+.leaderboard-tbl tr:nth-child(even) {
+  background: #fffbfa;
 }
 
 /* ── FAQ Section ── */
 .faq-box {
-  margin: 20px 0;
+  margin: 24px 0;
   width: 100%;
 }
 .faq-row {
-  background: #15172b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #ffccd8;
+  border-radius: 12px;
   margin-bottom: 8px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(230, 0, 38, 0.04);
 }
 .faq-row summary {
-  padding: 10px 12px;
-  font-weight: 700;
-  font-size: 0.82rem;
-  color: #fff;
+  padding: 12px 14px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #1e293b;
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -917,26 +973,26 @@ img { display: block; max-width: 100%; height: auto; }
 .faq-row summary::after {
   content: "+";
   font-size: 1.1rem;
-  color: #ff2d88;
-  font-weight: 800;
+  color: #e60026;
+  font-weight: 900;
 }
 .faq-row[open] summary::after {
   content: "−";
 }
 .faq-body {
-  padding: 0 12px 10px;
-  color: #a0aec0;
-  font-size: 0.78rem;
-  line-height: 1.5;
+  padding: 0 14px 12px;
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
 
 /* ── Footer ── */
 .footer-wrap {
-  background: #080912;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 24px 12px 20px;
-  color: #718096;
-  font-size: 0.75rem;
+  background: #140208;
+  border-top: 3px solid #ff1475;
+  padding: 28px 12px 22px;
+  color: #cbd5e1;
+  font-size: 0.76rem;
   width: 100%;
 }
 .footer-inner {
@@ -945,24 +1001,28 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .footer-nav {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
-.footer-nav a:hover { color: #ff2d88; }
+.footer-nav a {
+  color: #ffd0dc;
+  font-weight: 700;
+}
+.footer-nav a:hover { color: #ff6b9d; }
 .footer-notice {
   font-size: 0.68rem;
-  line-height: 1.5;
-  color: #4a5568;
+  line-height: 1.6;
+  color: #94a3b8;
   margin-top: 8px;
 }
 
-/* ── Announcement Modal (Responsive) ── */
+/* ── Announcement Modal (White & Red/Pink Theme) ── */
 #ann-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 99999;
   align-items: center;
   justify-content: center;
@@ -970,68 +1030,70 @@ img { display: block; max-width: 100%; height: auto; }
   backdrop-filter: blur(5px);
 }
 #ann-box {
-  background: linear-gradient(180deg, #1c1e3b 0%, #111226 100%);
-  border-radius: 18px;
+  background: #ffffff;
+  border-radius: 20px;
   width: 100%;
-  max-width: 380px;
+  max-width: 390px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
-  border: 2px solid rgba(255, 45, 136, 0.4);
+  box-shadow: 0 20px 60px rgba(230, 0, 38, 0.4);
+  border: 2px solid #ff1475;
   max-height: 90vh;
   overflow-y: auto;
 }
 .ann-top-bar {
-  background: linear-gradient(135deg, #231f47, #13142e);
-  padding: 10px 14px;
+  background: linear-gradient(135deg, #e60026 0%, #ff1475 100%);
+  padding: 11px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 45, 136, 0.2);
 }
-.ann-top-bar h3 { color: #fff; font-size: 0.88rem; font-weight: 900; }
+.ann-top-bar h3 { color: #ffffff; font-size: 0.92rem; font-weight: 900; }
 .btn-ann-close {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.25);
   border: none;
-  color: #fff;
+  color: #ffffff;
   width: 26px;
   height: 26px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 0.9rem;
+  font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.ann-content { padding: 16px 14px 14px; text-align: center; }
-.ann-main-title { font-size: 1.4rem; font-weight: 900; color: #ffd700; margin-bottom: 2px; }
-.ann-sub-text { color: #fff; font-size: 0.85rem; font-weight: 800; margin-bottom: 12px; }
+.ann-content { padding: 18px 16px 16px; text-align: center; }
+.ann-main-title { font-size: 1.5rem; font-weight: 900; color: #e60026; margin-bottom: 2px; }
+.ann-sub-text { color: #1e293b; font-size: 0.88rem; font-weight: 800; margin-bottom: 14px; }
 .ann-code-box {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  border-radius: 10px;
-  padding: 10px;
+  background: #fff5f8;
+  border: 1.5px solid #ffccd8;
+  border-radius: 12px;
+  padding: 12px;
   text-align: left;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
-.ann-code-title { color: #ffd700; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; }
+.ann-code-title { color: #e60026; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; margin-bottom: 8px; }
 .code-entry {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 6px;
-  padding: 6px 8px;
-  margin-bottom: 4px;
+  background: #ffffff;
+  border: 1px solid #ffd0dc;
+  border-radius: 8px;
+  padding: 7px 10px;
+  margin-bottom: 6px;
 }
-.code-name { color: #cbd5e1; font-size: 0.74rem; font-weight: 600; }
+.code-name { color: #1e293b; font-size: 0.78rem; font-weight: 700; }
 .code-btn {
-  background: linear-gradient(90deg, #ff2d88, #e00068);
-  color: #fff;
-  border-radius: 4px;
-  padding: 2px 8px;
-  font-size: 0.7rem;
+  background: linear-gradient(90deg, #e60026, #ff1475);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 0.72rem;
   font-weight: 900;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(230, 0, 38, 0.25);
 }
 .ann-cta-tg {
   display: flex;
@@ -1039,29 +1101,31 @@ img { display: block; max-width: 100%; height: auto; }
   justify-content: center;
   gap: 6px;
   background: linear-gradient(90deg, #0088cc, #006aad);
-  color: #fff !important;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 0.85rem;
-  margin-bottom: 6px;
+  color: #ffffff !important;
+  padding: 11px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
 }
 .ann-cta-games {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #ff2d88, #e00068);
-  color: #fff !important;
-  padding: 9px;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 0.8rem;
+  background: linear-gradient(90deg, #e60026, #ff1475);
+  color: #ffffff !important;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 0.84rem;
+  box-shadow: 0 4px 12px rgba(230, 0, 38, 0.3);
 }
 </style>
 </head>
 <body>
 
-<!-- Mobile Header -->
+<!-- Header -->
 <header class="app-header">
   <div class="header-inner">
     <a href="/" class="logo-wrap">
@@ -1079,7 +1143,7 @@ img { display: block; max-width: 100%; height: auto; }
 <div class="hero-wrapper">
   <div class="hero-box">
     <h1>All Yono Games 2026 – Download <span>72+ Verified APK</span> & Claim ₹550 Bonus</h1>
-    <p>India's verified list of Yono Rummy, Rummy 91, 789 Jackpots & Teen Patti APKs. Instant UPI cashouts & ₹550 free bonus.</p>
+    <p>India's #1 verified platform for downloading official Yono Rummy, Rummy 91, 789 Jackpots & Teen Patti APKs. Instant UPI withdrawals & ₹550 free welcome bonus.</p>
     <div class="hero-highlights">
       <span class="hl-item">⚡ 72+ Apps</span>
       <span class="hl-item">🎁 ₹550 Bonus</span>
@@ -1104,7 +1168,7 @@ img { display: block; max-width: 100%; height: auto; }
     <button class="chip" onclick="filterChip('rummy', this)">🃏 Rummy (30+)</button>
     <button class="chip" onclick="filterChip('teen-patti', this)">🎴 Teen Patti</button>
     <button class="chip" onclick="filterChip('slots', this)">🎰 Slots & 777</button>
-    <button class="chip" onclick="filterChip('popular', this)">🔥 Trending</button>
+    <button class="chip" onclick="filterChip('popular', this)">🔥 Trending Top</button>
   </div>
 </div>
 
@@ -1125,10 +1189,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/money-rummy/index.html">Money Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1147,10 +1211,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/101z-new/index.html">101 Z</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1169,10 +1233,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/567-slots-new/index.html">567 Slots</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1191,10 +1255,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/777-game-new/index.html">777 Game</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1213,10 +1277,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/789-jackpots-new/index.html">789 Jackpots</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1235,10 +1299,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/abc-rummy-new/index.html">ABC Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1257,10 +1321,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/bingo101-new/index.html">Bingo101</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1279,10 +1343,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/boss-rummy-new/index.html">Boss Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1301,10 +1365,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/club-inr-new/index.html">Club INR</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1323,10 +1387,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/dhan-game-new/index.html">Dhan Game</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1345,10 +1409,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/diwatop-new/index.html">DiwaTop</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1367,10 +1431,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/gogo-rummy-new/index.html">Gogo Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1389,10 +1453,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/gold-rummy-new/index.html">Gold Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1411,10 +1475,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/hi-rummy-new/index.html">Hi Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1433,10 +1497,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/hindi-777/index.html">Hindi 777</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1455,10 +1519,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/ind-club-new/index.html">IND Club</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1477,10 +1541,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/ind-slots-new/index.html">IND Slots</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1499,10 +1563,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/inr-rummy-new/index.html">INR Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1521,10 +1585,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/jaiho-777/index.html">Jaiho 777</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1543,10 +1607,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/jaiho-91/index.html">Jaiho 91</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹91 Bonus</span>
+            <span class="m-bonus">🎁 ₹91 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1565,10 +1629,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/jaiho-arcade-new/index.html">Jaiho Arcade</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1587,10 +1651,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/jaiho-rummy-new/index.html">Jaiho Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1609,10 +1673,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/jaiho-slots/index.html">Jaiho Slots</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1631,10 +1695,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/jaiho-spin-new/index.html">Jaiho Spin</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1653,10 +1717,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/jaiho-win-new/index.html">Jaiho Win</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1675,10 +1739,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/joy-rummy-new/index.html">Joy Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1697,10 +1761,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/love-rummy-new/index.html">Love Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1719,10 +1783,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/maha-games-new/index.html">Maha Games</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1741,10 +1805,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/max-rummy-new/index.html">Max Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1763,10 +1827,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/mbm-bet-new/index.html">MBM Bet</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1785,10 +1849,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/neta-vip-new/index.html">Neta VIP</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1807,10 +1871,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/ok-rummy/index.html">OK Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1829,10 +1893,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummy-ludo-new/index.html">Rummy Ludo</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1851,10 +1915,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummy91-new/index.html">Rummy 91</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹91 Bonus</span>
+            <span class="m-bonus">🎁 ₹91 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1873,10 +1937,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummyjoys/index.html">Rummy Joys</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1895,10 +1959,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/saga-slots-new/index.html">Saga Slots</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1917,10 +1981,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/share-slots-new/index.html">Share Slots</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1939,10 +2003,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/slots-spin-new/index.html">Slots Spin</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1961,10 +2025,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/slots-winner-new/index.html">Slots Winner</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -1983,10 +2047,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/spin-crush/index.html">Spin Crush</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2005,10 +2069,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/spin-winner-new/index.html">Spin Winner</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2027,10 +2091,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/spin101-new/index.html">Spin101</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2049,10 +2113,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/spin777-new/index.html">Spin 777</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2071,10 +2135,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/top-rummy/index.html">TOP RUMMY</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2093,10 +2157,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/win-rummy-new/index.html">Win Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2115,10 +2179,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yn777-new/index.html">YN777</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2137,10 +2201,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-777-new/index.html">Yono 777</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2159,10 +2223,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-arcade-new/index.html">Yono Arcade</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2181,10 +2245,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-games-referral-new/index.html">Yono Games</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2203,10 +2267,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-rummy-new/index.html">Yono Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2225,10 +2289,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-slots-new/index.html">Yono Slots</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹100 + Spins</span>
+            <span class="m-bonus">🎁 ₹100 + Spins</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2247,10 +2311,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-vip-new/index.html">Yono VIP</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">₹550 Bonus</span>
+            <span class="m-bonus">🎁 ₹550 Bonus</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2269,10 +2333,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-21/index.html">Yono 21</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2291,10 +2355,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/holy-rummy/index.html">Holy Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2313,10 +2377,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummy-modern/index.html">Rummy Modern</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2335,10 +2399,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummy-nabob/index.html">Rummy Nabob</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2357,10 +2421,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummy-wealth/index.html">Rummy Wealth</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2379,10 +2443,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/royal-rummy/index.html">Royal Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2401,10 +2465,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/teen-patti-gold/index.html">Teen Patti Gold Yono</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2423,10 +2487,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/teen-patti-master/index.html">Teen Patti Master Yono</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2445,10 +2509,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-teen-patti/index.html">Yono Teen Patti</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2467,10 +2531,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-mbm/index.html">Yono MBM</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2489,10 +2553,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-slots-777/index.html">Yono Slots 777</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2511,10 +2575,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummy-most/index.html">Rummy Most</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2533,10 +2597,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/rummy-gold-star/index.html">Rummy Gold Star</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2555,10 +2619,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/666-rummy/index.html">666 Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2577,10 +2641,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/777-rummy/index.html">777 Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2599,10 +2663,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/888-rummy/index.html">888 Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2621,10 +2685,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/999-rummy/index.html">999 Rummy</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2643,10 +2707,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-rummy-51/index.html">Yono Rummy 51</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2665,10 +2729,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-super/index.html">Yono Super</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2687,10 +2751,10 @@ img { display: block; max-width: 100%; height: auto; }
         <div class="m-info">
           <h3 class="m-title"><a href="games/yono-winner/index.html">Yono Winner</a></h3>
           <div class="m-badge-row">
-            <span class="m-bonus">Sign Up Bonus ₹550</span>
+            <span class="m-bonus">🎁 Sign Up Bonus ₹550</span>
             <span class="m-star">★ 4.8</span>
           </div>
-          <div class="m-subtitle">⚡ 60s UPI • 100% Safe</div>
+          <div class="m-subtitle">⚡ Instant UPI • 100% Verified</div>
         </div>
       </div>
       <div class="m-card-right">
@@ -2705,7 +2769,7 @@ img { display: block; max-width: 100%; height: auto; }
 
   <!-- Leaderboard Table -->
   <div class="table-card">
-    <div class="table-head-bar">🏆 Top 15 Trending Games 2026</div>
+    <div class="table-head-bar">🏆 Top 15 Trending Leaderboard 2026</div>
     <div class="tbl-scroll-wrap">
       <table class="leaderboard-tbl">
         <thead>
@@ -2719,14 +2783,14 @@ img { display: block; max-width: 100%; height: auto; }
           </tr>
         </thead>
         <tbody>
-          <tr><td>🥇 #1</td><td><strong>Rummy 91</strong></td><td>₹550 Bonus</td><td>₹100 (Instant UPI)</td><td>★ 4.9</td><td><a href="games/rummy91-new/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
-          <tr><td>🥈 #2</td><td><strong>Money Rummy</strong></td><td>₹550 Bonus</td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/money-rummy/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
-          <tr><td>🥉 #3</td><td><strong>Yono Rummy</strong></td><td>₹550 Bonus</td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/yono-rummy-new/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
-          <tr><td>#4</td><td><strong>789 Jackpots</strong></td><td>₹550 Bonus</td><td>₹50 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/789-jackpots-new/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
-          <tr><td>#5</td><td><strong>Yono VIP</strong></td><td>₹550 Bonus</td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/yono-vip-new/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
-          <tr><td>#6</td><td><strong>Yono 777</strong></td><td>₹550 Bonus</td><td>₹100 (Instant UPI)</td><td>★ 4.7</td><td><a href="games/yono-777-new/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
-          <tr><td>#7</td><td><strong>Teen Patti Gold</strong></td><td>₹550 Bonus</td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/teen-patti-gold/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
-          <tr><td>#8</td><td><strong>MBM Bet</strong></td><td>₹550 Bonus</td><td>₹100 (Instant UPI)</td><td>★ 4.7</td><td><a href="games/mbm-bet-new/index.html" style="color:#ff2d88;font-weight:800">Download →</a></td></tr>
+          <tr><td>🥇 #1</td><td><strong>Rummy 91</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹100 (Instant UPI)</td><td>★ 4.9</td><td><a href="games/rummy91-new/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
+          <tr><td>🥈 #2</td><td><strong>Money Rummy</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/money-rummy/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
+          <tr><td>🥉 #3</td><td><strong>Yono Rummy</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/yono-rummy-new/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
+          <tr><td>#4</td><td><strong>789 Jackpots</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹50 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/789-jackpots-new/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
+          <tr><td>#5</td><td><strong>Yono VIP</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/yono-vip-new/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
+          <tr><td>#6</td><td><strong>Yono 777</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹100 (Instant UPI)</td><td>★ 4.7</td><td><a href="games/yono-777-new/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
+          <tr><td>#7</td><td><strong>Teen Patti Gold</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹100 (Instant UPI)</td><td>★ 4.8</td><td><a href="games/teen-patti-gold/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
+          <tr><td>#8</td><td><strong>MBM Bet</strong></td><td><span style="color:#008a44;font-weight:800">₹550 Bonus</span></td><td>₹100 (Instant UPI)</td><td>★ 4.7</td><td><a href="games/mbm-bet-new/index.html" style="color:#e60026;font-weight:900">Download →</a></td></tr>
         </tbody>
       </table>
     </div>
