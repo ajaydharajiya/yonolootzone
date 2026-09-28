@@ -17,13 +17,14 @@
     "status": true,
     "featured": true,
     "popular": true,
-    "new_game": true
+    "new_game": true,
+    "page_link": "games/money-rummy/index.html"
   },
   {
     "id": "101z-new",
     "name": "101 Z",
     "category": "Games",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/101z.webp",
     "url": "https://101zvip0.com/?code=398GYBNEZK6&t=1788855511",
@@ -36,13 +37,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/101z-new/index.html"
   },
   {
     "id": "567-slots-new",
     "name": "567 Slots",
     "category": "Slots",
-    "bonus": "Check current offer",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/567-slots.webp",
     "url": "https://join567slots.cc/?code=4NY6BK7F3FC&t=1788292545",
@@ -55,13 +57,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/567-slots-new/index.html"
   },
   {
     "id": "777-game-new",
     "name": "777 Game",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/777-game.webp",
     "url": "https://www.rumblerummy555.com/?code=UC0LVMPVRDK&t=1788857613",
@@ -74,13 +77,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/777-game-new/index.html"
   },
   {
     "id": "789-jackpots-new",
     "name": "789 Jackpots",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/789-jackpots.webp",
     "url": "https://join789jackpots.com/?code=J7ZAL7EQVVK&t=1788292167",
@@ -93,13 +97,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/789-jackpots-new/index.html"
   },
   {
     "id": "abc-rummy-new",
     "name": "ABC Rummy",
     "category": "Rummy",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/abc-rummy.webp",
     "url": "https://www.abcrummy66.com/?code=75CAK3KXPFS&t=1788291651",
@@ -112,13 +117,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/abc-rummy-new/index.html"
   },
   {
     "id": "bingo101-new",
     "name": "Bingo101",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/bingo101.webp",
     "url": "https://bin1go101.com/?code=6YFGNDWY3QV&t=1788292100",
@@ -131,13 +137,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/bingo101-new/index.html"
   },
   {
     "id": "boss-rummy-new",
     "name": "Boss Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/boss-rummy.webp",
     "url": "https://www.bossrummyii.com/?code=9HFUGQNRBJ9&t=1788284863",
@@ -150,13 +157,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/boss-rummy-new/index.html"
   },
   {
     "id": "club-inr-new",
     "name": "Club INR",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/club-inr.webp",
     "url": "https://clubinrsvip.cc/?code=9VCJZTNLM2B&t=1788285734",
@@ -169,13 +177,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/club-inr-new/index.html"
   },
   {
     "id": "dhan-game-new",
     "name": "Dhan Game",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/dhan-game.webp",
     "url": "https://dhangamestrategy.com/?code=47TLBS9NPUA&t=1788286898",
@@ -188,13 +197,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/dhan-game-new/index.html"
   },
   {
     "id": "diwatop-new",
     "name": "DiwaTop",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/diwatop.webp",
     "url": "https://diwatopshare.bet?pid=457245758&channel=2010002&pkg=com.diwatopwhl.app",
@@ -207,13 +217,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/diwatop-new/index.html"
   },
   {
     "id": "gogo-rummy-new",
     "name": "Gogo Rummy",
     "category": "Rummy",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/gogo-rummy.webp",
     "url": "https://www.gogorummy4.com/?code=8FWG6ZK6Z4N&t=1788289256",
@@ -226,13 +237,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/gogo-rummy-new/index.html"
   },
   {
     "id": "gold-rummy-new",
     "name": "Gold Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/gold-rummy.webp",
     "url": "https://goldrummy26.com/?code=JLXB2B6QMTF&t=1788284654",
@@ -245,13 +257,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/gold-rummy-new/index.html"
   },
   {
     "id": "hi-rummy-new",
     "name": "Hi Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/hi-rummy.webp",
     "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799",
@@ -264,13 +277,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/hi-rummy-new/index.html"
   },
   {
     "id": "hindi-777",
     "name": "Hindi 777",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/hindi777.webp",
     "url": "https://www.hindi777agent5.com/?code=7LFVESBD2VS&t=1787411840",
@@ -283,13 +297,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/hindi-777/index.html"
   },
   {
     "id": "ind-club-new",
     "name": "IND Club",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/ind-club.webp",
     "url": "https://indclub99.com/?code=34UHNV9TDEU&t=1788291140",
@@ -302,13 +317,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/ind-club-new/index.html"
   },
   {
     "id": "ind-slots-new",
     "name": "IND Slots",
     "category": "Slots",
-    "bonus": "Check current offer",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/ind-slots.webp",
     "url": "https://www.indslotsbonus.com/?code=EYMA9ENAX8S&t=1788292245",
@@ -321,13 +337,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/ind-slots-new/index.html"
   },
   {
     "id": "inr-rummy-new",
     "name": "INR Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/inr-rummy.webp",
     "url": "https://inrrummy.sbs/?code=JMQ15MWNGGM&t=1788290102",
@@ -340,13 +357,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/inr-rummy-new/index.html"
   },
   {
     "id": "jaiho-777",
     "name": "Jaiho 777",
     "category": "Popular",
-    "bonus": "Check current offer",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/jaiho-777.webp",
     "url": "https://jaiho77790.com/?code=GC2815EEHMJ&t=1787409362",
@@ -359,7 +377,8 @@
     "button": "Download",
     "status": true,
     "featured": true,
-    "popular": true
+    "popular": true,
+    "page_link": "games/jaiho-777/index.html"
   },
   {
     "id": "jaiho-91-new",
@@ -367,7 +386,7 @@
     "category": "Popular",
     "image": "assets/jaiho-91.webp",
     "url": "https://91jaihowin.vip/?code=C42V7RHU9S6&t=1788288979",
-    "bonus": "Game information",
+    "bonus": "₹91 Bonus",
     "withdrawal": "Check current terms",
     "description": "Jaiho 91 game listing. Check the linked site for current game information and terms.",
     "seoTitle": "Jaiho 91 - Play Online",
@@ -378,13 +397,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/jaiho-91/index.html"
   },
   {
     "id": "jaiho-arcade-new",
     "name": "Jaiho Arcade",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/jaiho-arcade.webp",
     "url": "https://www.jaihoarcade33.com/?code=AZD1EG8MDFR&t=1788291780",
@@ -397,13 +417,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/jaiho-arcade-new/index.html"
   },
   {
     "id": "jaiho-rummy-new",
     "name": "Jaiho Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/jaiho-rummy.webp",
     "url": "https://jaihorummy.co/?code=E74UXLLHKBC&t=1788289594",
@@ -416,7 +437,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/jaiho-rummy-new/index.html"
   },
   {
     "id": "jaiho-slots-new",
@@ -424,20 +446,21 @@
     "category": "Popular",
     "image": "assets/jaiho-slots.webp",
     "url": "https://www.jaihoslots18.com/?code=EGPK99W7JZM&t=1788287628",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdrawal": "Check current terms",
     "description": "Jaiho Slots game listing. Check the linked site for current game information and terms.",
     "seoTitle": "Jaiho Slots - Play Online",
     "metaDescription": "Jaiho Slots game listing with game information and the provided access link.",
     "slug": "jaiho-slots",
     "ogImage": "assets/jaiho-slots.webp",
-    "faq": ""
+    "faq": "",
+    "page_link": "games/jaiho-slots/index.html"
   },
   {
     "id": "jaiho-spin-new",
     "name": "Jaiho Spin",
     "category": "Spin",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/jaiho-spin.webp",
     "url": "https://3jaihospinwin.com/?code=DX1NAT15&t=1788292833",
@@ -450,13 +473,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/jaiho-spin-new/index.html"
   },
   {
     "id": "jaiho-win-new",
     "name": "Jaiho Win",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/jaiho-win.webp",
     "url": "https://www.jaihowin1.com/?code=1XN2NLPP47Z&t=1788291043",
@@ -469,13 +493,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/jaiho-win-new/index.html"
   },
   {
     "id": "joy-rummy-new",
     "name": "Joy Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/joy-rummy.webp",
     "url": "https://www.joyrummyapp.com/?code=J5K5TKLVJCB&t=1788287675",
@@ -488,13 +513,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/joy-rummy-new/index.html"
   },
   {
     "id": "love-rummy-new",
     "name": "Love Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/love-rummy.webp",
     "url": "https://www.loverummy88.com/?code=AFC98NSMHKT&t=1788290176",
@@ -507,13 +533,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/love-rummy-new/index.html"
   },
   {
     "id": "maha-games-new",
     "name": "Maha Games",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/maha-games.webp",
     "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799",
@@ -526,13 +553,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/maha-games-new/index.html"
   },
   {
     "id": "max-rummy-new",
     "name": "Max Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/max-rummy.webp",
     "url": "https://www.maxrummy111.com/?code=QUMU89TBHLK&t=1788287554",
@@ -545,13 +573,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/max-rummy-new/index.html"
   },
   {
     "id": "mbm-bet-new",
     "name": "MBM Bet",
     "category": "Games",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/mbm-bet.webp",
     "url": "https://www.mbmbet8.com/?code=GD3MUF42S36&t=1788289338",
@@ -564,13 +593,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/mbm-bet-new/index.html"
   },
   {
     "id": "neta-vip-new",
     "name": "Neta VIP",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/neta-vip.webp",
     "url": "https://neta6.vip/?code=DR044ADMAH5&t=1788291712",
@@ -583,13 +613,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/neta-vip-new/index.html"
   },
   {
     "id": "ok-rummy",
     "name": "OK Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/ok-rummy.webp",
     "url": "https://www.okrummy22.com/?code=27BWJTCZGZK&t=1788271676",
@@ -602,13 +633,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/ok-rummy/index.html"
   },
   {
     "id": "rummy-ludo-new",
     "name": "Rummy Ludo",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/rummy-ludo.webp",
     "url": "https://www.rummyludo1.com/?code=UWP2DT81346&t=1788284375",
@@ -621,13 +653,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummy-ludo-new/index.html"
   },
   {
     "id": "rummy91-new",
     "name": "Rummy 91",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹91 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/rummy91.webp",
     "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645",
@@ -640,13 +673,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummy91-new/index.html"
   },
   {
     "id": "rummyjoys",
     "name": "Rummy Joys",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/rummyjoys.webp",
     "url": "https://rummyjoys.com/?code=FM19ST42FT6&t=1788283951",
@@ -659,13 +693,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummyjoys/index.html"
   },
   {
     "id": "saga-slots-new",
     "name": "Saga Slots",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/saga-slots.webp",
     "url": "https://www.sagaslots77.com/?code=0QHTNT7RQKY&t=1788284518",
@@ -678,13 +713,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/saga-slots-new/index.html"
   },
   {
     "id": "share-slots-new",
     "name": "Share Slots",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/share-slots.webp",
     "url": "https://share0066.com/?code=YAZKFEL4U3A&t=1788291449",
@@ -697,13 +733,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/share-slots-new/index.html"
   },
   {
     "id": "slots-spin-new",
     "name": "Slots Spin",
     "category": "Slots",
-    "bonus": "Check current offer",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/slots-spin.webp",
     "url": "https://www.slotsspinf.com/?code=XJBMGNKLW9D&t=1788291848",
@@ -716,13 +753,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/slots-spin-new/index.html"
   },
   {
     "id": "slots-winner-new",
     "name": "Slots Winner",
     "category": "Slots",
-    "bonus": "Check current offer",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/slots-winner.webp",
     "url": "https://slotswinneragent.in/?code=K4EDD88GT63&t=1788293159",
@@ -735,13 +773,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/slots-winner-new/index.html"
   },
   {
     "id": "spin-crush",
     "name": "Spin Crush",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/spin-crush.webp",
     "url": "https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEK5VL6FE8&t=1788270471",
@@ -754,13 +793,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/spin-crush/index.html"
   },
   {
     "id": "spin-winner-new",
     "name": "Spin Winner",
     "category": "Spin",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/spin-winner.webp",
     "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242",
@@ -773,13 +813,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/spin-winner-new/index.html"
   },
   {
     "id": "spin101-new",
     "name": "Spin101",
     "category": "Spin",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/spin101.webp",
     "url": "https://spin101.win/?code=P4CXMZMPEZE&t=1788292661",
@@ -792,13 +833,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/spin101-new/index.html"
   },
   {
     "id": "spin777-new",
     "name": "Spin 777",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/spin777.webp",
     "url": "https://spin777qq.com/?code=7V9UZ5TK729&t=1788285073",
@@ -811,13 +853,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/spin777-new/index.html"
   },
   {
     "id": "top-rummy",
     "name": "TOP RUMMY",
     "category": "Popular",
-    "bonus": "Bonus information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Withdrawal information",
     "image": "assets/top-rummy.webp",
     "url": "https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258",
@@ -830,13 +873,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/top-rummy/index.html"
   },
   {
     "id": "win-rummy-new",
     "name": "Win Rummy",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/win-rummy.webp",
     "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383",
@@ -849,13 +893,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/win-rummy-new/index.html"
   },
   {
     "id": "yn777-new",
     "name": "YN777",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/yn777.webp",
     "url": "https://www.y729.com/?code=4SWSZNCDFV6&t=1788289709",
@@ -868,13 +913,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yn777-new/index.html"
   },
   {
     "id": "yono-777-new",
     "name": "Yono 777",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/yono-777.webp",
     "url": "https://uonoagentnew.asia/?code=F9MG7NJYP7T&t=1788290273",
@@ -887,13 +933,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-777-new/index.html"
   },
   {
     "id": "yono-arcade-new",
     "name": "Yono Arcade",
     "category": "Arcade",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/yono-arcade-new.webp",
     "url": "https://yonoarcadeapk8.com/?code=F552DZMGGWB&t=1788292761",
@@ -906,13 +953,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/yono-arcade-new/index.html"
   },
   {
     "id": "yono-games-referral-new",
     "name": "Yono Games",
     "category": "Popular",
-    "bonus": "Game information",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/yono-games-referral.webp",
     "url": "https://youonogamesreferral.com/?code=DG6KTC61&t=1788289931",
@@ -925,13 +973,14 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-games-referral-new/index.html"
   },
   {
     "id": "yono-rummy-new",
     "name": "Yono Rummy",
     "category": "Rummy",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/yono-rummy.webp",
     "url": "https://yonorummy056.com/?code=VIPKCZFWJYX&t=1788292338",
@@ -944,13 +993,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/yono-rummy-new/index.html"
   },
   {
     "id": "yono-slots-new",
     "name": "Yono Slots",
     "category": "Slots",
-    "bonus": "Check current offer",
+    "bonus": "₹100 + Spins",
     "withdraw": "Check current terms",
     "image": "assets/yono-slots.webp",
     "url": "https://www.yonoslotsc.com/?code=PJBJQ6G83VH&t=1788292980",
@@ -963,13 +1013,14 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/yono-slots-new/index.html"
   },
   {
     "id": "yono-vip-new",
     "name": "Yono VIP",
     "category": "Games",
-    "bonus": "Check current offer",
+    "bonus": "₹550 Bonus",
     "withdraw": "Check current terms",
     "image": "assets/yono-vip.webp",
     "url": "https://yonoviponline.vip/?code=3CR3QMH3UZS&t=1788289496",
@@ -982,7 +1033,8 @@
     "button": "View Game",
     "status": true,
     "featured": false,
-    "popular": false
+    "popular": false,
+    "page_link": "games/yono-vip-new/index.html"
   },
   {
     "id": "yono-21",
@@ -1001,7 +1053,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-21/index.html"
   },
   {
     "id": "holy-rummy",
@@ -1020,7 +1073,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/holy-rummy/index.html"
   },
   {
     "id": "rummy-modern",
@@ -1039,7 +1093,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummy-modern/index.html"
   },
   {
     "id": "rummy-nabob",
@@ -1058,7 +1113,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummy-nabob/index.html"
   },
   {
     "id": "rummy-wealth",
@@ -1077,7 +1133,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummy-wealth/index.html"
   },
   {
     "id": "royal-rummy",
@@ -1096,7 +1153,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/royal-rummy/index.html"
   },
   {
     "id": "teen-patti-gold",
@@ -1115,7 +1173,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/teen-patti-gold/index.html"
   },
   {
     "id": "teen-patti-master",
@@ -1134,7 +1193,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/teen-patti-master/index.html"
   },
   {
     "id": "yono-teen-patti",
@@ -1153,7 +1213,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-teen-patti/index.html"
   },
   {
     "id": "yono-mbm",
@@ -1172,7 +1233,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-mbm/index.html"
   },
   {
     "id": "yono-slots-777",
@@ -1191,7 +1253,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-slots-777/index.html"
   },
   {
     "id": "rummy-most",
@@ -1210,7 +1273,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummy-most/index.html"
   },
   {
     "id": "rummy-gold-star",
@@ -1229,7 +1293,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/rummy-gold-star/index.html"
   },
   {
     "id": "666-rummy",
@@ -1248,7 +1313,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/666-rummy/index.html"
   },
   {
     "id": "777-rummy",
@@ -1267,7 +1333,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/777-rummy/index.html"
   },
   {
     "id": "888-rummy",
@@ -1286,7 +1353,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/888-rummy/index.html"
   },
   {
     "id": "999-rummy",
@@ -1305,7 +1373,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/999-rummy/index.html"
   },
   {
     "id": "yono-rummy-51",
@@ -1324,7 +1393,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-rummy-51/index.html"
   },
   {
     "id": "yono-super",
@@ -1343,7 +1413,8 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-super/index.html"
   },
   {
     "id": "yono-winner",
@@ -1362,6 +1433,7 @@
     "button": "Download",
     "status": true,
     "featured": false,
-    "popular": true
+    "popular": true,
+    "page_link": "games/yono-winner/index.html"
   }
 ]
