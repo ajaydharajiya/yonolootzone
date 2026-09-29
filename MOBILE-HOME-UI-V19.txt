@@ -1,0 +1,15 @@
+YonoLootZone V19 - Mobile Home UI Polish
+
+Changes:
+- Compact mobile Telegram bar.
+- Cleaner one-row mobile header with smaller logo/title and compact Search/Menu buttons.
+- Mobile search drawer styling improved.
+- Shorter, more readable mobile hero section.
+- Added compact "Yono Game List" quick table on the homepage.
+- Table uses existing game pages/assets and links to the full game pages.
+- Latest Posts card made compact for mobile.
+- SEO intro and bonus section spacing reduced on small screens.
+- Popular Games grid changed to compact 2-column cards on mobile.
+- Desktop layout/functionality remains largely unchanged.
+
+Upload this package to Hostinger public_html. Existing admin/CMS files are retained.

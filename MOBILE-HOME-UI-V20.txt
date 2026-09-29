@@ -1,0 +1,8 @@
+YonoLootZone V20 — Mobile Home UI Update
+
+Changes:
+- Reduced mobile hero height and typography for a tighter first-screen layout.
+- Removed the Yono Game List quick table from the homepage.
+- Moved Latest Posts & Game Updates directly below the hero.
+- Moved Yono Game & All Yono Games SEO topic cards to the bottom of the footer.
+- Kept existing game cards, navigation, CMS/admin and SEO files intact.
