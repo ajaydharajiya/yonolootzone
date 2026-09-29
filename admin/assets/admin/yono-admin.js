@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const p=location.pathname.split('/').pop()||'dashboard.php';document.querySelectorAll('.nav-sidebar a.nav-link').forEach(a=>{const h=(a.getAttribute('href')||'').split('?')[0];if(h===p)a.classList.add('active');});});
