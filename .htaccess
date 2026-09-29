@@ -5,6 +5,7 @@ DirectoryIndex index.html index.php
 Redirect 301 /all-games.html /all-yono-games.html
 Redirect 301 /privacy.html /privacy-policy.html
 
-<FilesMatch "^\.(?!well-known)"
+# Block hidden files, but allow the .well-known directory
+<FilesMatch "^\.(?!well-known)">
   Require all denied
 </FilesMatch>

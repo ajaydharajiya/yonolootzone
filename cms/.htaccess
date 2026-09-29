@@ -1,4 +1,6 @@
 Options -Indexes
-<FilesMatch "^(config\.php|setup\.php)$">
+
+# Protect the CMS configuration file. setup.php must remain accessible for first-time setup.
+<FilesMatch "^config\.php$">
   Require all denied
 </FilesMatch>
