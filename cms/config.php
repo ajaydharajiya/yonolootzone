@@ -19,11 +19,34 @@ function check_csrf(): void { if(!hash_equals($_SESSION['csrf'] ?? '', $_POST['c
 function logged_in(): bool { return !empty($_SESSION['cms_auth']); }
 function require_login(): void { if(!logged_in()){ header('Location: setup.php'); exit; } }
 function safe_asset(string $url): string { return trim($url); }
+function game_page_url(array $g): string {
+  $page = trim((string)($g['page_link'] ?? ''));
+  if ($page === '') $page = 'games/' . slugify((string)($g['slug'] ?? $g['name'] ?? 'game')) . '/index.html';
+  return SITE_URL . '/' . ltrim($page, '/');
+}
 function update_sitemap(string $url): void {
   $file=SITE_ROOT.'/sitemap.xml'; $xml=is_file($file)?file_get_contents($file):'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
   $loc=h($url); if(strpos($xml, '<loc>'. $loc .'</loc>') !== false) return;
   $entry='  <url><loc>'.$loc.'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq></url>\n';
   $xml=str_replace('</urlset>', $entry.'</urlset>', $xml); file_put_contents($file,$xml,LOCK_EX);
+}
+function update_latest_post(array $posts): void {
+  if (!$posts) return;
+  usort($posts, fn($a,$b)=>strcmp(($b['date']??'').' '.($b['slug']??''), ($a['date']??'').' '.($a['slug']??'')));
+  $p=$posts[0];
+  $latest=[
+    'id'=>($p['slug']??'').'|'.($p['date']??''),
+    'title'=>$p['title']??'',
+    'slug'=>$p['slug']??'',
+    'date'=>$p['date']??'',
+    'type'=>$p['type']??'Article',
+    'excerpt'=>$p['excerpt']??($p['description']??''),
+    'description'=>$p['description']??'',
+    'image'=>$p['image']??'',
+    'imageAlt'=>$p['imageAlt']??''
+  ];
+  if(!is_dir(SITE_ROOT.'/posts')) mkdir(SITE_ROOT.'/posts',0755,true);
+  write_json(SITE_ROOT.'/posts/latest.json',$latest);
 }
 function update_posts_index(array $posts): void {
   usort($posts, fn($a,$b)=>strcmp($b['date']??'', $a['date']??''));
@@ -35,9 +58,11 @@ function render_post(array $p): string {
   $title=$p['title']; $desc=$p['description']??$p['excerpt']??''; $url=SITE_URL.'/posts/'.$p['slug'].'/'; $img=$p['image']??'';
   $body=$p['content']??''; $video=$p['video']??''; $videoHtml='';
   if($video){ $embed=$video; if(preg_match('~(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/shorts/)([A-Za-z0-9_-]{6,})~',$video,$m)) $embed='https://www.youtube.com/embed/'.$m[1]; if(str_ends_with(strtolower(parse_url($video,PHP_URL_PATH)??''),'.mp4')) $videoHtml='<video controls preload="metadata" style="width:100%;border-radius:14px"><source src="'.h($video).'">Your browser does not support video.</video>'; else $videoHtml='<div style="aspect-ratio:16/9"><iframe src="'.h($embed).'" title="'.h($title).' video" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0;border-radius:14px"></iframe></div>'; }
+  $gameHtml=''; if(!empty($p['gameName']) && !empty($p['gamePageLink'])){ $gameHtml='<section class="game-box"><h2>'.h($p['gameName']).'</h2>'.(!empty($p['gameImage'])?'<img src="'.h($p['gameImage']).'" alt="'.h($p['gameName']).'" loading="lazy">':'').'<p>Read the dedicated game page for details, screenshots and available information.</p><a class="game-btn" href="'.h($p['gamePageLink']).'">View '.h($p['gameName']).' Game Page →</a></section>'; }
+  $promoHtml=''; if(!empty($p['promoEnabled']) && !empty($p['promoCode'])){ $promoHtml='<section class="promo-box"><h2>🎁 '.h($p['gameName']?($p['gameName'].' Promo Code'):'Promo Code Update').'</h2><div class="promo-code">'.h($p['promoCode']).'</div>'.(!empty($p['promoReward'])?'<p><strong>Offer:</strong> '.h($p['promoReward']).'</p>':'').(!empty($p['promoMinDeposit'])?'<p><strong>Minimum Deposit:</strong> '.h($p['promoMinDeposit']).'</p>':'').(!empty($p['promoExpiry'])?'<p><strong>Expiry:</strong> '.h($p['promoExpiry']).'</p>':'').(!empty($p['promoTerms'])?'<p><strong>Terms:</strong> '.nl2br(h($p['promoTerms'])).'</p>':'').'<p class="promo-note">Check the offer inside the game/app before using it. Availability and eligibility may vary by account.</p></section>'; }
   $schema=['@context'=>'https://schema.org','@type'=>'Article','headline'=>$title,'description'=>$desc,'datePublished'=>$p['date']??date('Y-m-d'),'dateModified'=>$p['date']??date('Y-m-d'),'author'=>['@type'=>'Person','name'=>$p['author']??'YonoLootZone'],'publisher'=>['@type'=>'Organization','name'=>'YonoLootZone'],'mainEntityOfPage'=>$url];
   if($img) $schema['image']=SITE_URL.'/'.ltrim($img,'/');
-  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'.h($title).'</title><meta name="description" content="'.h($desc).'"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="'.h($url).'"><meta property="og:type" content="article"><meta property="og:title" content="'.h($title).'"><meta property="og:description" content="'.h($desc).'"><meta property="og:url" content="'.h($url).'">'.($img?'<meta property="og:image" content="'.h(SITE_URL.'/'.ltrim($img,'/')).'">':'').'<script type="application/ld+json">'.json_encode($schema,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script><link rel="stylesheet" href="../../assets/style.css"><style>.post-wrap{max-width:900px;margin:30px auto;padding:0 16px}.post-wrap article{background:#fff;border:1px solid #ffd5e2;border-radius:20px;padding:28px}.post-wrap img.hero{width:100%;max-height:480px;object-fit:cover;border-radius:16px;margin:15px 0}.post-content{font-size:16px;line-height:1.8;color:#334155}.post-content h2{margin-top:28px}</style></head><body><main class="post-wrap"><article><p><a href="/posts/">← All posts</a></p><h1>'.h($title).'</h1><p><small>'.h($p['date']??'').' · '.h($p['author']??'YonoLootZone').'</small></p>'.($img?'<img class="hero" src="'.h($img).'" alt="'.h($p['imageAlt']??$title).'">':'').'<p><strong>'.h($p['excerpt']??'').'</strong></p><div class="post-content">'.$body.'</div>'.($video?'<section><h2>Video</h2>'.$videoHtml.'</section>':'').'</article></main></body></html>';
+  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'.h($title).'</title><meta name="description" content="'.h($desc).'"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="'.h($url).'"><meta property="og:type" content="article"><meta property="og:title" content="'.h($title).'"><meta property="og:description" content="'.h($desc).'"><meta property="og:url" content="'.h($url).'">'.($img?'<meta property="og:image" content="'.h(SITE_URL.'/'.ltrim($img,'/')).'">':'').'<script type="application/ld+json">'.json_encode($schema,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script><link rel="stylesheet" href="../../assets/style.css"><style>.post-wrap{max-width:900px;margin:30px auto;padding:0 16px}.post-wrap article{background:#fff;border:1px solid #ffd5e2;border-radius:20px;padding:28px}.post-wrap img.hero{width:100%;max-height:480px;object-fit:cover;border-radius:16px;margin:15px 0}.post-content{font-size:16px;line-height:1.8;color:#334155}.post-content h2{margin-top:28px}.game-box,.promo-box{margin-top:28px;padding:22px;border-radius:18px;background:#fff7fb;border:1px solid #ffd1e2}.game-box img{width:82px;height:82px;object-fit:cover;border-radius:16px;display:block;margin:10px 0}.game-btn{display:inline-block;background:#e00068;color:#fff!important;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}.promo-code{display:inline-block;font-size:24px;font-weight:900;letter-spacing:1px;background:#fff;padding:12px 18px;border:2px dashed #e00068;border-radius:12px;margin:8px 0}.promo-note{font-size:13px;color:#64748b}</style></head><body><main class="post-wrap"><article><p><a href="/posts/">← All posts</a></p><h1>'.h($title).'</h1><p><small>'.h($p['date']??'').' · '.h($p['author']??'YonoLootZone').'</small></p>'.($img?'<img class="hero" src="'.h($img).'" alt="'.h($p['imageAlt']??$title).'">':'').'<p><strong>'.h($p['excerpt']??'').'</strong></p><div class="post-content">'.$body.'</div>'.$gameHtml.$promoHtml.($video?'<section><h2>Video</h2>'.$videoHtml.'</section>':'').'</article></main></body></html>';
 }
 function render_game(array $g): string {
   $name=$g['name']; $slug=$g['slug']; $url=SITE_URL.'/games/'.$slug.'/'; $desc=$g['metaDescription']??($g['description']??''); $img=$g['image']??''; $cat=$g['category']??'Yono Game'; $link=$g['url']??'#';

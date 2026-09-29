@@ -1,0 +1,1 @@
+<?php require_once __DIR__.'/../cms/config.php'; session_destroy(); header('Location: index.php'); exit; ?>

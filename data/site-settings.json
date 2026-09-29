@@ -1,0 +1,10 @@
+{
+  "siteName": "YonoLootZone",
+  "telegramUrl": "https://t.me/+jMDOLURgOQc1ODU1",
+  "announcement": "Latest game updates, guides and promo updates",
+  "logoUrl": "assets/logo.svg",
+  "accentColor": "#e00068",
+  "headerColor": "#ffffff",
+  "footerText": "YonoLootZone — Game updates, guides and listings.",
+  "enableNotifications": true
+}
