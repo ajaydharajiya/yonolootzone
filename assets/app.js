@@ -172,7 +172,7 @@ function renderGameDetail(){
        <h1>${name}</h1>
        <p class="premium-tagline">Your dedicated ${name} game page — quick access, useful information and a clean download experience.</p>
        <div class="hero-info-pills"><span>🎁 ${bonus}</span><span>▣ ${withdraw}</span><span>📱 Mobile Ready</span></div>
-       <div class="premium-actions"><a class="premium-download" href="${url}" target="_blank" rel="noopener noreferrer"><span>Download Now</span><b>↓</b></a><a class="premium-secondary" href="https://t.me/+jMDOLURgOQc1ODU1">Join Telegram <span>→</span></a></div>
+       <div class="premium-actions"><a class="premium-download" href="${url}" target="_blank" rel="noopener noreferrer"><span>Download Now</span><b>↓</b></a><a class="premium-secondary" href="https://t.me/+mvuCooBs1M02NDVl">Join Telegram <span>→</span></a></div>
        <div class="hero-trust"><span>✓ Listing information</span><span>✓ Direct destination</span><span>✓ Responsive page</span></div>
      </div>
      <div class="premium-hero-art"><div class="art-ring art-ring-one"></div><div class="art-ring art-ring-two"></div><div class="art-card"><img src="${image}" onerror="this.src=assetPath('assets/logo.svg')" alt="${name} logo" loading="lazy" decoding="async" width="180" height="180"></div><div class="art-label"><b>${name}</b><span>Game App</span></div></div>
@@ -217,7 +217,7 @@ function renderGameDetail(){
 
    <section class="detail-section system-panel"><div class="section-eyebrow">COMPATIBILITY</div><h2>System Requirements</h2><div class="system-cards"><div><span>ANDROID</span><b>5.0+</b><small>Operating system</small></div><div><span>MEMORY</span><b>2GB+</b><small>Recommended RAM</small></div><div><span>STORAGE</span><b>100MB+</b><small>Free space</small></div><div><span>NETWORK</span><b>4G / 5G</b><small>Wi-Fi supported</small></div></div></section>
 
-   <section id="telegram" class="detail-telegram"><div><span class="telegram-dot">➤</span><div><b>Stay updated with ${name}</b><small>Get new game updates and announcements through Telegram.</small></div></div><a href="https://t.me/+jMDOLURgOQc1ODU1" target="_blank" rel="noopener noreferrer">Join Telegram <span>→</span></a></section>
+   <section id="telegram" class="detail-telegram"><div><span class="telegram-dot">➤</span><div><b>Stay updated with ${name}</b><small>Get new game updates and announcements through Telegram.</small></div></div><a href="https://t.me/+mvuCooBs1M02NDVl" target="_blank" rel="noopener noreferrer">Join Telegram <span>→</span></a></section>
 
    <section class="detail-section collection-panel"><div class="collection-head"><div><div class="section-eyebrow">EXPLORE MORE</div><h2>All Games <span>(${games.length})</span></h2><p>Choose another game to open its dedicated page.</p></div><a href="index.html#games">View Homepage →</a></div><div class="collection-tabs"><span class="active">All Games</span><span>New Games</span></div><div class="premium-games-list">${allGames}</div></section>
 
