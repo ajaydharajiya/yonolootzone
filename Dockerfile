@@ -1,6 +1,10 @@
-FROM nginx:alpine
+FROM php:8.3-apache
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY . /usr/share/nginx/html
+WORKDIR /var/www/html
+COPY . /var/www/html/
+
+RUN a2enmod rewrite headers expires \
+    && chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
+CMD ["apache2-foreground"]

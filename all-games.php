@@ -1,4 +1,4 @@
-<?php
+<head><meta content="noindex, nofollow, noarchive" name="robots"/><link href="https://yonolootzone.com/all-yono-games.html" rel="canonical"/></head><?php
 // =====================================================
 // YONOLOOTZONE - ALL GAMES DIRECTORY (MODULAR PHP)
 // =====================================================
@@ -11,26 +11,23 @@ include_once(__DIR__ . '/part/header.php');
 include_once(__DIR__ . '/part/navbar.php');
 include_once(__DIR__ . '/part/announcement.php');
 ?>
-
 <div class="hero-banner">
-  <div class="hero-card">
-    <h1>All Yono Games Directory 2026 – <span>Complete 72+ App List</span></h1>
-    <p>Compare sign-up bonuses, file sizes, ratings, and download official APK files directly from trusted CDN servers.</p>
-    <div class="hero-badges">
-      <span class="hero-badge">🎮 72 Verified Games</span>
-      <span class="hero-badge">🎁 ₹550 Free Bonus</span>
-      <span class="hero-badge">⚡ Instant UPI Withdrawal</span>
-    </div>
-  </div>
+<div class="hero-card">
+<h1>All Yono Games Directory 2026 – <span>Complete 72+ App List</span></h1>
+<p>Compare sign-up bonuses, file sizes, ratings, and download official APK files directly from trusted CDN servers.</p>
+<div class="hero-badges">
+<span class="hero-badge">🎮 72 Verified Games</span>
+<span class="hero-badge">🎁 ₹550 Free Bonus</span>
+<span class="hero-badge">⚡ Instant UPI Withdrawal</span>
 </div>
-
+</div>
+</div>
 <div class="search-wrap">
-  <input type="text" id="dirSearch" class="search-input" placeholder="🔍 Search any of the 72+ Yono games..." onkeyup="filterDirectory(this.value)" />
+<input class="search-input" id="dirSearch" onkeyup="filterDirectory(this.value)" placeholder="🔍 Search any of the 72+ Yono games..." type="text"/>
 </div>
-
 <main class="main-container">
-  <div class="games-grid" id="dirGrid">
-    <?php foreach ($all_games as $index => $game): ?>
+<div class="games-grid" id="dirGrid">
+<?php foreach ($all_games as $index => $game): ?&gt;
       <?php 
         $rank = $index + 1;
         $bonus = !empty($game['bonus']) ? $game['bonus'] : '₹550 Bonus';
@@ -38,26 +35,25 @@ include_once(__DIR__ . '/part/announcement.php');
         $icon = !empty($game['icon']) ? $game['icon'] : '/assets/default-game.webp';
         $page = !empty($game['page']) ? $game['page'] : '/all-games.html';
       ?>
-      <article class="game-card" data-name="<?php echo htmlspecialchars(strtolower($game['name'])); ?>">
-        <div class="game-icon-wrap">
-          <img src="<?php echo htmlspecialchars($icon); ?>" alt="<?php echo htmlspecialchars($game['name']); ?> APK" class="game-icon" loading="lazy" onerror="this.src='/assets/default-game.webp'" />
-          <span class="game-rank"><?php echo $rank; ?></span>
-        </div>
-        <div class="game-info">
-          <h3 class="game-name"><a href="<?php echo htmlspecialchars($page); ?>"><?php echo htmlspecialchars($game['name']); ?></a></h3>
-          <div class="game-meta">
-            <span class="game-bonus"><?php echo htmlspecialchars($bonus); ?></span>
-            <span class="game-stars">★ <?php echo htmlspecialchars($rating); ?></span>
-          </div>
-        </div>
-        <div class="game-actions">
-          <a href="<?php echo htmlspecialchars($page); ?>" class="btn-download">Download</a>
-        </div>
-      </article>
-    <?php endforeach; ?>
-  </div>
+<article class="game-card" data-name="&lt;?php echo htmlspecialchars(strtolower($game['name'])); ?&gt;">
+<div class="game-icon-wrap">
+<img alt="&lt;?php echo htmlspecialchars($game['name']); ?&gt; APK" class="game-icon" loading="lazy" onerror="this.src='/assets/default-game.webp'" src="&lt;?php echo htmlspecialchars($icon); ?&gt;"/>
+<span class="game-rank"><?php echo $rank; ?></span>
+</div>
+<div class="game-info">
+<h3 class="game-name"><a href="&lt;?php echo htmlspecialchars($page); ?&gt;"><?php echo htmlspecialchars($game['name']); ?></a></h3>
+<div class="game-meta">
+<span class="game-bonus"><?php echo htmlspecialchars($bonus); ?></span>
+<span class="game-stars">★ <?php echo htmlspecialchars($rating); ?></span>
+</div>
+</div>
+<div class="game-actions">
+<a class="btn-download" href="&lt;?php echo htmlspecialchars($page); ?&gt;">Download</a>
+</div>
+</article>
+<?php endforeach; ?>
+</div>
 </main>
-
 <script>
 function filterDirectory(query) {
   var q = query.toLowerCase().trim();
@@ -68,7 +64,6 @@ function filterDirectory(query) {
   });
 }
 </script>
-
 <?php
 include_once(__DIR__ . '/part/footer.php');
 ?>
