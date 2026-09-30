@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /admin.html
 Disallow: /admin/
-
+Disallow: /cms/
+Disallow: /data/
+Disallow: /backup/
+Disallow: /*?*
 Sitemap: https://yonolootzone.com/sitemap.xml

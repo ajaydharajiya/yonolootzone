@@ -1,11 +1,41 @@
 Options -Indexes
 DirectoryIndex index.html index.php
 
-# Keep legacy redirects
-Redirect 301 /all-games.html /all-yono-games.html
-Redirect 301 /privacy.html /privacy-policy.html
+RewriteEngine On
 
-# Block hidden files, but allow the .well-known directory
+# Canonical host and HTTPS
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^yonolootzone\.com$ [NC]
+RewriteRule ^ https://yonolootzone.com%{REQUEST_URI} [R=301,L]
+
+# Canonicalize common index-file URLs to clean directory URLs.
+RewriteRule ^index\.html$ / [R=301,L,NE]
+RewriteRule ^(.+)/index\.html$ /$1/ [R=301,L,NE]
+
+# Legacy URLs
+RewriteRule ^789-jackpots-download/?$ /games/789-jackpots-new/ [R=301,L,NE]
+RewriteRule ^yonogames-download-center\.html$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^how-to-withdraw-all-yono-games\.html$ /guides/safe-app-installation-checklist.html [R=301,L,NE]
+RewriteRule ^how-to-withdraw-yono-money\.html$ /guides/safe-app-installation-checklist.html [R=301,L,NE]
+RewriteRule ^yonogames-official-platform\.html$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^yonogame-app-download\.html$ /guides/yono-games-search-guide.html [R=301,L,NE]
+RewriteRule ^yonogames-apk-download\.html$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^yono-777-arcade-games\.html$ /guides/yono-arcade-games-guide.html [R=301,L,NE]
+RewriteRule ^all-games\.(?:html|php)$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^privacy\.html$ /privacy-policy.html [R=301,L,NE]
+RewriteRule ^admin\.html$ /admin/ [R=301,L,NE]
+
+# Keep internal application/data paths out of search and direct browsing.
+RewriteRule ^cms(?:/|$) - [F,L]
+RewriteRule ^admin(?:/|$) - [L]
+
 <FilesMatch "^\.(?!well-known)">
   Require all denied
 </FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
