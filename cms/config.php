@@ -17,7 +17,14 @@ function write_json(string $file, $data): void { file_put_contents($file, json_e
 function csrf(): string { if(empty($_SESSION['csrf'])) $_SESSION['csrf']=bin2hex(random_bytes(16)); return $_SESSION['csrf']; }
 function check_csrf(): void { if(!hash_equals($_SESSION['csrf'] ?? '', $_POST['csrf'] ?? '')) die('Invalid request.'); }
 function logged_in(): bool { return !empty($_SESSION['cms_auth']); }
-function require_login(): void { if(!logged_in()){ header('Location: setup.php'); exit; } }
+function require_login(): void {
+  if (!logged_in()) {
+    $hasAuth = is_file(CMS_DATA . '/auth.json');
+    $loginUrl = $hasAuth ? '/admin/index.php' : '/cms/setup.php';
+    header('Location: ' . $loginUrl);
+    exit;
+  }
+}
 function safe_asset(string $url): string { return trim($url); }
 function normalize_site_url(string $url): string {
   $url = trim($url);

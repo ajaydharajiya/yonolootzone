@@ -27,7 +27,7 @@ include_once(__DIR__ . '/part/announcement.php');
 </div>
 <main class="main-container">
 <div class="games-grid" id="dirGrid">
-<?php foreach ($all_games as $index => $game): ?&gt;
+<?php foreach ($all_games as $index => $game): ?>
       <?php 
         $rank = $index + 1;
         $bonus = !empty($game['bonus']) ? $game['bonus'] : '₹550 Bonus';
@@ -35,20 +35,20 @@ include_once(__DIR__ . '/part/announcement.php');
         $icon = !empty($game['icon']) ? $game['icon'] : '/assets/default-game.webp';
         $page = !empty($game['page']) ? $game['page'] : '/all-games.html';
       ?>
-<article class="game-card" data-name="&lt;?php echo htmlspecialchars(strtolower($game['name'])); ?&gt;">
+<article class="game-card" data-name="<?php echo htmlspecialchars(strtolower($game['name'])); ?>">
 <div class="game-icon-wrap">
-<img alt="&lt;?php echo htmlspecialchars($game['name']); ?&gt; APK" class="game-icon" loading="lazy" onerror="this.src='/assets/default-game.webp'" src="&lt;?php echo htmlspecialchars($icon); ?&gt;"/>
+<img alt="<?php echo htmlspecialchars($game['name']); ?> APK" class="game-icon" loading="lazy" onerror="this.src='/assets/default-game.webp'" src="<?php echo htmlspecialchars($icon); ?>"/>
 <span class="game-rank"><?php echo $rank; ?></span>
 </div>
 <div class="game-info">
-<h3 class="game-name"><a href="&lt;?php echo htmlspecialchars($page); ?&gt;"><?php echo htmlspecialchars($game['name']); ?></a></h3>
+<h3 class="game-name"><a href="<?php echo htmlspecialchars($page); ?>"><?php echo htmlspecialchars($game['name']); ?></a></h3>
 <div class="game-meta">
 <span class="game-bonus"><?php echo htmlspecialchars($bonus); ?></span>
 <span class="game-stars">★ <?php echo htmlspecialchars($rating); ?></span>
 </div>
 </div>
 <div class="game-actions">
-<a class="btn-download" href="&lt;?php echo htmlspecialchars($page); ?&gt;">Download</a>
+<a class="btn-download" href="<?php echo htmlspecialchars($page); ?>">Download</a>
 </div>
 </article>
 <?php endforeach; ?>
