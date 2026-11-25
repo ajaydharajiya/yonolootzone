@@ -1396,3 +1396,43 @@ main {
 .yono-filter-hidden {
   display: none !important;
 }
+
+/* ── Mobile Header: shrink btn-icon and limit header control overflow ── */
+@media (max-width: 479px) {
+  .btn-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .glass-header .flex.items-center.gap-2,
+  .glass-header .flex.items-center.gap-3 {
+    gap: 6px !important;
+  }
+  /* Keep logo text on one line, truncate if needed */
+  .glass-header a[href] div[style*="font-size:20px"],
+  .glass-header a[href] div[style*="font-size: 20px"] {
+    font-size: 16px !important;
+  }
+  .glass-header a[href] div[style*="font-size:10px"],
+  .glass-header a[href] div[style*="font-size: 10px"] {
+    display: none;
+  }
+}
+
+/* ── Mobile Game Grid: fix gap so left column is not clipped ── */
+@media (max-width: 639px) {
+  #games-grid.grid {
+    gap: 10px !important;
+    padding: 0 2px;
+  }
+  /* Home game-card on mobile */
+  .game-card {
+    padding: 10px 8px !important;
+  }
+  .game-card > div:first-child {
+    width: 72px !important;
+    height: 72px !important;
+    margin-bottom: 8px !important;
+  }
+}
