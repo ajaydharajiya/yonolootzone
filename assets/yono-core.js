@@ -328,7 +328,7 @@
         <div class="search-modal-box">
           <div class="search-input-wrap">
             <i class="fas fa-search" style="color:var(--primary); font-size:18px;"></i>
-            <input type="text" id="live-search-input" placeholder="Search 73+ games by name, category, features..." autocomplete="off">
+            <input type="text" id="live-search-input" placeholder="Search 92+ games by name, category, features..." autocomplete="off" style="min-width:0;">
             <button class="btn-icon" style="width:32px; height:32px;" onclick="document.getElementById('search-modal').classList.remove('open')">✕</button>
           </div>
           <div style="padding:12px 20px; background:var(--primary-subtle); display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px;">
@@ -388,7 +388,7 @@
     if (!query) {
       resultsContainer.innerHTML = `
         <div style="text-align:center; padding:30px; color:var(--text-muted); font-size:14px;">
-          Start typing to explore all 73 verified game listings.
+          Start typing to explore all 92 verified game listings.
         </div>
       `;
       return;
@@ -457,7 +457,7 @@
           </div>
           <div style="padding:20px;">
             <div style="display:flex; gap:8px; margin-bottom:14px;">
-              <input type="text" id="ai-query-input" placeholder="e.g. 'Show me fast rummy games' or 'New releases with bonuses'" style="flex:1; padding:12px 16px; border-radius:12px; border:1px solid var(--border-strong); background:var(--bg-surface); color:var(--text-main); font-size:14px; outline:none;">
+              <input type="text" id="ai-query-input" placeholder="e.g. 'Show me fast rummy games' or 'New releases with bonuses'" style="flex:1; min-width:0; width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--border-strong); background:var(--bg-surface); color:var(--text-main); font-size:14px; outline:none;">
               <button class="btn-yono-primary" onclick="YonoApp.askAI()">Ask</button>
             </div>
             <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;">
@@ -603,6 +603,81 @@
     });
   });
 
+  // --- 12. CATALOG VIEW TOGGLE & A-Z ALPHABET FILTER HELPERS ---
+  const VIEW_STORAGE_KEY = 'yono_view_mode';
+
+  function getSavedView() {
+    try {
+      const saved = localStorage.getItem(VIEW_STORAGE_KEY);
+      return saved === 'list' ? 'list' : 'grid';
+    } catch (e) {
+      return 'grid';
+    }
+  }
+
+  function setGridView(mode, gridId = 'games-grid') {
+    const view = mode === 'list' ? 'list' : 'grid';
+    const grid = document.getElementById(gridId);
+    if (grid) {
+      grid.classList.toggle('games-list-view', view === 'list');
+    }
+    document.querySelectorAll('.yono-view-btn').forEach(btn => {
+      const isMatch = btn.getAttribute('data-view') === view;
+      btn.classList.toggle('active', isMatch);
+      btn.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+    });
+    try {
+      localStorage.setItem(VIEW_STORAGE_KEY, view);
+    } catch (e) {}
+  }
+
+  function matchesAz(name, letter) {
+    if (!letter || letter === 'all') return true;
+    const clean = (name || '').trim().toLowerCase();
+    if (!clean) return false;
+    if (letter === '0-9') return /^[0-9]/.test(clean);
+    return clean.startsWith(letter.toLowerCase());
+  }
+
+  function buildAzBar(containerId, items, getNameFn, onSelectFn) {
+    const bar = document.getElementById(containerId);
+    if (!bar) return;
+
+    const counts = { all: items.length, '0-9': 0 };
+    for (let c = 65; c <= 90; c++) {
+      counts[String.fromCharCode(c).toLowerCase()] = 0;
+    }
+
+    items.forEach(item => {
+      const n = (getNameFn(item) || '').trim().toLowerCase();
+      if (!n) return;
+      if (/^[0-9]/.test(n)) {
+        counts['0-9']++;
+      } else {
+        const ch = n.charAt(0);
+        if (counts[ch] !== undefined) counts[ch]++;
+      }
+    });
+
+    const keys = ['all', '0-9'];
+    for (let c = 65; c <= 90; c++) keys.push(String.fromCharCode(c).toLowerCase());
+
+    bar.innerHTML = '<span class="az-label">A–Z:</span>' + keys.map(k => {
+      const label = k === 'all' ? 'All' : (k === '0-9' ? '0–9' : k.toUpperCase());
+      const empty = k !== 'all' && !counts[k];
+      return `<button type="button" class="az-btn${k === 'all' ? ' active' : ''}${empty ? ' az-empty' : ''}" data-letter="${k}"${empty ? ' disabled title="No games starting with ' + label + '"' : ' title="Filter games starting with ' + label + ' (' + counts[k] + ')"'}>${label}</button>`;
+    }).join('');
+
+    bar.querySelectorAll('.az-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        const letter = btn.getAttribute('data-letter');
+        bar.querySelectorAll('.az-btn').forEach(b => b.classList.toggle('active', b === btn));
+        if (typeof onSelectFn === 'function') onSelectFn(letter);
+      });
+    });
+  }
+
   // Expose methods to global scope
   window.YonoApp.setTheme = setTheme;
   window.YonoApp.toggleFavorite = toggleFavorite;
@@ -630,4 +705,8 @@
   window.YonoApp.askAI = askAI;
   window.YonoApp.dismissAnnouncement = dismissAnnouncement;
   window.YonoApp.showToast = showToast;
+  window.YonoApp.getSavedView = getSavedView;
+  window.YonoApp.setGridView = setGridView;
+  window.YonoApp.matchesAz = matchesAz;
+  window.YonoApp.buildAzBar = buildAzBar;
 })();

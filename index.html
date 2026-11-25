@@ -63,9 +63,9 @@
     position:relative;
     align-items:center;
     justify-content:space-between;
-    gap:12px;
-    margin:14px 12px 18px;
-    padding:14px 16px;
+    gap:10px;
+    margin:10px 12px 12px;
+    padding:12px 14px;
     border-radius:14px;
     background:linear-gradient(135deg,#168de2,#0877c9);
     color:#fff;
@@ -73,11 +73,14 @@
     box-shadow:0 5px 16px rgba(8,119,201,.22);
     font-weight:700;
     z-index:2;
+    max-width:calc(100% - 24px);
+    box-sizing:border-box;
   }
   #mobile-telegram-cta .tg-copy {
     display:flex;
     flex-direction:column;
     line-height:1.25;
+    min-width:0;
   }
   #mobile-telegram-cta .tg-title {
     font-size:15px;
@@ -111,7 +114,7 @@
 <!-- Header -->
   <!-- Top Announcement Bar -->
   <div id="site-announcement-bar" class="top-announcement-bar">
-    <span>📢 <strong>2026 Directory:</strong> 92 verified YonoLootZone, updated APK guides, and ratings.</span>
+    <span>📢 <strong>2026 Directory:</strong> 92 verified Yono game listings &amp; updated APK guides.</span>
     <a href="all-yono-games.html">Browse All Games</a>
     <button class="top-announcement-close" onclick="YonoApp.dismissAnnouncement()" title="Dismiss">✕</button>
   </div>
@@ -266,9 +269,61 @@
 </div>
 </section>
 <!-- Popular Games Grid -->
-<section class="py-16" id="games">
+<section class="py-12 md:py-16" id="games">
 <div class="container mx-auto px-4">
-<h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Popular Games</h3>
+<h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Popular Games</h3>
+<div class="yono-controls-wrap" id="home-catalog-controls">
+  <div class="yono-toolbar">
+    <div class="yono-toolbar-left">
+      <label class="yono-pill-control" for="home-sort-select">
+        <span>Sort:</span>
+        <select id="home-sort-select" class="yono-pill-select" aria-label="Sort games">
+          <option value="default">Default Order</option>
+          <option value="az">Name (A → Z)</option>
+          <option value="za">Name (Z → A)</option>
+          <option value="newest">Newest First</option>
+          <option value="popular">Popular First</option>
+        </select>
+      </label>
+
+      <button type="button" id="home-filters-btn" class="yono-pill-control yono-filters-btn" aria-expanded="false" aria-controls="home-filters-drawer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="4" y1="12" x2="4" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/><line x1="4" y1="18" x2="8" y2="18"/><circle cx="6" cy="6" r="2" fill="#15803d"/><circle cx="15" cy="12" r="2" fill="#15803d"/><circle cx="10" cy="18" r="2" fill="#15803d"/></svg>
+        <span>Filters</span>
+        <span id="home-filter-badge" class="yono-filter-badge" style="display:none;">0</span>
+      </button>
+
+      <div class="yono-view-toggle" role="group" aria-label="View mode">
+        <button type="button" class="yono-view-btn" data-view="list" title="List view" aria-label="List view" aria-pressed="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="5" height="6" rx="1"/><line x1="11" y1="5" x2="21" y2="5"/><line x1="11" y1="9" x2="18" y2="9"/><rect x="3" y="14" width="5" height="6" rx="1"/><line x1="11" y1="15" x2="21" y2="15"/><line x1="11" y1="19" x2="18" y2="19"/></svg>
+        </button>
+        <button type="button" class="yono-view-btn active" data-view="grid" title="Grid view" aria-label="Grid view" aria-pressed="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <span id="home-games-counter" class="yono-toolbar-count">Showing 92 of 92 games</span>
+      <button type="button" id="home-reset-btn" class="yono-pill-control" style="height:30px; padding:0 10px; font-size:11px; display:none;">Reset</button>
+    </div>
+  </div>
+
+  <div id="home-filters-drawer" class="yono-filters-drawer hidden">
+    <div class="yono-drawer-row">
+      <button type="button" class="filter-pill active" data-home-cat="all">All</button>
+      <button type="button" class="filter-pill" data-home-cat="new">🆕 New</button>
+      <button type="button" class="filter-pill" data-home-cat="popular">🔥 Popular</button>
+      <button type="button" class="filter-pill" data-home-cat="rummy">🃏 Rummy</button>
+      <button type="button" class="filter-pill" data-home-cat="slots">🎰 Slots</button>
+      <button type="button" class="filter-pill" data-home-cat="spin">🎡 Spin</button>
+      <button type="button" class="filter-pill" data-home-cat="arcade">🕹️ Arcade</button>
+      <input type="text" id="home-filter-search" class="yono-drawer-search" placeholder="Filter by game name...">
+      <button type="button" id="home-drawer-reset" class="yono-pill-control" style="height:36px;">Reset All</button>
+    </div>
+  </div>
+
+  <div id="home-az-bar" class="az-filter-bar" aria-label="Filter games A to Z"></div>
+</div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6" id="games-grid">
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
@@ -324,7 +379,7 @@
 <img alt="DiwaLucky" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-lucky.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaLucky</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Invite Friends & Earn ₹50 + VIP Rewards</p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Invite Friends &amp; Earn ₹50 + VIP Rewards</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-lucky/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://share1diwaluck.cyou?pid=353730018&amp;channel=2010002&amp;pkg=com.diwalucky2.app" rel="nofollow" target="_blank">Download</a>
@@ -448,6 +503,78 @@
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-slot/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://sharediwaslot.xyz?pid=363998113&amp;channel=2010002&amp;pkg=com.diwaslotwhl.app" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="Spin Gold" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/spin-gold.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Spin Gold</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹13 Joining Bonus + ₹99 7-Days Login + 100% Cashback</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin-gold/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://spingoldu.com/?code=TBTNL33TLNC&amp;t=1795584287" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="MQM Bet" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/mqm-bet.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">MQM Bet</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Deposit Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/mqm-bet/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://mqmshare1.vip?pid=496757839&amp;channel=2010001&amp;pkg=com.mqm.bet" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="Rummy 77" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-77.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy 77</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹7 Joining Bonus + ₹406 7-Days Login + 100% Cashback</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-77/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rummy77bonus.vip/?code=5FNMA7HLJ9F&amp;t=1795583916" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="123 Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/123-rummy.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">123 Rummy</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Welcome Bonus up to ₹199 FREE + 100% Extra Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/123-rummy/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.123rummy11.com/?code=HT9Y32PNM2B&amp;t=1795582464" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="Jaiho Play" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-play.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho Play</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">FREE Welcome Bonus up to ₹99 + 200% Deposit Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-play/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://2m5p7z6h.jaiholink.com/?code=EGP7HX953MS&amp;t=1795583984" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="Rummy Zip" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-zip.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Zip</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">FREE ₹10–₹80 Welcome Bonus + 30%–100% Extra Cashback</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-zip/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rummyzip9.com/?code=N9G644TN&amp;t=1795584364" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
@@ -612,10 +739,10 @@
 <img alt="Hindi 777" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/hindi777.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Hindi 777</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 First Order Discount + Friend Invite Cash</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/hindi-777/">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.hindi777agent5.com/?code=7LFVESBD2VS&amp;t=1787411840" rel="nofollow" target="_blank">Download</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.hindi777agent5.com/?code=7LFEQS17695&amp;t=1795584409" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
@@ -684,10 +811,10 @@
 <img alt="Jaiho Arcade" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-arcade.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho Arcade</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">500+ Games &amp; Welcome Rewards</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-arcade-new/">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.jaihoarcade33.com/?code=AZD1EG8MDFR&amp;t=1788291780" rel="nofollow" target="_blank">Download</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://jaihoreferral.com/?code=AZD1EG8MDFR&amp;t=1795583225" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
@@ -744,10 +871,10 @@
 <img alt="Joy Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/joy-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Joy Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Up to ₹300 Welcome Cash + 100% Deposit Boost</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/joy-rummy-new/">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.joyrummyapp.com/?code=J5K5TKLVJCB&amp;t=1788287675" rel="nofollow" target="_blank">Download</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.joyrummygold.com/?code=J5K5TKLVJCB&amp;t=1795583154" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
@@ -828,10 +955,10 @@
 <img alt="Rummy Ludo" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-ludo.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Ludo</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Up to ₹100 Welcome Bonus (No Deposit)</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-ludo-new/">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.rummyludo1.com/?code=UWP2DT81346&amp;t=1788284375" rel="nofollow" target="_blank">Download</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.rummyludo1.com/?code=UWP2DT81346&amp;t=1795582723" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
@@ -960,10 +1087,10 @@
 <img alt="TOP RUMMY" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/top-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">TOP RUMMY</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹8 Joining Bonus + ₹80 7-Days Login + 100% Cashback</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/top-rummy/">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://toprummyapp.top/?code=7K9XWEJTGD4&amp;t=1787409258" rel="nofollow" target="_blank">Download</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://spinrummy.cx/?code=7K92BVBTMSA&amp;t=1795582538" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
@@ -1019,7 +1146,7 @@
 
 <img alt="Yono Games" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-games-referral.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">YonoLootZone</h4>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Games</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-games-referral-new/">Details</a>
@@ -1248,10 +1375,10 @@
 <img alt="888 Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/888-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">888 Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹8 Joining Bonus + ₹312 7-Days Login + 100% Cashback</p>
 <div class="w-full mt-auto space-y-1.5">
 <a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/888-rummy/">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rummy888vip44.com/?code=7WTPFSAW23K&amp;t=1795584457" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
@@ -1302,6 +1429,10 @@
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
+</div>
+<div id="home-no-results" class="text-center py-10 hidden">
+  <p class="text-gray-500 font-semibold mb-3">No games match the selected letter or filter.</p>
+  <button type="button" id="home-empty-reset" class="btn-yono-primary" style="padding:8px 18px; font-size:13px;">Show All Games</button>
 </div>
 </div>
 </section>
@@ -1627,8 +1758,161 @@ if(sb && sd) sb.addEventListener('click', function(){ sd.classList.toggle('hidde
   </nav>
 
   <script>
-    window.gamesData = [{"name": "Rush Gala", "slug": "rush-gala", "category": "New Game", "image": "assets/rush-gala.webp", "url": "https://rushgala.club/?code=E74DL8BGYPP&t=1795580118", "bonus": "₹9-₹89 Free (No Deposit) + 150% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaBonus", "slug": "diwa-bonus", "category": "New Game", "image": "assets/diwa-bonus.webp", "url": "https://diwabonusshare.bet?pid=272735844&channel=2010002&pkg=com.diwabonus002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaWow", "slug": "diwa-wow", "category": "New Game", "image": "assets/diwa-wow.webp", "url": "https://diwawowshare.org?pid=451930879&channel=2010001&pkg=com.diwawow.app", "bonus": "Up to ₹388 Cash + 1040% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaPlay", "slug": "diwa-play", "category": "New Game", "image": "assets/diwa-play.webp", "url": "https://diwaplayshare.co?pid=466706687&channel=2010002&pkg=com.diwaplaywhl.app", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaLucky", "slug": "diwa-lucky", "category": "New Game", "image": "assets/diwa-lucky.webp", "url": "https://share1diwaluck.cyou?pid=353730018&channel=2010002&pkg=com.diwalucky2.app", "bonus": "Invite Friends & Earn ₹50 + VIP Rewards", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaX", "slug": "diwa-x", "category": "New Game", "image": "assets/diwa-x.webp", "url": "https://diwaxshare.io?pid=493260172&channel=2010002&pkg=com.diwax002.app", "bonus": "Up to ₹288 Cash + 750% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaKing", "slug": "diwa-king", "category": "New Game", "image": "assets/diwa-king.webp", "url": "https://diwakingshare.bet?pid=344264244&channel=2010002&pkg=com.diwaking0002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaSpin", "slug": "diwa-spin", "category": "New Game", "image": "assets/diwa-spin.webp", "url": "https://diwaspinshare.bet?pid=467079832&channel=2010002&pkg=com.diwaspin0002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaRummy", "slug": "diwa-rummy", "category": "New Game", "image": "assets/diwa-rummy.webp", "url": "https://diwarummyshare.bet?pid=445630377&channel=2050001&pkg=com.diwarummy.h5", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaVIP", "slug": "diwa-vip", "category": "New Game", "image": "assets/diwa-vip.webp", "url": "https://diwavipshare.bet?pid=372006642&channel=2050001&pkg=com.diwavip.h5", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaWin", "slug": "diwa-win", "category": "New Game", "image": "assets/diwa-win.webp", "url": "https://diwawinshare.io?pid=433046975&channel=2050001&pkg=com.diwawin.h5", "bonus": "Up to ₹109 Cash + 575% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Dhan Game", "slug": "dhan-game-new", "category": "Popular", "image": "assets/dhan-game.webp", "url": "https://dhangamestrategy.com/?code=47TLBS9NPUA&t=1795581646", "bonus": "Welcome Bonus up to ₹777 FREE + 886% Login Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "DiwaTop", "slug": "diwatop-new", "category": "New Game", "image": "assets/diwatop.webp", "url": "https://diwatopshare.bet?pid=457245758&channel=2010002&pkg=com.diwatopwhl.app", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaAce", "slug": "diwa-ace", "category": "New Game", "image": "assets/diwa-ace.webp", "url": "https://diwaaceshare.games?pid=269709231&channel=2010003&pkg=com.diwaace003.app", "bonus": "Up to ₹388 Cash + 750% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaSlot", "slug": "diwa-slot", "category": "New Game", "image": "assets/diwa-slot.webp", "url": "https://sharediwaslot.xyz?pid=363998113&channel=2010002&pkg=com.diwaslotwhl.app", "bonus": "₹108 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Spin Gold", "slug": "spin-gold", "category": "Slots", "image": "assets/spin-gold.webp", "url": "https://spingoldu.com/?code=TBTNL33TLNC&t=1795584287", "bonus": "₹13 Joining Bonus + ₹99 7-Days Login + 100% Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "MQM Bet", "slug": "mqm-bet", "category": "New Game", "image": "assets/mqm-bet.webp", "url": "https://mqmshare1.vip?pid=496757839&channel=2010001&pkg=com.mqm.bet", "bonus": "₹109 Random Cash + Up to 450% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Rummy 77", "slug": "rummy-77", "category": "Rummy", "image": "assets/rummy-77.webp", "url": "https://rummy77bonus.vip/?code=5FNMA7HLJ9F&t=1795583916", "bonus": "₹7 Joining Bonus + ₹406 7-Days Login + 100% Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "123 Rummy", "slug": "123-rummy", "category": "Rummy", "image": "assets/123-rummy.webp", "url": "https://www.123rummy11.com/?code=HT9Y32PNM2B&t=1795582464", "bonus": "Welcome Bonus up to ₹199 FREE + 100% Extra Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Jaiho Play", "slug": "jaiho-play", "category": "New Game", "image": "assets/jaiho-play.webp", "url": "https://2m5p7z6h.jaiholink.com/?code=EGP7HX953MS&t=1795583984", "bonus": "FREE Welcome Bonus up to ₹99 + 200% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Rummy Zip", "slug": "rummy-zip", "category": "Rummy", "image": "assets/rummy-zip.webp", "url": "https://rummyzip9.com/?code=N9G644TN&t=1795584364", "bonus": "FREE ₹10–₹80 Welcome Bonus + 30%–100% Extra Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Jeet Spin", "slug": "jeet-spin", "category": "All Games", "image": "assets/jeet-spin.webp", "url": "https://www.jeetspin18.com/?code=SYHHW8FA9ZP&t=1795580252", "bonus": "₹5-₹55 Cash Reward + 100% Deposit Rebate", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Money Rummy", "slug": "money-rummy", "category": "New Game", "image": "assets/money-rummy.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": ""}, {"name": "101 Z", "slug": "101z-new", "category": "Games", "image": "assets/101z.webp", "url": "https://101zvip0.com/?code=398GYBNEZK6&t=1788855511", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "567 Slots", "slug": "567-slots-new", "category": "Slots", "image": "assets/567-slots.webp", "url": "https://join567slots.cc/?code=4NY6BK7F3FC&t=1788292545", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "777 Game", "slug": "777-game-new", "category": "Popular", "image": "assets/777-game.webp", "url": "https://www.rumblerummy555.com/?code=UC0LVMPVRDK&t=1788857613", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "789 Jackpots", "slug": "789-jackpots-new", "category": "Popular", "image": "assets/789-jackpots.webp", "url": "https://join789jackpots.com/?code=J7ZAL7EQVVK&t=1788292167", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "ABC Rummy", "slug": "abc-rummy-new", "category": "Rummy", "image": "assets/abc-rummy.webp", "url": "https://www.abcrummy66.com/?code=75CAK3KXPFS&t=1788291651", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Bingo101", "slug": "bingo101-new", "category": "Popular", "image": "assets/bingo101.webp", "url": "https://bin1go101.com/?code=6YFGNDWY3QV&t=1788292100", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Boss Rummy", "slug": "boss-rummy-new", "category": "Popular", "image": "assets/boss-rummy.webp", "url": "https://www.bossrummyii.com/?code=9HFUGQNRBJ9&t=1788284863", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Club INR", "slug": "club-inr-new", "category": "Popular", "image": "assets/club-inr.webp", "url": "https://clubinrsvip.cc/?code=9VCJZTNLM2B&t=1788285734", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Gogo Rummy", "slug": "gogo-rummy-new", "category": "Rummy", "image": "assets/gogo-rummy.webp", "url": "https://www.gogorummy4.com/?code=8FWG6ZK6Z4N&t=1788289256", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Gold Rummy", "slug": "gold-rummy-new", "category": "Popular", "image": "assets/gold-rummy.webp", "url": "https://goldrummy26.com/?code=JLXB2B6QMTF&t=1788284654", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Hi Rummy", "slug": "hi-rummy-new", "category": "Popular", "image": "assets/hi-rummy.webp", "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Hindi 777", "slug": "hindi-777", "category": "Popular", "image": "assets/hindi777.webp", "url": "https://www.hindi777agent5.com/?code=7LFEQS17695&t=1795584409", "bonus": "₹100 First Order Discount + Friend Invite Cash", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "IND Club", "slug": "ind-club-new", "category": "Popular", "image": "assets/ind-club.webp", "url": "https://indclub99.com/?code=34UHNV9TDEU&t=1788291140", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "IND Slots", "slug": "ind-slots-new", "category": "Slots", "image": "assets/ind-slots.webp", "url": "https://www.indslotsbonus.com/?code=EYMA9ENAX8S&t=1788292245", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "INR Rummy", "slug": "inr-rummy-new", "category": "Popular", "image": "assets/inr-rummy.webp", "url": "https://inrrummy.sbs/?code=JMQ15MWNGGM&t=1788290102", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho 777", "slug": "jaiho-777", "category": "Popular", "image": "assets/jaiho-777.webp", "url": "https://jaiho77790.com/?code=GC2815EEHMJ&t=1787409362", "bonus": "₹100 + Spins", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho 91", "slug": "jaiho-91", "category": "Popular", "image": "assets/jaiho-91.webp", "url": "https://91jaihowin.vip/?code=C42V7RHU9S6&t=1788288979", "bonus": "₹91 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Arcade", "slug": "jaiho-arcade-new", "category": "Popular", "image": "assets/jaiho-arcade.webp", "url": "https://jaihoreferral.com/?code=AZD1EG8MDFR&t=1795583225", "bonus": "500+ Games & Welcome Rewards", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Rummy", "slug": "jaiho-rummy-new", "category": "Popular", "image": "assets/jaiho-rummy.webp", "url": "https://jaihorummy.co/?code=E74UXLLHKBC&t=1788289594", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Slots", "slug": "jaiho-slots", "category": "Popular", "image": "assets/jaiho-slots.webp", "url": "https://www.jaihoslots18.com/?code=EGPK99W7JZM&t=1788287628", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Spin", "slug": "jaiho-spin-new", "category": "Spin", "image": "assets/jaiho-spin.webp", "url": "https://3jaihospinwin.com/?code=DX1NAT15&t=1788292833", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Win", "slug": "jaiho-win-new", "category": "Popular", "image": "assets/jaiho-win.webp", "url": "https://www.jaihowin1.com/?code=1XN2NLPP47Z&t=1788291043", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Joy Rummy", "slug": "joy-rummy-new", "category": "Popular", "image": "assets/joy-rummy.webp", "url": "https://www.joyrummygold.com/?code=J5K5TKLVJCB&t=1795583154", "bonus": "Up to ₹300 Welcome Cash + 100% Deposit Boost", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Love Rummy", "slug": "love-rummy-new", "category": "Popular", "image": "assets/love-rummy.webp", "url": "https://www.loverummy88.com/?code=AFC98NSMHKT&t=1788290176", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Maha Games", "slug": "maha-games-new", "category": "Popular", "image": "assets/maha-games.webp", "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Max Rummy", "slug": "max-rummy-new", "category": "Popular", "image": "assets/max-rummy.webp", "url": "https://www.maxrummy111.com/?code=QUMU89TBHLK&t=1788287554", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "MBM Bet", "slug": "mbm-bet-new", "category": "Games", "image": "assets/mbm-bet.webp", "url": "https://www.mbmbet8.com/?code=GD3MUF42S36&t=1788289338", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Neta VIP", "slug": "neta-vip-new", "category": "Popular", "image": "assets/neta-vip.webp", "url": "https://neta6.vip/?code=DR044ADMAH5&t=1788291712", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "OK Rummy", "slug": "ok-rummy", "category": "Popular", "image": "assets/ok-rummy.webp", "url": "https://www.okrummy22.com/?code=27BWJTCZGZK&t=1788271676", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Ludo", "slug": "rummy-ludo-new", "category": "Popular", "image": "assets/rummy-ludo.webp", "url": "https://www.rummyludo1.com/?code=UWP2DT81346&t=1795582723", "bonus": "Up to ₹100 Welcome Bonus (No Deposit)", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy 91", "slug": "rummy91-new", "category": "Popular", "image": "assets/rummy91.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "₹91 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Joys", "slug": "rummyjoys", "category": "Popular", "image": "assets/rummyjoys.webp", "url": "https://rummyjoys.com/?code=FM19ST42FT6&t=1788283951", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Saga Slots", "slug": "saga-slots-new", "category": "Popular", "image": "assets/saga-slots.webp", "url": "https://www.sagaslots77.com/?code=0QHTNT7RQKY&t=1788284518", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Share Slots", "slug": "share-slots-new", "category": "Popular", "image": "assets/share-slots.webp", "url": "https://share0066.com/?code=YAZKFEL4U3A&t=1788291449", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Slots Spin", "slug": "slots-spin-new", "category": "Slots", "image": "assets/slots-spin.webp", "url": "https://www.slotsspinf.com/?code=XJBMGNKLW9D&t=1788291848", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Slots Winner", "slug": "slots-winner-new", "category": "Slots", "image": "assets/slots-winner.webp", "url": "https://slotswinneragent.in/?code=K4EDD88GT63&t=1788293159", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Spin Crush", "slug": "spin-crush", "category": "Popular", "image": "assets/spin-crush.webp", "url": "https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEK5VL6FE8&t=1788270471", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Spin Winner", "slug": "spin-winner-new", "category": "Spin", "image": "assets/spin-winner.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Spin101", "slug": "spin101-new", "category": "Spin", "image": "assets/spin101.webp", "url": "https://spin101.win/?code=P4CXMZMPEZE&t=1788292661", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Spin 777", "slug": "spin777-new", "category": "Popular", "image": "assets/spin777.webp", "url": "https://spin777qq.com/?code=7V9UZ5TK729&t=1788285073", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "TOP RUMMY", "slug": "top-rummy", "category": "Popular", "image": "assets/top-rummy.webp", "url": "https://spinrummy.cx/?code=7K92BVBTMSA&t=1795582538", "bonus": "₹8 Joining Bonus + ₹80 7-Days Login + 100% Cashback", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Win Rummy", "slug": "win-rummy-new", "category": "Popular", "image": "assets/win-rummy.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "YN777", "slug": "yn777-new", "category": "Popular", "image": "assets/yn777.webp", "url": "https://www.y729.com/?code=4SWSZNCDFV6&t=1788289709", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono 777", "slug": "yono-777-new", "category": "Popular", "image": "assets/yono-777.webp", "url": "https://uonoagentnew.asia/?code=F9MG7NJYP7T&t=1788290273", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Arcade", "slug": "yono-arcade-new", "category": "Arcade", "image": "assets/yono-arcade-new.webp", "url": "https://yonoarcadeapk8.com/?code=F552DZMGGWB&t=1788292761", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono Games", "slug": "yono-games-referral-new", "category": "Popular", "image": "assets/yono-games-referral.webp", "url": "https://youonogamesreferral.com/?code=DG6KTC61&t=1788289931", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Rummy", "slug": "yono-rummy-new", "category": "Rummy", "image": "assets/yono-rummy.webp", "url": "https://yonorummy056.com/?code=VIPKCZFWJYX&t=1788292338", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono Slots", "slug": "yono-slots-new", "category": "Slots", "image": "assets/yono-slots.webp", "url": "https://www.yonoslotsc.com/?code=PJBJQ6G83VH&t=1788292980", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono VIP", "slug": "yono-vip-new", "category": "Games", "image": "assets/yono-vip.webp", "url": "https://yonoviponline.vip/?code=3CR3QMH3UZS&t=1788289496", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono 21", "slug": "yono-21", "category": "Popular", "image": "assets/yono-21.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Holy Rummy", "slug": "holy-rummy", "category": "Rummy", "image": "assets/holy-rummy.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Modern", "slug": "rummy-modern", "category": "Rummy", "image": "assets/rummy-modern.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Nabob", "slug": "rummy-nabob", "category": "Rummy", "image": "assets/rummy-nabob.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Wealth", "slug": "rummy-wealth", "category": "Rummy", "image": "assets/rummy-wealth.webp", "url": "https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Royal Rummy", "slug": "royal-rummy", "category": "Rummy", "image": "assets/royal-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Teen Patti Gold Yono", "slug": "teen-patti-gold", "category": "Popular", "image": "assets/teen-patti-gold.webp", "url": "https://www.y729.com/?code=4SWSZNCDFV6&t=1788289709", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Teen Patti Master Yono", "slug": "teen-patti-master", "category": "Popular", "image": "assets/teen-patti-master.webp", "url": "https://youonogamesreferral.com/?code=DG6KTC61&t=1788289931", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Teen Patti", "slug": "yono-teen-patti", "category": "Popular", "image": "assets/yono-teen-patti.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono MBM", "slug": "yono-mbm", "category": "Popular", "image": "assets/yono-mbm.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Slots 777", "slug": "yono-slots-777", "category": "Slots", "image": "assets/yono-slots-777.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Most", "slug": "rummy-most", "category": "Rummy", "image": "assets/rummy-most.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Gold Star", "slug": "rummy-gold-star", "category": "Rummy", "image": "assets/rummy-gold-star.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "666 Rummy", "slug": "666-rummy", "category": "Rummy", "image": "assets/666-rummy.webp", "url": "https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "777 Rummy", "slug": "777-rummy", "category": "Rummy", "image": "assets/777-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "888 Rummy", "slug": "888-rummy", "category": "Rummy", "image": "assets/888-rummy.webp", "url": "https://rummy888vip44.com/?code=7WTPFSAW23K&t=1795584457", "bonus": "₹8 Joining Bonus + ₹312 7-Days Login + 100% Cashback", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "999 Rummy", "slug": "999-rummy", "category": "Rummy", "image": "assets/999-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Rummy 51", "slug": "yono-rummy-51", "category": "Rummy", "image": "assets/yono-rummy-51.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Super", "slug": "yono-super", "category": "Spin", "image": "assets/yono-super.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Winner", "slug": "yono-winner", "category": "Spin", "image": "assets/yono-winner.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}];
+    window.gamesData = [{"name": "Rush Gala", "slug": "rush-gala", "category": "New Game", "image": "assets/rush-gala.webp", "url": "https://rushgala.club/?code=E74DL8BGYPP&t=1795580118", "bonus": "₹9-₹89 Free (No Deposit) + 150% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaBonus", "slug": "diwa-bonus", "category": "New Game", "image": "assets/diwa-bonus.webp", "url": "https://diwabonusshare.bet?pid=272735844&channel=2010002&pkg=com.diwabonus002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaWow", "slug": "diwa-wow", "category": "New Game", "image": "assets/diwa-wow.webp", "url": "https://diwawowshare.org?pid=451930879&channel=2010001&pkg=com.diwawow.app", "bonus": "Up to ₹388 Cash + 1040% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaPlay", "slug": "diwa-play", "category": "New Game", "image": "assets/diwa-play.webp", "url": "https://diwaplayshare.co?pid=466706687&channel=2010002&pkg=com.diwaplaywhl.app", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaLucky", "slug": "diwa-lucky", "category": "New Game", "image": "assets/diwa-lucky.webp", "url": "https://share1diwaluck.cyou?pid=353730018&channel=2010002&pkg=com.diwalucky2.app", "bonus": "Invite Friends & Earn ₹50 + VIP Rewards", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaX", "slug": "diwa-x", "category": "New Game", "image": "assets/diwa-x.webp", "url": "https://diwaxshare.io?pid=493260172&channel=2010002&pkg=com.diwax002.app", "bonus": "Up to ₹288 Cash + 750% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaKing", "slug": "diwa-king", "category": "New Game", "image": "assets/diwa-king.webp", "url": "https://diwakingshare.bet?pid=344264244&channel=2010002&pkg=com.diwaking0002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaSpin", "slug": "diwa-spin", "category": "New Game", "image": "assets/diwa-spin.webp", "url": "https://diwaspinshare.bet?pid=467079832&channel=2010002&pkg=com.diwaspin0002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaRummy", "slug": "diwa-rummy", "category": "New Game", "image": "assets/diwa-rummy.webp", "url": "https://diwarummyshare.bet?pid=445630377&channel=2050001&pkg=com.diwarummy.h5", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaVIP", "slug": "diwa-vip", "category": "New Game", "image": "assets/diwa-vip.webp", "url": "https://diwavipshare.bet?pid=372006642&channel=2050001&pkg=com.diwavip.h5", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaWin", "slug": "diwa-win", "category": "New Game", "image": "assets/diwa-win.webp", "url": "https://diwawinshare.io?pid=433046975&channel=2050001&pkg=com.diwawin.h5", "bonus": "Up to ₹109 Cash + 575% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Dhan Game", "slug": "dhan-game-new", "category": "Popular", "image": "assets/dhan-game.webp", "url": "https://dhangamestrategy.com/?code=47TLBS9NPUA&t=1795581646", "bonus": "Welcome Bonus up to ₹777 FREE + 886% Login Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "DiwaTop", "slug": "diwatop-new", "category": "New Game", "image": "assets/diwatop.webp", "url": "https://diwatopshare.bet?pid=457245758&channel=2010002&pkg=com.diwatopwhl.app", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaAce", "slug": "diwa-ace", "category": "New Game", "image": "assets/diwa-ace.webp", "url": "https://diwaaceshare.games?pid=269709231&channel=2010003&pkg=com.diwaace003.app", "bonus": "Up to ₹388 Cash + 750% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaSlot", "slug": "diwa-slot", "category": "New Game", "image": "assets/diwa-slot.webp", "url": "https://sharediwaslot.xyz?pid=363998113&channel=2010002&pkg=com.diwaslotwhl.app", "bonus": "₹108 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Spin Gold", "slug": "spin-gold", "category": "Slots", "image": "assets/spin-gold.webp", "url": "https://spingoldu.com/?code=TBTNL33TLNC&t=1795584287", "bonus": "₹13 Joining Bonus + ₹99 7-Days Login + 100% Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "MQM Bet", "slug": "mqm-bet", "category": "New Game", "image": "assets/mqm-bet.webp", "url": "https://mqmshare1.vip?pid=496757839&channel=2010001&pkg=com.mqm.bet", "bonus": "₹109 Random Cash + Up to 450% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Rummy 77", "slug": "rummy-77", "category": "Rummy", "image": "assets/rummy-77.webp", "url": "https://rummy77bonus.vip/?code=5FNMA7HLJ9F&t=1795583916", "bonus": "₹7 Joining Bonus + ₹406 7-Days Login + 100% Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "123 Rummy", "slug": "123-rummy", "category": "Rummy", "image": "assets/123-rummy.webp", "url": "https://www.123rummy11.com/?code=HT9Y32PNM2B&t=1795582464", "bonus": "Welcome Bonus up to ₹199 FREE + 100% Extra Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Jaiho Play", "slug": "jaiho-play", "category": "New Game", "image": "assets/jaiho-play.webp", "url": "https://2m5p7z6h.jaiholink.com/?code=EGP7HX953MS&t=1795583984", "bonus": "FREE Welcome Bonus up to ₹99 + 200% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Rummy Zip", "slug": "rummy-zip", "category": "Rummy", "image": "assets/rummy-zip.webp", "url": "https://rummyzip9.com/?code=N9G644TN&t=1795584364", "bonus": "FREE ₹10–₹80 Welcome Bonus + 30%–100% Extra Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Jeet Spin", "slug": "jeet-spin", "category": "All Games", "image": "assets/jeet-spin.webp", "url": "https://www.jeetspin18.com/?code=SYHHW8FA9ZP&t=1795580252", "bonus": "₹5-₹55 Cash Reward + 100% Deposit Rebate", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "Money Rummy", "slug": "money-rummy", "category": "New Game", "image": "assets/money-rummy.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-10-15"}, {"name": "101 Z", "slug": "101z-new", "category": "Games", "image": "assets/101z.webp", "url": "https://101zvip0.com/?code=398GYBNEZK6&t=1788855511", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "567 Slots", "slug": "567-slots-new", "category": "Slots", "image": "assets/567-slots.webp", "url": "https://join567slots.cc/?code=4NY6BK7F3FC&t=1788292545", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "777 Game", "slug": "777-game-new", "category": "Popular", "image": "assets/777-game.webp", "url": "https://www.rumblerummy555.com/?code=UC0LVMPVRDK&t=1788857613", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "789 Jackpots", "slug": "789-jackpots-new", "category": "Popular", "image": "assets/789-jackpots.webp", "url": "https://join789jackpots.com/?code=J7ZAL7EQVVK&t=1788292167", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "ABC Rummy", "slug": "abc-rummy-new", "category": "Rummy", "image": "assets/abc-rummy.webp", "url": "https://www.abcrummy66.com/?code=75CAK3KXPFS&t=1788291651", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Bingo101", "slug": "bingo101-new", "category": "Popular", "image": "assets/bingo101.webp", "url": "https://bin1go101.com/?code=6YFGNDWY3QV&t=1788292100", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Boss Rummy", "slug": "boss-rummy-new", "category": "Popular", "image": "assets/boss-rummy.webp", "url": "https://www.bossrummyii.com/?code=9HFUGQNRBJ9&t=1788284863", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Club INR", "slug": "club-inr-new", "category": "Popular", "image": "assets/club-inr.webp", "url": "https://clubinrsvip.cc/?code=9VCJZTNLM2B&t=1788285734", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Gogo Rummy", "slug": "gogo-rummy-new", "category": "Rummy", "image": "assets/gogo-rummy.webp", "url": "https://www.gogorummy4.com/?code=8FWG6ZK6Z4N&t=1788289256", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Gold Rummy", "slug": "gold-rummy-new", "category": "Popular", "image": "assets/gold-rummy.webp", "url": "https://goldrummy26.com/?code=JLXB2B6QMTF&t=1788284654", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Hi Rummy", "slug": "hi-rummy-new", "category": "Popular", "image": "assets/hi-rummy.webp", "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Hindi 777", "slug": "hindi-777", "category": "Popular", "image": "assets/hindi777.webp", "url": "https://www.hindi777agent5.com/?code=7LFEQS17695&t=1795584409", "bonus": "₹100 First Order Discount + Friend Invite Cash", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "IND Club", "slug": "ind-club-new", "category": "Popular", "image": "assets/ind-club.webp", "url": "https://indclub99.com/?code=34UHNV9TDEU&t=1788291140", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "IND Slots", "slug": "ind-slots-new", "category": "Slots", "image": "assets/ind-slots.webp", "url": "https://www.indslotsbonus.com/?code=EYMA9ENAX8S&t=1788292245", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "INR Rummy", "slug": "inr-rummy-new", "category": "Popular", "image": "assets/inr-rummy.webp", "url": "https://inrrummy.sbs/?code=JMQ15MWNGGM&t=1788290102", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Jaiho 777", "slug": "jaiho-777", "category": "Popular", "image": "assets/jaiho-777.webp", "url": "https://jaiho77790.com/?code=GC2815EEHMJ&t=1787409362", "bonus": "₹100 + Spins", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Jaiho 91", "slug": "jaiho-91", "category": "Popular", "image": "assets/jaiho-91.webp", "url": "https://91jaihowin.vip/?code=C42V7RHU9S6&t=1788288979", "bonus": "₹91 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "Jaiho Arcade", "slug": "jaiho-arcade-new", "category": "Popular", "image": "assets/jaiho-arcade.webp", "url": "https://jaihoreferral.com/?code=AZD1EG8MDFR&t=1795583225", "bonus": "500+ Games & Welcome Rewards", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "Jaiho Rummy", "slug": "jaiho-rummy-new", "category": "Popular", "image": "assets/jaiho-rummy.webp", "url": "https://jaihorummy.co/?code=E74UXLLHKBC&t=1788289594", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Jaiho Slots", "slug": "jaiho-slots", "category": "Popular", "image": "assets/jaiho-slots.webp", "url": "https://www.jaihoslots18.com/?code=EGPK99W7JZM&t=1788287628", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Jaiho Spin", "slug": "jaiho-spin-new", "category": "Spin", "image": "assets/jaiho-spin.webp", "url": "https://3jaihospinwin.com/?code=DX1NAT15&t=1788292833", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Jaiho Win", "slug": "jaiho-win-new", "category": "Popular", "image": "assets/jaiho-win.webp", "url": "https://www.jaihowin1.com/?code=1XN2NLPP47Z&t=1788291043", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Joy Rummy", "slug": "joy-rummy-new", "category": "Popular", "image": "assets/joy-rummy.webp", "url": "https://www.joyrummygold.com/?code=J5K5TKLVJCB&t=1795583154", "bonus": "Up to ₹300 Welcome Cash + 100% Deposit Boost", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "Love Rummy", "slug": "love-rummy-new", "category": "Popular", "image": "assets/love-rummy.webp", "url": "https://www.loverummy88.com/?code=AFC98NSMHKT&t=1788290176", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Maha Games", "slug": "maha-games-new", "category": "Popular", "image": "assets/maha-games.webp", "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Max Rummy", "slug": "max-rummy-new", "category": "Popular", "image": "assets/max-rummy.webp", "url": "https://www.maxrummy111.com/?code=QUMU89TBHLK&t=1788287554", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "MBM Bet", "slug": "mbm-bet-new", "category": "Games", "image": "assets/mbm-bet.webp", "url": "https://www.mbmbet8.com/?code=GD3MUF42S36&t=1788289338", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Neta VIP", "slug": "neta-vip-new", "category": "Popular", "image": "assets/neta-vip.webp", "url": "https://neta6.vip/?code=DR044ADMAH5&t=1788291712", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "OK Rummy", "slug": "ok-rummy", "category": "Popular", "image": "assets/ok-rummy.webp", "url": "https://www.okrummy22.com/?code=27BWJTCZGZK&t=1788271676", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Rummy Ludo", "slug": "rummy-ludo-new", "category": "Popular", "image": "assets/rummy-ludo.webp", "url": "https://www.rummyludo1.com/?code=UWP2DT81346&t=1795582723", "bonus": "Up to ₹100 Welcome Bonus (No Deposit)", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "Rummy 91", "slug": "rummy91-new", "category": "Popular", "image": "assets/rummy91.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "₹91 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Rummy Joys", "slug": "rummyjoys", "category": "Popular", "image": "assets/rummyjoys.webp", "url": "https://rummyjoys.com/?code=FM19ST42FT6&t=1788283951", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Saga Slots", "slug": "saga-slots-new", "category": "Popular", "image": "assets/saga-slots.webp", "url": "https://www.sagaslots77.com/?code=0QHTNT7RQKY&t=1788284518", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Share Slots", "slug": "share-slots-new", "category": "Popular", "image": "assets/share-slots.webp", "url": "https://share0066.com/?code=YAZKFEL4U3A&t=1788291449", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Slots Spin", "slug": "slots-spin-new", "category": "Slots", "image": "assets/slots-spin.webp", "url": "https://www.slotsspinf.com/?code=XJBMGNKLW9D&t=1788291848", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Slots Winner", "slug": "slots-winner-new", "category": "Slots", "image": "assets/slots-winner.webp", "url": "https://slotswinneragent.in/?code=K4EDD88GT63&t=1788293159", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Spin Crush", "slug": "spin-crush", "category": "Popular", "image": "assets/spin-crush.webp", "url": "https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEK5VL6FE8&t=1788270471", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Spin Winner", "slug": "spin-winner-new", "category": "Spin", "image": "assets/spin-winner.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Spin101", "slug": "spin101-new", "category": "Spin", "image": "assets/spin101.webp", "url": "https://spin101.win/?code=P4CXMZMPEZE&t=1788292661", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Spin 777", "slug": "spin777-new", "category": "Popular", "image": "assets/spin777.webp", "url": "https://spin777qq.com/?code=7V9UZ5TK729&t=1788285073", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "TOP RUMMY", "slug": "top-rummy", "category": "Popular", "image": "assets/top-rummy.webp", "url": "https://spinrummy.cx/?code=7K92BVBTMSA&t=1795582538", "bonus": "₹8 Joining Bonus + ₹80 7-Days Login + 100% Cashback", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "Win Rummy", "slug": "win-rummy-new", "category": "Popular", "image": "assets/win-rummy.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "YN777", "slug": "yn777-new", "category": "Popular", "image": "assets/yn777.webp", "url": "https://www.y729.com/?code=4SWSZNCDFV6&t=1788289709", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono 777", "slug": "yono-777-new", "category": "Popular", "image": "assets/yono-777.webp", "url": "https://uonoagentnew.asia/?code=F9MG7NJYP7T&t=1788290273", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Arcade", "slug": "yono-arcade-new", "category": "Arcade", "image": "assets/yono-arcade-new.webp", "url": "https://yonoarcadeapk8.com/?code=F552DZMGGWB&t=1788292761", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Games", "slug": "yono-games-referral-new", "category": "Popular", "image": "assets/yono-games-referral.webp", "url": "https://youonogamesreferral.com/?code=DG6KTC61&t=1788289931", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Rummy", "slug": "yono-rummy-new", "category": "Rummy", "image": "assets/yono-rummy.webp", "url": "https://yonorummy056.com/?code=VIPKCZFWJYX&t=1788292338", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Slots", "slug": "yono-slots-new", "category": "Slots", "image": "assets/yono-slots.webp", "url": "https://www.yonoslotsc.com/?code=PJBJQ6G83VH&t=1788292980", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono VIP", "slug": "yono-vip-new", "category": "Games", "image": "assets/yono-vip.webp", "url": "https://yonoviponline.vip/?code=3CR3QMH3UZS&t=1788289496", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono 21", "slug": "yono-21", "category": "Popular", "image": "assets/yono-21.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Holy Rummy", "slug": "holy-rummy", "category": "Rummy", "image": "assets/holy-rummy.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Rummy Modern", "slug": "rummy-modern", "category": "Rummy", "image": "assets/rummy-modern.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Rummy Nabob", "slug": "rummy-nabob", "category": "Rummy", "image": "assets/rummy-nabob.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Rummy Wealth", "slug": "rummy-wealth", "category": "Rummy", "image": "assets/rummy-wealth.webp", "url": "https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Royal Rummy", "slug": "royal-rummy", "category": "Rummy", "image": "assets/royal-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Teen Patti Gold Yono", "slug": "teen-patti-gold", "category": "Popular", "image": "assets/teen-patti-gold.webp", "url": "https://www.y729.com/?code=4SWSZNCDFV6&t=1788289709", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Teen Patti Master Yono", "slug": "teen-patti-master", "category": "Popular", "image": "assets/teen-patti-master.webp", "url": "https://youonogamesreferral.com/?code=DG6KTC61&t=1788289931", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Teen Patti", "slug": "yono-teen-patti", "category": "Popular", "image": "assets/yono-teen-patti.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono MBM", "slug": "yono-mbm", "category": "Popular", "image": "assets/yono-mbm.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Slots 777", "slug": "yono-slots-777", "category": "Slots", "image": "assets/yono-slots-777.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Rummy Most", "slug": "rummy-most", "category": "Rummy", "image": "assets/rummy-most.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Rummy Gold Star", "slug": "rummy-gold-star", "category": "Rummy", "image": "assets/rummy-gold-star.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "666 Rummy", "slug": "666-rummy", "category": "Rummy", "image": "assets/666-rummy.webp", "url": "https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "777 Rummy", "slug": "777-rummy", "category": "Rummy", "image": "assets/777-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "888 Rummy", "slug": "888-rummy", "category": "Rummy", "image": "assets/888-rummy.webp", "url": "https://rummy888vip44.com/?code=7WTPFSAW23K&t=1795584457", "bonus": "₹8 Joining Bonus + ₹312 7-Days Login + 100% Cashback", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "999 Rummy", "slug": "999-rummy", "category": "Rummy", "image": "assets/999-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Rummy 51", "slug": "yono-rummy-51", "category": "Rummy", "image": "assets/yono-rummy-51.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Super", "slug": "yono-super", "category": "Spin", "image": "assets/yono-super.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}, {"name": "Yono Winner", "slug": "yono-winner", "category": "Spin", "image": "assets/yono-winner.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": "2026-10-15"}];
   </script>
   <script src="assets/yono-core.js"></script>
+  <script>
+    (function () {
+      const grid = document.getElementById('games-grid');
+      if (!grid) return;
+
+      const metaBySlug = {};
+      (window.gamesData || []).forEach(g => {
+        if (g && g.slug) metaBySlug[g.slug] = g;
+      });
+
+      const cards = Array.from(grid.querySelectorAll('.game-card'));
+      cards.forEach((card, idx) => {
+        const titleEl = card.querySelector('h4');
+        const linkEl = card.querySelector('a[href^="games/"]');
+        const href = linkEl ? linkEl.getAttribute('href') : '';
+        const slugMatch = href.match(/games\/([^/]+)/);
+        const slug = slugMatch ? slugMatch[1] : '';
+        const meta = metaBySlug[slug] || {};
+        const name = (titleEl ? titleEl.textContent : meta.name || '').trim();
+        const isNew = Boolean(meta.new_game || card.textContent.includes('NEW'));
+
+        card.dataset.origIdx = String(idx);
+        card.dataset.name = name.toLowerCase();
+        card.dataset.category = (meta.category || '').toLowerCase();
+        card.dataset.new = isNew ? '1' : '0';
+        card.dataset.popular = meta.popular ? '1' : '0';
+      });
+
+      let activeLetter = 'all';
+      let activeCat = 'all';
+      let activeQuery = '';
+      let activeSort = 'default';
+
+      const counterEl = document.getElementById('home-games-counter');
+      const resetBtn = document.getElementById('home-reset-btn');
+      const badgeEl = document.getElementById('home-filter-badge');
+      const emptyEl = document.getElementById('home-no-results');
+      const drawerEl = document.getElementById('home-filters-drawer');
+      const filtersBtn = document.getElementById('home-filters-btn');
+      const sortSelect = document.getElementById('home-sort-select');
+      const searchInput = document.getElementById('home-filter-search');
+
+      function applyHomeFilters() {
+        let visible = 0;
+        const q = activeQuery.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const name = card.dataset.name || '';
+          const cat = card.dataset.category || '';
+          const isNew = card.dataset.new === '1';
+          const isPop = card.dataset.popular === '1';
+
+          let catOk = true;
+          if (activeCat === 'new') catOk = isNew || cat.includes('new');
+          else if (activeCat === 'popular') catOk = isPop || cat.includes('popular');
+          else if (activeCat === 'rummy') catOk = cat.includes('rummy') || name.includes('rummy') || name.includes('teen patti');
+          else if (activeCat === 'slots') catOk = cat.includes('slot') || name.includes('slot') || name.includes('777');
+          else if (activeCat === 'spin') catOk = cat.includes('spin') || name.includes('spin');
+          else if (activeCat === 'arcade') catOk = cat.includes('arcade') || name.includes('arcade') || name.includes('101');
+
+          const letterOk = window.YonoApp ? YonoApp.matchesAz(name, activeLetter) : true;
+          const textOk = !q || name.includes(q) || cat.includes(q);
+
+          if (catOk && letterOk && textOk) {
+            card.style.display = '';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (counterEl) counterEl.textContent = `Showing ${visible} of ${cards.length} games`;
+        if (emptyEl) emptyEl.classList.toggle('hidden', visible > 0);
+
+        const activeCount = (activeLetter !== 'all' ? 1 : 0) + (activeCat !== 'all' ? 1 : 0) + (q ? 1 : 0);
+        if (badgeEl) {
+          badgeEl.textContent = activeCount;
+          badgeEl.style.display = activeCount > 0 ? 'inline-flex' : 'none';
+        }
+        if (resetBtn) {
+          resetBtn.style.display = (activeCount > 0 || activeSort !== 'default') ? 'inline-flex' : 'none';
+        }
+      }
+
+      function applyHomeSort() {
+        const sorted = [...cards].sort((a, b) => {
+          if (activeSort === 'az') return (a.dataset.name || '').localeCompare(b.dataset.name || '');
+          if (activeSort === 'za') return (b.dataset.name || '').localeCompare(a.dataset.name || '');
+          if (activeSort === 'newest') return Number(b.dataset.new) - Number(a.dataset.new) || Number(a.dataset.origIdx) - Number(b.dataset.origIdx);
+          if (activeSort === 'popular') return Number(b.dataset.popular) - Number(a.dataset.popular) || Number(a.dataset.origIdx) - Number(b.dataset.origIdx);
+          return Number(a.dataset.origIdx) - Number(b.dataset.origIdx);
+        });
+        sorted.forEach(c => grid.appendChild(c));
+      }
+
+      function resetHomeAll() {
+        activeLetter = 'all';
+        activeCat = 'all';
+        activeQuery = '';
+        activeSort = 'default';
+        if (sortSelect) sortSelect.value = 'default';
+        if (searchInput) searchInput.value = '';
+        document.querySelectorAll('[data-home-cat]').forEach(b => b.classList.toggle('active', b.dataset.homeCat === 'all'));
+        document.querySelectorAll('#home-az-bar .az-btn').forEach(b => b.classList.toggle('active', b.dataset.letter === 'all'));
+        applyHomeSort();
+        applyHomeFilters();
+      }
+
+      if (window.YonoApp) {
+        YonoApp.buildAzBar('home-az-bar', cards, c => c.dataset.name || '', letter => {
+          activeLetter = letter;
+          applyHomeFilters();
+        });
+        YonoApp.setGridView(YonoApp.getSavedView(), 'games-grid');
+      }
+
+      document.querySelectorAll('#home-catalog-controls .yono-view-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (window.YonoApp) YonoApp.setGridView(btn.dataset.view, 'games-grid');
+        });
+      });
+
+      filtersBtn?.addEventListener('click', () => {
+        const isHidden = drawerEl.classList.toggle('hidden');
+        filtersBtn.classList.toggle('active', !isHidden);
+        filtersBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+      });
+
+      sortSelect?.addEventListener('change', e => {
+        activeSort = e.target.value;
+        applyHomeSort();
+      });
+
+      searchInput?.addEventListener('input', e => {
+        activeQuery = e.target.value;
+        applyHomeFilters();
+      });
+
+      document.querySelectorAll('[data-home-cat]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeCat = btn.dataset.homeCat;
+          document.querySelectorAll('[data-home-cat]').forEach(b => b.classList.toggle('active', b === btn));
+          applyHomeFilters();
+        });
+      });
+
+      resetBtn?.addEventListener('click', resetHomeAll);
+      document.getElementById('home-drawer-reset')?.addEventListener('click', resetHomeAll);
+      document.getElementById('home-empty-reset')?.addEventListener('click', resetHomeAll);
+
+      applyHomeFilters();
+    })();
+  </script>
 </body>
 </html>

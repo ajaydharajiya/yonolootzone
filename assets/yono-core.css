@@ -73,12 +73,22 @@
 }
 
 /* Base Resets & Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--bg-body);
   color: var(--text-main);
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: clip;
   margin: 0;
   padding: 0;
 }
@@ -173,10 +183,19 @@ body {
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 8px 40px 8px 16px;
   text-align: center;
   position: relative;
   z-index: 105;
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  .top-announcement-bar {
+    font-size: 12px;
+    line-height: 1.35;
+    padding: 8px 36px 8px 12px;
+  }
 }
 
 .top-announcement-bar a {
@@ -680,4 +699,700 @@ body {
   border-radius: 24px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
   overflow: hidden;
+}
+
+/* ===================================================================
+   Missing Tailwind Utilities + Responsive Visibility & Mobile Guards
+   Must come after component classes (.btn-yono-primary / .btn-icon)
+   so Tailwind visibility utilities are never overridden.
+   =================================================================== */
+.overflow-x-auto { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.break-all { word-break: break-all; overflow-wrap: anywhere; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.max-w-7xl { max-width: 80rem; }
+.max-w-6xl { max-width: 72rem; }
+.max-w-md { max-width: 28rem; }
+.w-28 { width: 7rem; }
+.h-28 { height: 7rem; }
+.w-1\/3 { width: 33.333333%; }
+.h-18 { height: 4.5rem; }
+.-right-1 { right: -0.25rem; }
+.ml-3 { margin-left: 0.75rem; }
+.mr-1 { margin-right: 0.25rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-16 { margin-top: 4rem; }
+.mt-20 { margin-top: 5rem; }
+.pb-3 { padding-bottom: 0.75rem; }
+.pb-20 { padding-bottom: 5rem; }
+.pt-14 { padding-top: 3.5rem; }
+.pl-4 { padding-left: 1rem; }
+.bg-transparent { background-color: transparent; }
+.border-none { border-style: none; }
+.border-2 { border-width: 2px; }
+.border-pink-500 { border-color: #ec4899; }
+.outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+.text-decoration-none { text-decoration: none; }
+.tracking-tight { letter-spacing: -0.025em; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+.text-blue-500 { color: #3b82f6; }
+.text-purple-500 { color: #a855f7; }
+.text-amber-500 { color: #f59e0b; }
+.hover\:text-pink-600:hover { color: #db2777; }
+.hover\:bg-pink-50:hover { background-color: #fdf2f8; }
+.space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.375rem; }
+.space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+.space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+
+.glass-panel,
+main {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .sm\:inline { display: inline; }
+  .sm\:inline-flex { display: inline-flex; }
+  .sm\:flex { display: flex; }
+  .sm\:flex-row { flex-direction: row; }
+  .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .sm\:gap-3 { gap: 0.75rem; }
+  .sm\:gap-6 { gap: 1.5rem; }
+  .sm\:gap-10 { gap: 2.5rem; }
+  .sm\:p-8 { padding: 2rem; }
+  .sm\:w-32 { width: 8rem; }
+  .sm\:h-32 { height: 8rem; }
+  .sm\:items-start { align-items: flex-start; }
+  .sm\:justify-start { justify-content: flex-start; }
+  .sm\:text-left { text-align: left; }
+  .sm\:text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+  .sm\:text-base { font-size: 1rem; line-height: 1.5rem; }
+  .sm\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+  .sm\:text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+  .sm\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+}
+
+@media (min-width: 768px) {
+  .md\:flex { display: flex; }
+  .md\:inline-flex { display: inline-flex; }
+  .md\:hidden { display: none; }
+  .md\:items-center { align-items: center; }
+  .md\:pb-12 { padding-bottom: 3rem; }
+  .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+  .md\:col-span-1 { grid-column: span 1 / span 1; }
+  .md\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* Mobile Header, Grid & Overlay Refinements */
+.game-card,
+.yono-card,
+#games-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  .glass-header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glass-header > div:first-child {
+    height: 60px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .glass-header > div:first-child > a:first-child {
+    gap: 8px !important;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .glass-header > div:first-child > a:first-child > div:first-child {
+    width: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0;
+  }
+
+  .glass-header > div:first-child > a:first-child > div:last-child {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .glass-header > div:first-child > a:first-child > div:last-child > div:first-child {
+    font-size: 16px !important;
+    white-space: nowrap;
+  }
+
+  .glass-header > div:first-child > a:first-child > div:last-child > div:last-child {
+    font-size: 9px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .glass-header > div:first-child > div:last-child {
+    gap: 5px !important;
+    flex-shrink: 0;
+  }
+
+  .glass-header .btn-icon {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .glass-header .btn-yono-outline {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    white-space: nowrap;
+  }
+
+  #games-grid {
+    gap: 10px !important;
+  }
+
+  .game-card {
+    padding: 12px 10px !important;
+  }
+
+  .comparison-dock {
+    max-width: calc(100vw - 24px);
+    padding: 8px 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .yono-toast-container {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .yono-toast {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  /* Theme toggle is already present in the bottom mobile nav bar */
+  header.glass-header:has(#mobile-menu-toggle) .theme-toggle-btn {
+    display: none;
+  }
+
+  .glass-header .btn-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mobile-nav-item {
+    min-width: 0;
+    padding: 6px 2px;
+  }
+}
+
+/* ===================================================================
+   Sort / Filters / View Switcher Toolbar + A-Z Alphabet + List View
+   =================================================================== */
+.yono-controls-wrap {
+  margin-bottom: 20px;
+}
+
+.yono-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 10px 14px;
+  box-shadow: var(--card-shadow);
+}
+
+.yono-toolbar-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.yono-toolbar-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.yono-pill-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  white-space: nowrap;
+}
+
+.yono-pill-control:hover {
+  border-color: #15803d;
+}
+
+.yono-pill-select {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  padding-right: 2px;
+}
+
+.yono-pill-select option {
+  background: var(--bg-surface);
+  color: var(--text-main);
+}
+
+.yono-filters-btn.active {
+  border-color: #15803d;
+  background: rgba(21, 128, 61, 0.08);
+  color: #15803d;
+}
+
+.yono-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9999px;
+  background: #15803d;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.yono-view-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: var(--bg-surface);
+  gap: 2px;
+  height: 38px;
+}
+
+.yono-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 30px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.yono-view-btn:hover {
+  color: var(--text-main);
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.yono-view-btn.active {
+  background: #15803d;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(21, 128, 61, 0.28);
+}
+
+/* Collapsible Filters Drawer */
+.yono-filters-drawer {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+}
+
+.yono-filters-drawer.hidden {
+  display: none;
+}
+
+.yono-drawer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.yono-drawer-search {
+  flex: 1 1 200px;
+  min-width: 0;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: var(--bg-body);
+  color: var(--text-main);
+  font-size: 13px;
+  outline: none;
+}
+
+.yono-drawer-search:focus {
+  border-color: #15803d;
+}
+
+/* A-Z Alphabet Filter Bar */
+.az-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.az-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .az-filter-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.az-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  margin-right: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.az-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 28px;
+  padding: 0 7px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: var(--bg-body);
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.az-btn:hover:not(:disabled) {
+  border-color: #15803d;
+  color: #15803d;
+}
+
+.az-btn.active {
+  background: #15803d;
+  color: #ffffff !important;
+  border-color: #15803d;
+  box-shadow: 0 2px 6px rgba(21, 128, 61, 0.25);
+}
+
+.az-btn:disabled,
+.az-btn.az-empty {
+  opacity: 0.38;
+  cursor: default;
+}
+
+@media (max-width: 639px) {
+  .yono-toolbar {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .yono-pill-control {
+    height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .yono-pill-select {
+    font-size: 12px;
+    max-width: 155px;
+  }
+
+  .yono-view-toggle {
+    height: 34px;
+  }
+
+  .yono-view-btn {
+    width: 30px;
+    height: 26px;
+  }
+
+  .yono-card {
+    padding: 12px 10px !important;
+    border-radius: 16px;
+  }
+
+  .yono-card .card-meta-row {
+    gap: 5px;
+    font-size: 10.5px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .yono-card .card-meta-row > span:first-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+  }
+
+  .yono-card .compare-checkbox-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+  }
+
+  .yono-card .card-actions-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .yono-card .card-actions-grid > a {
+    padding: 6px 4px !important;
+    font-size: 11px !important;
+    gap: 4px !important;
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 10px;
+  }
+}
+
+/* List View Mode for #games-grid (Index .game-card & All-Games .yono-card) */
+#games-grid.games-list-view {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 10px !important;
+}
+
+@media (min-width: 900px) {
+  #games-grid.games-list-view {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+/* Home page .game-card in List View */
+#games-grid.games-list-view .game-card {
+  display: grid !important;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 2px;
+  align-items: center;
+  text-align: left !important;
+  padding: 10px 12px !important;
+  border-radius: 14px;
+}
+
+#games-grid.games-list-view .game-card > div:first-child {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 56px !important;
+  height: 56px !important;
+  margin-bottom: 0 !important;
+  border-radius: 12px;
+}
+
+#games-grid.games-list-view .game-card > h4 {
+  grid-column: 2;
+  grid-row: 1;
+  margin-bottom: 0 !important;
+  align-self: end;
+  font-size: 14px;
+}
+
+#games-grid.games-list-view .game-card > p {
+  grid-column: 2;
+  grid-row: 2;
+  margin-bottom: 0 !important;
+  align-self: start;
+}
+
+#games-grid.games-list-view .game-card > div:last-child {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  width: auto !important;
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 80px;
+}
+
+#games-grid.games-list-view .game-card > div:last-child > * {
+  margin-top: 0 !important;
+  padding: 5px 10px !important;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (min-width: 520px) {
+  #games-grid.games-list-view .game-card > div:last-child {
+    flex-direction: row;
+    gap: 6px;
+  }
+}
+
+/* Directory .yono-card in List View */
+#games-grid.games-list-view .yono-card {
+  display: grid !important;
+  grid-template-columns: 60px minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto;
+  column-gap: 12px;
+  row-gap: 3px;
+  align-items: center;
+  text-align: left !important;
+  padding: 12px !important;
+  height: auto !important;
+  border-radius: 16px;
+}
+
+#games-grid.games-list-view .yono-card .card-thumb-wrap {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  width: 60px !important;
+  height: 60px !important;
+  margin: 0 !important;
+  border-radius: 14px;
+}
+
+#games-grid.games-list-view .yono-card .card-title {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: left;
+  margin: 0;
+}
+
+#games-grid.games-list-view .yono-card .card-category {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  justify-self: start;
+}
+
+#games-grid.games-list-view .yono-card .card-desc {
+  grid-column: 2;
+  grid-row: 3;
+  text-align: left;
+  margin: 0;
+  -webkit-line-clamp: 1;
+}
+
+#games-grid.games-list-view .yono-card .card-meta-row {
+  display: none;
+}
+
+#games-grid.games-list-view .yono-card .card-badge {
+  top: 6px;
+  left: 6px;
+  font-size: 9px;
+  padding: 2px 5px;
+}
+
+#games-grid.games-list-view .yono-card .fav-btn {
+  top: 6px;
+  left: 52px;
+  right: auto;
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+}
+
+#games-grid.games-list-view .yono-card .card-actions-grid {
+  grid-column: 3;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 0;
+  min-width: 78px;
+}
+
+#games-grid.games-list-view .yono-card .card-actions-grid > a {
+  padding: 6px 10px !important;
+  font-size: 11px !important;
+  white-space: nowrap;
+}
+
+@media (min-width: 520px) {
+  #games-grid.games-list-view .yono-card .card-actions-grid {
+    flex-direction: row;
+    gap: 6px;
+  }
+}
+
+/* Preserve JS filter hiding in List View */
+#games-grid.games-list-view .game-card[style*="display: none"],
+#games-grid.games-list-view .game-card[style*="display:none"],
+#games-grid.games-list-view .yono-card[style*="display: none"],
+#games-grid.games-list-view .yono-card[style*="display:none"],
+.yono-filter-hidden {
+  display: none !important;
 }
