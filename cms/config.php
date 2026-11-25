@@ -117,38 +117,67 @@ function render_post(array $p): string {
   return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'.h($title).'</title><meta name="description" content="'.h($desc).'"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="'.h($url).'">'.($imgUrl?'<meta property="og:image" content="'.h($imgUrl).'">':'').'<meta property="og:type" content="article"><meta property="og:title" content="'.h($title).'"> <meta property="og:description" content="'.h($desc).'"> <meta property="og:url" content="'.h($url).'"> <meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">'.json_encode($schema,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script><link rel="stylesheet" href="../../assets/style.css"><style>.post-wrap{max-width:900px;margin:30px auto;padding:0 16px}.post-wrap article{background:#fff;border:1px solid #ffd5e2;border-radius:20px;padding:28px}.post-wrap img.hero{width:100%;max-height:480px;object-fit:cover;border-radius:16px;margin:15px 0}.post-content{font-size:16px;line-height:1.8;color:#334155}.post-content h2{margin-top:28px}.game-box,.promo-box{margin-top:28px;padding:22px;border-radius:18px;background:#fff7fb;border:1px solid #ffd1e2}.game-box img{width:82px;height:82px;object-fit:cover;border-radius:16px;display:block;margin:10px 0}.game-btn{display:inline-block;background:#e00068;color:#fff!important;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}.promo-code{display:inline-block;font-size:24px;font-weight:900;letter-spacing:1px;background:#fff;padding:12px 18px;border:2px dashed #e00068;border-radius:12px;margin:8px 0}.promo-note{font-size:13px;color:#64748b}</style></head><body><main class="post-wrap"><article><p><a href="/posts/">← All posts</a></p><h1>'.h($title).'</h1><p><small>'.h($p['date']??'').' · '.h($p['author']??'YonoLootZone').'</small></p>'.($imgUrl?'<img class="hero" src="'.h($imgUrl).'" alt="'.h($p['imageAlt']??$title).'">':'').'<p><strong>'.h($p['excerpt']??'').'</strong></p><div class="post-content">'.$body.'</div>'.$gameHtml.$promoHtml.($video?'<section><h2>Video</h2>'.$videoHtml.'</section>':'').'</article></main></body></html>';
 }
 function render_game(array $g): string {
-  $name=trim((string)($g['name']??'Game')); $slug=slugify((string)($g['slug']??$name)); $url=SITE_URL.'/games/'.$slug.'/';
-  $desc=trim((string)($g['description']??'')); $meta=trim((string)($g['metaDescription']??'')); $img=trim((string)($g['image']??'')); $imgUrl=public_asset_url($img);
-  $cat=trim((string)($g['category']??'Game')); $link=trim((string)($g['url']??''));
-  if($desc==='') $desc=$meta ?: 'Information, access details and app guidance for '. $name .' on YonoLootZone.';
-  $title=trim((string)($g['seoTitle']??'')) ?: $name.' APK & App Guide | YonoLootZone';
-  $reviewed=trim((string)($g['lastReviewed']??'')); $version=trim((string)($g['appVersion']??'')); $developer=trim((string)($g['developer']??'')); $platform=trim((string)($g['platform']??'')); $os=trim((string)($g['os']??'')); $size=trim((string)($g['size']??'')); $language=trim((string)($g['language']??''));
-  $requirements=array_values(array_filter(array_map('trim',(array)($g['requirements']??[]))));
-  $features=array_values(array_filter(array_map('trim',(array)($g['features']??[]))));
-  $screenshots=array_values(array_filter(array_map('public_asset_url',(array)($g['screenshots']??[]))));
-  $faq=array_values(array_filter((array)($g['faq']??[]),fn($x)=>is_array($x)&&trim((string)($x['q']??''))!==''&&trim((string)($x['a']??''))!==''));
-  $safety=array_values(array_filter(array_map('trim',(array)($g['safetyNotes']??[]))));
-  $sourceNote=trim((string)($g['sourceNote']??''));
-  $games=read_json(SITE_ROOT.'/data/games.json',[]); $related=[];
-  foreach($games as $r){ if(($r['slug']??'')!==$slug && !empty($r['status']) && (($r['category']??'')===$cat)) $related[]=$r; }
-  if(count($related)<6) foreach($games as $r){ if(($r['slug']??'')!==$slug && !empty($r['status']) && !in_array($r,$related,true)) $related[]=$r; }
-  usort($related,fn($a,$b)=>strcmp($a['name']??'',$b['name']??'')); $related=array_slice($related,0,8);
-  $relatedHtml=''; foreach($related as $r){$rs=slugify($r['slug']??$r['name']??'game'); $relatedHtml.='<li><a href="'.h(SITE_URL.'/games/'.$rs.'/').'">'.h($r['name']??'Related game').'</a></li>';}
-  $details=[];
-  foreach([['Category',$cat],['Platform',$platform],['Android / OS',$os],['Version',$version],['App size',$size],['Language',$language],['Developer',$developer],['Last reviewed',$reviewed]] as $d){ if($d[1]!=='') $details[]='<tr><th>'.h($d[0]).'</th><td>'.h($d[1]).'</td></tr>'; }
-  $detailsHtml=$details?'<section><h2>App details</h2><div class="table-wrap"><table><tbody>'.implode('',$details).'</tbody></table></div></section>':'';
-  $featuresHtml=$features?'<section><h2>Key features</h2><ul>'.implode('',array_map(fn($x)=>'<li>'.h($x).'</li>',$features)).'</ul></section>':'';
-  $reqHtml=$requirements?'<section><h2>System requirements</h2><ul>'.implode('',array_map(fn($x)=>'<li>'.h($x).'</li>',$requirements)).'</ul></section>':'';
-  $shotsHtml=$screenshots?'<section><h2>Screenshots</h2><div class="shots">'.implode('',array_map(fn($x)=>'<img src="'.h($x).'" alt="'.h($name).' screenshot" loading="lazy">',$screenshots)).'</div></section>':'';
-  $faqHtml=''; $faqSchema=[];
-  foreach($faq as $f){$q=trim((string)$f['q']);$a=trim((string)$f['a']);$faqHtml.='<details><summary>'.h($q).'</summary><p>'.nl2br(h($a)).'</p></details>'; $faqSchema[]=['@type'=>'Question','name'=>$q,'acceptedAnswer'=>['@type'=>'Answer','text'=>$a]];}
-  if($faqHtml) $faqHtml='<section><h2>Frequently asked questions</h2>'.$faqHtml.'</section>';
-  $safetyHtml=$safety?'<section class="notice"><h2>Safety &amp; verification checklist</h2><ul>'.implode('',array_map(fn($x)=>'<li>'.h($x).'</li>',$safety)).'</ul></section>':'<section class="notice"><h2>Before installing or registering</h2><p>Check the publisher, app permissions, privacy policy, age requirements, payment terms and availability. YonoLootZone does not operate the third-party apps listed here.</p></section>';
-  $button=$link!==''?'<a class="btn" href="'.h($link).'" rel="nofollow sponsored noopener" target="_blank">'.h($g['button']??'Visit Game').'</a>':'<p><strong>Access link:</strong> No external link is currently listed.</p>';
-  $safeImg=$imgUrl!==''?'<img src="'.h($imgUrl).'" alt="'.h($name).' game icon" loading="eager" width="112" height="112">':'';
-  $breadcrumb=['@context'=>'https://schema.org','@type'=>'BreadcrumbList','itemListElement'=>[['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>SITE_URL.'/'],['@type'=>'ListItem','position'=>2,'name'=>'All Games','item'=>SITE_URL.'/all-yono-games.html'],['@type'=>'ListItem','position'=>3,'name'=>$name,'item'=>$url]]];
-  $schema=['@context'=>'https://schema.org','@type'=>'WebPage','name'=>$title,'description'=>$meta?:$desc,'url'=>$url,'dateModified'=>$reviewed?:date('Y-m-d'),'isPartOf'=>['@type'=>'WebSite','name'=>'YonoLootZone','url'=>SITE_URL.'/']];
-  $scripts='<script type="application/ld+json">'.json_encode($schema,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script><script type="application/ld+json">'.json_encode($breadcrumb,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script>';
-  if($faqSchema) $scripts.='<script type="application/ld+json">'.json_encode(['@context'=>'https://schema.org','@type'=>'FAQPage','mainEntity'=>$faqSchema],JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script>';
-  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'.h($title).'</title><meta name="description" content="'.h($meta ?: $desc).'"> <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="'.h($url).'"> <meta property="og:type" content="website"><meta property="og:site_name" content="YonoLootZone"><meta property="og:title" content="'.h($title).'"> <meta property="og:description" content="'.h($meta ?: $desc).'"> <meta property="og:url" content="'.h($url).'">'.($imgUrl?'<meta property="og:image" content="'.h($imgUrl).'">':'').'<meta name="twitter:card" content="summary_large_image">'.$scripts.'<link rel="stylesheet" href="../../assets/style.css"><style>.gwrap{max-width:1000px;margin:30px auto;padding:16px}.gcard{background:#fff;border:1px solid #ffd5e2;border-radius:20px;padding:28px}.crumbs{font-size:14px;margin-bottom:18px}.ghead{display:flex;gap:20px;align-items:center}.ghead img{width:112px;height:112px;object-fit:cover;border-radius:22px}.gwrap p,.gwrap li{line-height:1.75;color:#334155}.btn{display:inline-block;background:#e00068;color:#fff!important;padding:13px 22px;border-radius:12px;text-decoration:none;font-weight:800;margin:12px 0}.notice{padding:18px;background:#fff7fb;border:1px solid #ffd1e2;border-radius:14px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #f1dce5}th{width:35%;font-weight:800}.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.shots img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;border:1px solid #f1dce5}details{padding:14px 0;border-bottom:1px solid #f1dce5}summary{cursor:pointer;font-weight:800}h2{margin-top:28px}@media(max-width:650px){.ghead{align-items:flex-start}.shots{grid-template-columns:1fr 1fr}}</style></head><body><main class="gwrap"><article class="gcard"><nav class="crumbs"><a href="/">Home</a> → <a href="/all-yono-games.html">All Games</a> → '.h($name).'</nav><div class="ghead">'.$safeImg.'<div><h1>'.h($name).' APK &amp; App Guide</h1><p>'.h($cat).'</p></div></div><p>'.h($desc).'</p>'.$button.$detailsHtml.$featuresHtml.$reqHtml.$shotsHtml.'<section><h2>How to install or access '.h($name).'</h2><ol><li>Review the app information and current terms on this page.</li><li>Use the listed access link only after checking the destination and publisher details.</li><li>If installing an APK, review Android security prompts and requested permissions before continuing.</li><li>Do not share passwords, OTPs, UPI PINs or banking credentials with anyone claiming to provide support.</li></ol></section>'.$safetyHtml.($sourceNote?'<section><h2>Source &amp; editorial note</h2><p>'.h($sourceNote).'</p></section>':'').$faqHtml.'<section><h2>Related '.h($cat).' games</h2><ul>'.$relatedHtml.'</ul></section></article></main></body></html>';
+  $name = trim((string)($g['name'] ?? 'Game'));
+  $slug = slugify((string)($g['slug'] ?? $name));
+  $url = SITE_URL . '/games/' . $slug . '/';
+  $desc = trim((string)($g['description'] ?? ''));
+  $meta = trim((string)($g['metaDescription'] ?? ''));
+  $img = trim((string)($g['image'] ?? ''));
+  $imgUrl = public_asset_url($img);
+  $cat = trim((string)($g['category'] ?? 'Games'));
+  $link = trim((string)($g['url'] ?? ''));
+  if ($desc === '') $desc = $meta ?: 'Information, access details and app guidance for ' . $name . ' on YonoLootZone.';
+  $title = trim((string)($g['seoTitle'] ?? '')) ?: $name . ' APK & App Guide (2026) | YonoLootZone';
+  $reviewed = trim((string)($g['lastReviewed'] ?? date('Y-m-d')));
+  $version = trim((string)($g['appVersion'] ?? 'Latest 2026 Release'));
+  $developer = trim((string)($g['developer'] ?? 'Independent Publisher'));
+  $platform = trim((string)($g['platform'] ?? 'Android'));
+  $os = trim((string)($g['os'] ?? 'Android 6.0 and above'));
+  $size = trim((string)($g['size'] ?? '38 MB - 48 MB'));
+  $language = trim((string)($g['language'] ?? 'English, Hindi'));
+  
+  $games = read_json(SITE_ROOT . '/data/games.json', []);
+  $related = [];
+  foreach ($games as $r) {
+    if (($r['slug'] ?? '') !== $slug && !empty($r['status']) && (($r['category'] ?? '') === $cat)) {
+      $related[] = $r;
+    }
+  }
+  if (count($related) < 6) {
+    foreach ($games as $r) {
+      if (($r['slug'] ?? '') !== $slug && !empty($r['status']) && !in_array($r, $related, true)) {
+        $related[] = $r;
+      }
+    }
+  }
+  $related = array_slice($related, 0, 6);
+  $relCards = '';
+  foreach ($related as $r) {
+    $rs = slugify($r['slug'] ?? $r['name'] ?? 'game');
+    $rimg = trim((string)($r['image'] ?? 'assets/all-yono-header.webp'));
+    $relCards .= '<div class="yono-card p-3 flex flex-col items-center text-center"><div class="card-thumb-wrap mb-2" style="width:64px;height:64px;"><img src="../../' . h($rimg) . '" class="card-thumb" width="64" height="64"></div><h4 class="card-title text-xs font-bold mb-1 truncate w-full">' . h($r['name'] ?? 'Game') . '</h4><span class="card-category text-[10px] mb-2">' . h($r['category'] ?? 'Games') . '</span><a href="../' . $rs . '/" class="btn-yono-outline text-[11px] py-1 px-3 w-full text-center">View Guide</a></div>';
+  }
+
+  $schemaSoftware = json_encode([
+    "@context" => "https://schema.org",
+    "@type" => "SoftwareApplication",
+    "name" => $name . " APK",
+    "operatingSystem" => "ANDROID",
+    "applicationCategory" => "GameApplication",
+    "image" => $imgUrl,
+    "url" => $url,
+    "offers" => ["@type" => "Offer", "price" => "0", "priceCurrency" => "INR"]
+  ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+
+  $schemaBreadcrumb = json_encode([
+    "@context" => "https://schema.org",
+    "@type" => "BreadcrumbList",
+    "itemListElement" => [
+      ["@type" => "ListItem", "position" => 1, "name" => "Home", "item" => SITE_URL . "/"],
+      ["@type" => "ListItem", "position" => 2, "name" => "All Games", "item" => SITE_URL . "/all-yono-games.html"],
+      ["@type" => "ListItem", "position" => 3, "name" => $name, "item" => $url]
+    ]
+  ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+
+  return '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' . h($title) . '</title><meta name="description" content="' . h($meta ?: $desc) . '"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="' . h($url) . '"><meta property="og:type" content="website"><meta property="og:site_name" content="YonoLootZone"><meta property="og:title" content="' . h($title) . '"><meta property="og:description" content="' . h($meta ?: $desc) . '"><meta property="og:url" content="' . h($url) . '">' . ($imgUrl ? '<meta property="og:image" content="' . h($imgUrl) . '">' : '') . '<meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/x-icon" href="../../favicon.ico"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="../../assets/tailwind.min.css"><link rel="stylesheet" href="../../assets/style.css"><link rel="stylesheet" href="../../assets/yono-core.css"><script type="application/ld+json">' . $schemaSoftware . '</script><script type="application/ld+json">' . $schemaBreadcrumb . '</script></head><body><header class="glass-header"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a href="../../index.html" class="flex items-center gap-2"><div style="width:36px;height:36px;border-radius:10px;overflow:hidden;border:1.5px solid var(--primary);"><img src="../../assets/all-yono-game-app.webp" class="w-full h-full object-cover"></div><div class="font-extrabold text-lg" style="color:var(--text-main);">Yono<span style="color:var(--primary);">LootZone</span></div></a><div class="flex items-center gap-2"><button class="btn-icon theme-toggle-btn" title="Toggle Theme" style="width:36px;height:36px;"><i class="fas fa-moon"></i></button><a href="../../all-yono-games.html" class="btn-yono-outline text-xs py-1.5 px-3"><i class="fas fa-th mr-1"></i> Directory</a></div></div></header><main class="max-w-4xl mx-auto px-4 py-8"><nav class="flex items-center gap-2 text-xs font-semibold mb-6" style="color:var(--text-muted);"><a href="../../index.html">Home</a> / <a href="../../all-yono-games.html">All Games</a> / <span style="color:var(--primary);">' . h($name) . '</span></nav><article class="glass-panel p-6 sm:p-8 rounded-3xl shadow-xl mb-8"><div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left"><div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl overflow-hidden shadow-lg border-2" style="border-color:var(--border-strong);flex-shrink:0;"><img src="../../' . h($img) . '" class="w-full h-full object-cover"></div><div class="flex-1"><span class="card-category text-xs">' . h($cat) . '</span><h1 class="text-2xl sm:text-3xl font-extrabold my-2" style="color:var(--text-main);">' . h($name) . ' APK & App Guide</h1><p class="text-sm mb-4 leading-relaxed" style="color:var(--text-muted);">' . h($desc) . '</p><div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">' . ($link ? '<a href="' . h($link) . '" target="_blank" rel="nofollow noopener" class="btn-yono-primary"><i class="fas fa-download mr-1"></i> Get Official App</a>' : '') . '<button class="btn-icon fav-btn" data-slug="' . $slug . '" onclick="YonoApp.toggleFavorite('' . $slug . '','' . h($name) . '','../../' . h($img) . '','' . h($cat) . '')"><i class="far fa-heart"></i></button></div></div></div></article><section class="mb-12"><h2 class="text-lg font-bold mb-4" style="color:var(--text-main);">Related ' . h($cat) . ' Games</h2><div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">' . $relCards . '</div></section></main><nav class="mobile-bottom-nav"><a href="../../index.html" class="mobile-nav-item"><i class="fas fa-home"></i><span>Home</span></a><a href="../../all-yono-games.html" class="mobile-nav-item active"><i class="fas fa-gamepad"></i><span>Games</span></a><a href="javascript:void(0)" class="mobile-nav-item theme-toggle-btn"><i class="fas fa-moon"></i><span>Theme</span></a></nav><script src="../../assets/yono-core.js"></script><script>document.addEventListener("DOMContentLoaded",function(){if(window.YonoApp&&YonoApp.trackGameView){YonoApp.trackGameView("' . $slug . '","' . h($name) . '","../../' . h($img) . '","' . h($cat) . '");}});</script></body></html>';
 }

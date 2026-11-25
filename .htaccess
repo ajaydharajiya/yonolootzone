@@ -42,6 +42,7 @@ RewriteRule ^admin(?:/|$) - [L]
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set Link "</llms.txt>; rel=\"service-doc\""
 </IfModule>
 
 # Gzip Compression

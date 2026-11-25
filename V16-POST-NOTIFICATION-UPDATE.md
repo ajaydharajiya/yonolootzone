@@ -1,6 +1,6 @@
 # V16 Post Notifications & Homepage Update
 
-- Telegram channel links updated to https://t.me/+jMDOLURgOQc1ODU1 across the site.
+- Telegram channel links updated to https://t.me/allyonolootzone across the site.
 - Homepage now contains a Latest Posts & Game Updates section.
 - CMS publishing updates /posts/latest.json.
 - Homepage polls for a new post and shows a blinking NEW indicator.

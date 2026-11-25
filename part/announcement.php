@@ -51,7 +51,7 @@
           <span class="ann-code-btn" onclick="copyAnnCode(this,'YONO2026')">YONO2026</span>
         </div>
       </div>
-      <a href="<?php echo defined('TELEGRAM_URL') ? TELEGRAM_URL : 'https://t.me/+jMDOLURgOQc1ODU1'; ?>" target="_blank" class="ann-tg-action" onclick="closeAnnPopup()">
+      <a href="<?php echo defined('TELEGRAM_URL') ? TELEGRAM_URL : 'https://t.me/allyonolootzone'; ?>" target="_blank" class="ann-tg-action" onclick="closeAnnPopup()">
         ✈ Join Telegram — Get Daily Free Codes
       </a>
       <a href="/all-games.html" class="ann-all-action" onclick="closeAnnPopup()">

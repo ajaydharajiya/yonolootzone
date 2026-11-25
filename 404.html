@@ -1,4 +1,109 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>404 — Page Not Found | YonoLootZone</title>
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/webp" href="assets/all-yono-header.webp">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="assets/tailwind.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/yono-core.css">
+</head>
+<body class="min-h-screen flex flex-col justify-between" style="background:var(--bg-body); color:var(--text-main);">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="noindex, nofollow, noarchive" name="robots"/><meta content="#e00068" name="theme-color"/><title>Page Not Found | YonoLootZone</title><link href="assets/all-yono-header.webp" rel="icon" type="image/png"/><link as="image" fetchpriority="high" href="assets/all-yono-header.webp" rel="preload"/><link href="assets/style.css?v=19" rel="stylesheet"/><style>.error-page{min-height:70vh;display:grid;place-items:center;padding:40px 18px}.error-card{max-width:650px;text-align:center;background:#ffffffea;border:1px solid #fff;border-radius:28px;padding:48px 28px;box-shadow:0 24px 70px #0002}.error-code{font-size:72px;font-weight:950;color:#e00068;line-height:1}.error-card h1{font-size:34px;margin:15px 0 10px}.error-card p{color:#666;line-height:1.7}.error-card a{display:inline-block;margin-top:18px;padding:13px 24px;border-radius:999px;background:linear-gradient(135deg,#e00068,#ff4f92);color:#fff;text-decoration:none;font-weight:900}</style></head><body><div class="ambient"><i></i><i></i><i></i></div><header id="header"></header><main class="error-page"><section class="error-card"><div class="error-code">404</div><h1>Page not found</h1><p>The page you requested could not be found. Return to YonoLootZone and browse the available game listings.</p><a href="index.html">Back to Home</a></section></main><footer id="footer"></footer><script src="assets/app.js?v=19"></script><script src="assets/site-config.js" defer></script></body></html>
+  <!-- Glass Header -->
+  <header class="glass-header">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <div style="width:36px; height:36px; border-radius:10px; overflow:hidden; border:1.5px solid var(--primary);">
+          <img src="assets/all-yono-game-app.webp" alt="YonoLootZone" class="w-full h-full object-cover">
+        </div>
+        <div class="font-extrabold text-lg">
+          Yono<span style="color:var(--primary);">LootZone</span>
+        </div>
+      </a>
+      <div class="flex items-center gap-2">
+        <button class="btn-icon theme-toggle-btn" title="Toggle Theme" style="width:36px; height:36px;">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="all-yono-games.html" class="btn-yono-outline text-xs py-1.5 px-3">
+          <i class="fas fa-th mr-1"></i> All Games
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 404 Hero Container -->
+  <main class="flex-1 flex items-center justify-center px-4 py-16">
+    <div class="glass-panel max-w-lg w-full p-8 sm:p-12 rounded-3xl text-center shadow-2xl" style="border:1.5px solid var(--border-strong);">
+      
+      <div style="font-size:80px; font-weight:950; line-height:1; background:var(--accent-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:12px;">
+        404
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-extrabold mb-3" style="color:var(--text-main);">
+        Page Not Found
+      </h1>
+
+      <p class="text-sm mb-6 leading-relaxed" style="color:var(--text-muted);">
+        The page you are looking for may have been moved, renamed, or is temporarily unavailable. Use the search bar below or explore the directory.
+      </p>
+
+      <!-- Quick Search Form -->
+      <div class="glass-panel p-2 rounded-2xl mb-6 flex items-center gap-2 shadow-inner" style="border:1px solid var(--border);">
+        <i class="fas fa-search ml-3 text-pink-600"></i>
+        <input type="text" id="error-search-input" placeholder="Search 92+ games..." class="w-full py-2 bg-transparent border-none outline-none text-xs sm:text-sm font-medium" style="color:var(--text-main);" onkeydown="if(event.key==='Enter')location.href='all-yono-games.html?q='+encodeURIComponent(this.value)">
+        <button class="btn-yono-primary text-xs py-2 px-4" onclick="location.href='all-yono-games.html?q='+encodeURIComponent(document.getElementById('error-search-input').value)">
+          Search
+        </button>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a href="index.html" class="btn-yono-primary text-xs py-2.5 px-5">
+          <i class="fas fa-home mr-1"></i> Return Home
+        </a>
+        <a href="all-yono-games.html" class="btn-yono-outline text-xs py-2.5 px-5">
+          <i class="fas fa-gamepad mr-1"></i> Browse 92 Games
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modern Footer -->
+  <footer class="border-t py-6 text-center text-xs" style="background:var(--bg-surface); border-color:var(--border); color:var(--text-muted);">
+    <p>© 2026 YonoLootZone. All rights reserved.</p>
+  </footer>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="all-yono-games.html" class="mobile-nav-item">
+      <i class="fas fa-gamepad"></i>
+      <span>Games</span>
+    </a>
+    <a href="all-yono-games.html" class="mobile-nav-item">
+      <i class="fas fa-search"></i>
+      <span>Search</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-nav-item theme-toggle-btn">
+      <i class="fas fa-moon"></i>
+      <span>Theme</span>
+    </a>
+  </nav>
+
+  <script src="assets/yono-core.js"></script>
+</body>
+</html>

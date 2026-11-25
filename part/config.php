@@ -5,7 +5,7 @@
 
 define('SITE_NAME', 'YonoLootZone');
 define('SITE_URL', 'https://yonolootzone.com');
-define('TELEGRAM_URL', 'https://t.me/+jMDOLURgOQc1ODU1');
+define('TELEGRAM_URL', 'https://t.me/allyonolootzone');
 define('SITE_VERSION', '2026.3');
 define('DEFAULT_BONUS', '₹550');
 

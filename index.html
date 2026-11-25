@@ -25,7 +25,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap"/></noscript>
-<link rel="preload" as="image" href="assets/jeet-spin.webp" type="image/webp" fetchpriority="high"/>
+<link rel="preload" as="image" href="assets/rush-gala.webp" type="image/webp" fetchpriority="high"/>
 <link rel="stylesheet" href="assets/tailwind.min.css"/>
 <style>
     body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
@@ -98,7 +98,9 @@
     white-space:nowrap;
   }
 }
-</style></head>
+</style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/yono-core.css">
+</head>
 <body class="bg-gray-50"><a aria-label="Join our Telegram community" href="telegram.html" id="mobile-telegram-cta">
 <span class="tg-copy">
 <span class="tg-title">Join Our Telegram</span>
@@ -107,110 +109,107 @@
 <span class="tg-button">Join Now</span>
 </a>
 <!-- Header -->
-<header class="bg-white shadow-lg sticky top-0 z-50">
-<div class="container mx-auto px-4 py-4">
-<div class="flex items-center justify-between">
-<a class="flex items-center space-x-3 hover:opacity-80 transition-opacity" href="index.html">
-<img alt="Yono Games Logo" class="w-12 h-12 rounded-full shadow object-cover border border-gray-100" src="assets/all-yono-game-app.webp" width="48" height="48" loading="eager" fetchpriority="high">
-<div>
-<div class="text-2xl font-bold text-gray-800 leading-none text-2xl font-bold">Yono Games</div>
-<div class="text-base font-bold text-gray-800 leading-none mt-0.5">App</div>
-<p class="text-xs text-gray-500 mt-0.5">Download Best Online Games</p>
-</div>
-</a>
-<!-- Mobile Buttons -->
-<div class="md:hidden flex items-center space-x-2">
-<button class="p-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg" id="mobile-search-btn">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<button class="p-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg" id="mobile-menu-btn">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-</div>
-<!-- Desktop Nav -->
-<nav class="hidden md:flex items-center space-x-6">
-<a class="text-gray-700 hover:text-blue-600 font-medium" href="index.html">Home</a>
-<a class="text-gray-700 hover:text-blue-600 font-medium" href="guides/yono-games-search-guide.html">App Download</a>
-<a class="text-gray-700 hover:text-blue-600 font-medium" href="all-yono-games.html">APK Download</a>
-<a class="text-gray-700 hover:text-blue-600 font-medium relative" href="posts/">Latest Posts <span id="nav-post-badge" class="hidden absolute -top-2 -right-3 text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded-full animate-pulse">NEW</span></a>
-<a class="text-gray-700 hover:text-blue-600 font-medium" href="all-yono-games.html">All Games</a>
-<div class="relative group">
-<a class="text-gray-700 hover:text-blue-600 font-medium flex items-center gap-1" href="#">More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a>
-<div class="absolute top-full left-0 mt-2 w-60 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
-<div class="py-2">
-<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="all-yono-games.html">Download Center</a>
-<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="yono-game-dd.html">Yono Game DD</a>
-<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="guides/yono-arcade-games-guide.html">Yono 777 &amp; Arcade</a>
-<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="all-yono-games.html">Game Directory</a>
-<a class="block px-4 py-2 text-sm text-blue-600 font-bold hover:bg-blue-50 flex items-center justify-between" href="https://t.me/+jMDOLURgOQc1ODU1" rel="noopener noreferrer" target="_blank">Join Telegram Channel <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded-full font-bold">JOIN</span></a>
-</div>
-</div>
-</div>
-<a class="text-gray-700 hover:text-blue-600 font-medium" href="#rummy">Rummy Games</a>
-<a class="text-gray-700 hover:text-blue-600 font-medium" href="#slots">Slots Games</a>
-<a class="text-gray-700 hover:text-blue-600 font-medium" href="#arcade">Arcade Games</a>
-<div class="relative group">
-<button class="text-gray-700 hover:text-blue-600 font-medium flex items-center space-x-1">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>Search</span>
-</button>
-<div class="absolute top-full right-0 mt-2 w-80 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
-<div class="p-4">
-<input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" id="desktop-search-input" placeholder="Search games..." type="text"/>
-<div class="mt-2 max-h-72 overflow-y-auto hidden" id="desktop-search-results"></div>
-</div>
-</div>
-</div>
-<a class="bg-blue-500 hover:bg-blue-600 text-white font-bold text-sm px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 shadow transition-all hover:scale-105 whitespace-nowrap" href="https://t.me/+jMDOLURgOQc1ODU1" rel="noopener noreferrer" target="_blank"><svg class="w-4 h-4 fill-current shrink-0" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg> Join Telegram Channel</a>
-</nav>
-</div>
-</div>
-<!-- Mobile Search Dropdown -->
-<div class="md:hidden bg-white border-t border-gray-200 px-4 py-4 hidden" id="mobile-search-dropdown">
-<input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="mobile-search-input" placeholder="Search games (rummy, slots, yono...)" type="text"/>
-<div class="mt-2 max-h-72 overflow-y-auto hidden" id="mobile-search-results"></div>
-</div>
-<!-- Mobile Menu -->
-<div class="md:hidden bg-white border-t border-gray-200 px-4 py-4 hidden" id="mobile-menu"><div class="space-y-2">
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="index.html">Home</a>
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="guides/yono-games-search-guide.html">App Download</a>
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="all-yono-games.html">APK Download</a>
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="posts/">📝 Latest Posts <span id="mobile-post-badge" class="hidden ml-1 text-[9px] bg-red-600 text-white px-1.5 py-0.5 rounded-full animate-pulse">NEW</span></a>
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="all-yono-games.html">All Games</a>
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="all-yono-games.html">Download Center</a>
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="guides/yono-arcade-games-guide.html">Yono 777 &amp; Arcade</a>
-<a class="block py-2 text-gray-700 hover:text-blue-600 font-medium" href="all-yono-games.html">Game Directory</a>
-<a class="block py-2 text-blue-600 font-bold flex items-center gap-2" href="https://t.me/+jMDOLURgOQc1ODU1" rel="noopener noreferrer" target="_blank"><svg class="w-5 h-5 fill-current shrink-0" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg> Join Telegram Channel</a>
-</div></div>
-</header>
-<!-- Hero Section (Exact yonogames.app structure) -->
-<section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-8" id="home">
-<div class="container mx-auto px-4 text-center">
-<h1 class="text-3xl md:text-5xl font-bold mb-4">Yono Game — All Yono Games</h1>
-<p class="text-lg md:text-xl mb-6 max-w-3xl mx-auto">Get instant access to top-rated online games including Jaiho777, Rummy91, GoGoRummy, and many more. Join thousands of players and win big!</p>
-<div class="flex flex-wrap justify-center gap-4">
-<a class="download-btn text-white px-6 py-3 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity btn-green" href="#games">Download Now</a>
-</div>
-</div>
-</section>
+  <!-- Top Announcement Bar -->
+  <div id="site-announcement-bar" class="top-announcement-bar">
+    <span>📢 <strong>2026 Directory:</strong> 92 verified YonoLootZone, updated APK guides, and ratings.</span>
+    <a href="all-yono-games.html">Browse All Games</a>
+    <button class="top-announcement-close" onclick="YonoApp.dismissAnnouncement()" title="Dismiss">✕</button>
+  </div>
 
+  <!-- Modern Glass Header -->
+  <header class="glass-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between" style="height:72px;">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none group">
+        <div style="position:relative; width:44px; height:44px; border-radius:12px; overflow:hidden; border:2px solid var(--primary); box-shadow:0 0 12px var(--primary-glow);">
+          <img src="assets/all-yono-game-app.webp" alt="YonoLootZone Logo" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <div style="font-weight:900; font-size:20px; line-height:1.1; color:var(--text-main); letter-spacing:-0.5px;">
+            Yono<span style="color:var(--primary);">LootZone</span>
+          </div>
+          <div style="font-size:10px; font-weight:700; color:var(--text-muted); letter-spacing:0.5px; text-transform:uppercase;">
+            Gaming Discovery Hub
+          </div>
+        </div>
+      </a>
 
-<section id="jeet-spin-spotlight" class="py-6 bg-white">
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-6" style="font-size:14px; font-weight:600;">
+        <a href="index.html" class="text-pink-600 transition-colors font-bold" style="color:var(--primary);">Home</a>
+        <a href="all-yono-games.html" class="hover:text-pink-600 transition-colors" style="color:var(--text-main);">All Games</a>
+        <a href="guides.html" class="hover:text-pink-600 transition-colors" style="color:var(--text-main);">Game Guides</a>
+        <a href="#about" class="hover:text-pink-600 transition-colors" style="color:var(--text-main);">About</a>
+        <a href="contact.html" class="hover:text-pink-600 transition-colors" style="color:var(--text-main);">Contact</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Live Search Trigger -->
+        <button class="btn-icon trigger-search-btn" title="Search games">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <!-- AI Assistant Trigger -->
+        <button class="btn-icon trigger-ai-btn" title="AI Game Assistant" style="color:var(--primary);">
+          <i class="fas fa-magic"></i>
+        </button>
+
+        <!-- Theme Switcher -->
+        <button class="btn-icon theme-toggle-btn" title="Switch Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Favorites Counter Button -->
+        <a href="all-yono-games.html?cat=favorites" class="btn-icon relative" title="Saved Favorites">
+          <i class="fas fa-heart" style="color:#ef4444;"></i>
+          <span class="fav-count-badge mobile-nav-badge" style="display:none; position:absolute; top:-4px; right:-4px;">0</span>
+        </a>
+
+        <!-- Telegram Button -->
+        <a href="https://t.me/allyonolootzone" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-yono-primary" style="padding:8px 16px; font-size:13px; background:linear-gradient(135deg, #0088cc, #0077b5);">
+          <i class="fab fa-telegram-plane"></i> <span>Join Telegram</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-toggle" class="md:hidden btn-icon" title="Toggle menu" onclick="document.getElementById('mobile-nav-menu')?.classList.toggle('hidden')">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Nav -->
+    <div id="mobile-nav-menu" class="hidden md:hidden glass-panel border-t p-4" style="border-color:var(--border);">
+      <div class="flex flex-col gap-3 font-semibold text-sm">
+        <a href="index.html" class="py-2 px-3 rounded-lg font-bold" style="color:var(--primary); background:var(--primary-subtle);"><i class="fas fa-home mr-2"></i> Home</a>
+        <a href="all-yono-games.html" class="py-2 px-3 rounded-lg hover:bg-pink-50" style="color:var(--text-main);"><i class="fas fa-gamepad mr-2 text-pink-600"></i> All 92 Games</a>
+        <a href="guides.html" class="py-2 px-3 rounded-lg hover:bg-pink-50" style="color:var(--text-main);"><i class="fas fa-book mr-2 text-blue-500"></i> Guides &amp; Tips</a>
+        <a href="about.html" class="py-2 px-3 rounded-lg hover:bg-pink-50" style="color:var(--text-main);"><i class="fas fa-info-circle mr-2 text-purple-500"></i> About</a>
+        <a href="contact.html" class="py-2 px-3 rounded-lg hover:bg-pink-50" style="color:var(--text-main);"><i class="fas fa-envelope mr-2 text-green-500"></i> Contact Us</a>
+        <a href="https://t.me/allyonolootzone" target="_blank" class="btn-yono-primary text-center mt-2" style="background:#0088cc;">
+          <i class="fab fa-telegram-plane mr-2"></i> Join Telegram
+        </a>
+      </div>
+    </div>
+  </header>
+<section id="rush-gala-spotlight" class="py-6 bg-white">
 <div class="container mx-auto px-4 max-w-5xl">
 <div class="rounded-2xl overflow-hidden border border-emerald-100 shadow-lg bg-gradient-to-r from-emerald-950 via-emerald-700 to-emerald-500 text-white">
 <div class="p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
 <div class="relative shrink-0">
 <span class="absolute -top-2 -right-2 z-10 bg-pink-600 text-white text-[10px] font-black px-2 py-1 rounded-full animate-pulse">NEW</span>
-<img src="assets/jeet-spin.webp" alt="Jeet Spin new game app" class="w-24 h-24 md:w-28 md:h-28 rounded-2xl object-cover shadow-2xl ring-2 ring-white/40" width="112" height="112" loading="eager">
+<img src="assets/rush-gala.webp" alt="Rush Gala new game app" class="w-24 h-24 md:w-28 md:h-28 rounded-2xl object-cover shadow-2xl ring-2 ring-white/40" width="112" height="112" loading="eager">
 </div>
 <div class="flex-1 text-center md:text-left">
 <p class="text-[11px] uppercase tracking-widest font-black text-emerald-200 mb-1">New Game Spotlight</p>
-<h2 class="text-2xl md:text-3xl font-black mb-2">Jeet Spin APK – New Game</h2>
-<p class="text-sm md:text-base text-emerald-50 leading-relaxed mb-3">Explore the new Jeet Spin listing, APK access and the promotional details supplied for new players. Offers and eligibility can change, so check the current terms before use.</p>
-<div class="flex flex-wrap justify-center md:justify-start gap-2 mb-3"><span class="px-2.5 py-1 rounded-full bg-white/15 text-xs font-bold">🆕 New</span><span class="px-2.5 py-1 rounded-full bg-white/15 text-xs font-bold">📱 Android APK</span><span class="px-2.5 py-1 rounded-full bg-white/15 text-xs font-bold">🎰 Spin Game</span></div>
+<h2 class="text-2xl md:text-3xl font-black mb-2">Rush Gala APK – Har Haath Jeet!</h2>
+<p class="text-sm md:text-base text-emerald-50 leading-relaxed mb-3">Muh Mitha Karo: ₹9–89 FREE without deposit! 150% First Deposit Bonus + 1 FREE Spin Voucher. Permanent VIP Cashback (0.5%–3%) &amp; lifetime 1% referral profit.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-2 mb-3"><span class="px-2.5 py-1 rounded-full bg-white/15 text-xs font-bold">🆕 New Game</span><span class="px-2.5 py-1 rounded-full bg-white/15 text-xs font-bold">📱 Android APK</span><span class="px-2.5 py-1 rounded-full bg-white/15 text-xs font-bold">🪙 ₹9-₹89 Free</span><span class="px-2.5 py-1 rounded-full bg-white/15 text-xs font-bold">👑 VIP Rewards</span></div>
 <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-2">
-<a href="games/jeet-spin/" class="inline-flex justify-center items-center px-4 py-2.5 rounded-xl bg-white text-emerald-800 font-black text-sm hover:opacity-90">View Jeet Spin →</a>
-<a href="https://d13hcaanhiy3gm.cloudfront.net/JeetSpin_SYHEC2FNAYE.apk" target="_blank" rel="nofollow noopener noreferrer" class="inline-flex justify-center items-center px-4 py-2.5 rounded-xl bg-amber-400 text-amber-950 font-black text-sm hover:opacity-90">Download APK</a>
+<a href="games/rush-gala/" class="inline-flex justify-center items-center px-4 py-2.5 rounded-xl bg-white text-emerald-800 font-black text-sm hover:opacity-90">View Rush Gala →</a>
+<a href="https://rushgala.club/?code=E74DL8BGYPP&amp;t=1795580118" target="_blank" rel="nofollow noopener noreferrer" class="inline-flex justify-center items-center px-4 py-2.5 rounded-xl bg-amber-400 text-amber-950 font-black text-sm hover:opacity-90">Download APK</a>
 </div>
 </div>
 </div>
@@ -218,24 +217,6 @@
 </div>
 </section>
 
-<section id="latest-posts" class="py-8 bg-white border-b border-gray-100 latest-posts-section">
-<div class="container mx-auto px-4 max-w-5xl">
-<div class="flex items-center justify-between gap-3 mb-4">
-<div>
-<p class="text-xs uppercase tracking-widest font-black text-pink-600">Gaming News • Updates • Daily Promo Codes</p>
-<h2 class="text-2xl md:text-3xl font-bold text-gray-900">Gaming News, Updates &amp; Daily Promo Codes <span id="latest-post-badge" class="hidden ml-2 align-middle text-[11px] bg-red-600 text-white px-2 py-1 rounded-full animate-pulse">NEW</span></h2>
-</div>
-<div class="flex items-center gap-2">
-<button id="enable-post-notifications" type="button" class="text-xs font-bold px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50">🔔 Enable Notifications</button>
-<a href="posts/" class="text-sm font-bold text-blue-600 hover:underline">View All →</a>
-</div>
-</div>
-<div id="homepage-latest-post" class="rounded-2xl border border-pink-100 bg-pink-50/40 p-4 md:p-5 shadow-sm">
-<div class="text-sm text-gray-500">Loading latest update…</div>
-</div>
-<p id="post-notification-status" class="mt-2 text-xs text-gray-500"></p>
-</div>
-</section>
 <!-- High Bonuses Apps Section (Exact yonogames.app layout) -->
 <section class="py-6 bg-gradient-to-r from-yellow-50 to-orange-50">
 <div class="container mx-auto px-4">
@@ -291,793 +272,1033 @@
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6" id="games-grid">
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="Money Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/money-rummy.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="Rush Gala" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rush-gala.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Money Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rush Gala</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹9-₹89 Free (No Deposit) + 150% Deposit Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/money-rummy/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://moneyrummytt.com/?code=T1XR6CH9G63&amp;t=1788922892" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rush-gala/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rushgala.club/?code=E74DL8BGYPP&amp;t=1795580118" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="101 Z" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/101z.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaBonus" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-bonus.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">101 Z</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaBonus</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/101z-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://101zvip0.com/?code=398GYBNEZK6&amp;t=1788855511" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-bonus/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwabonusshare.bet?pid=272735844&amp;channel=2010002&amp;pkg=com.diwabonus002.com" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="567 Slots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/567-slots.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaWow" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-wow.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">567 Slots</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaWow</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Up to ₹388 Cash + 1040% Deposit Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/567-slots-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://join567slots.cc/?code=4NY6BK7F3FC&amp;t=1788292545" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-wow/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwawowshare.org?pid=451930879&amp;channel=2010001&amp;pkg=com.diwawow.app" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="777 Game" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/777-game.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaPlay" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-play.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">777 Game</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaPlay</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/777-game-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.rumblerummy555.com/?code=UC0LVMPVRDK&amp;t=1788857613" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-play/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwaplayshare.co?pid=466706687&amp;channel=2010002&amp;pkg=com.diwaplaywhl.app" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="789 Jackpots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/789-jackpots.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaLucky" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-lucky.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">789 Jackpots</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaLucky</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Invite Friends & Earn ₹50 + VIP Rewards</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/789-jackpots-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://join789jackpots.com/?code=J7ZAL7EQVVK&amp;t=1788292167" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-lucky/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://share1diwaluck.cyou?pid=353730018&amp;channel=2010002&amp;pkg=com.diwalucky2.app" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="ABC Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/abc-rummy.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaX" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-x.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">ABC Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaX</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Up to ₹288 Cash + 750% Deposit Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/abc-rummy-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.abcrummy66.com/?code=75CAK3KXPFS&amp;t=1788291651" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-x/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwaxshare.io?pid=493260172&amp;channel=2010002&amp;pkg=com.diwax002.app" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="Bingo101" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/bingo101.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaKing" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-king.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Bingo101</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaKing</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/bingo101-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://bin1go101.com/?code=6YFGNDWY3QV&amp;t=1788292100" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-king/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwakingshare.bet?pid=344264244&amp;channel=2010002&amp;pkg=com.diwaking0002.com" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="Boss Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/boss-rummy.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaSpin" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-spin.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Boss Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaSpin</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/boss-rummy-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.bossrummyii.com/?code=9HFUGQNRBJ9&amp;t=1788284863" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-spin/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwaspinshare.bet?pid=467079832&amp;channel=2010002&amp;pkg=com.diwaspin0002.com" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
-<img alt="Club INR" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/club-inr.webp"/>
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaRummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-rummy.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Club INR</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaRummy</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/club-inr-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://clubinrsvip.cc/?code=9VCJZTNLM2B&amp;t=1788285734" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-rummy/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwarummyshare.bet?pid=445630377&amp;channel=2050001&amp;pkg=com.diwarummy.h5" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaVIP" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-vip.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaVIP</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-vip/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwavipshare.bet?pid=372006642&amp;channel=2050001&amp;pkg=com.diwavip.h5" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaWin" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-win.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaWin</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Up to ₹109 Cash + 575% Deposit Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-win/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwawinshare.io?pid=433046975&amp;channel=2050001&amp;pkg=com.diwawin.h5" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Dhan Game" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/dhan-game.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Dhan Game</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Welcome Bonus up to ₹777 FREE + 886% Login Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/dhan-game-new/index.html">Details</a>
-<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://dhangamestrategy.com/?code=47TLBS9NPUA&amp;t=1788286898" rel="nofollow" target="_blank">Download</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/dhan-game-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://dhangamestrategy.com/?code=47TLBS9NPUA&amp;t=1795581646" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
 <img alt="DiwaTop" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwatop.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaTop</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹109 Random Cash + Up to 450% Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwatop-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwatop-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwatopshare.bet?pid=457245758&amp;channel=2010002&amp;pkg=com.diwatopwhl.app" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaAce" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-ace.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaAce</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Up to ₹388 Cash + 750% Deposit Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-ace/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://diwaaceshare.games?pid=269709231&amp;channel=2010003&amp;pkg=com.diwaace003.app" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="DiwaSlot" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/diwa-slot.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">DiwaSlot</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹108 Random Cash + Up to 450% Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/diwa-slot/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://sharediwaslot.xyz?pid=363998113&amp;channel=2010002&amp;pkg=com.diwaslotwhl.app" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="Jeet Spin" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jeet-spin.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jeet Spin</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹5-₹55 Cash Reward + 100% Deposit Rebate</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jeet-spin/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.jeetspin18.com/?code=SYHHW8FA9ZP&amp;t=1795580252" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+<span class="absolute -top-1 -right-1 z-10 bg-pink-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
+<img alt="Money Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/money-rummy.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Money Rummy</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/money-rummy/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://moneyrummytt.com/?code=T1XR6CH9G63&amp;t=1788922892" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="101 Z" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/101z.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">101 Z</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/101z-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://101zvip0.com/?code=398GYBNEZK6&amp;t=1788855511" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="567 Slots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/567-slots.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">567 Slots</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/567-slots-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://join567slots.cc/?code=4NY6BK7F3FC&amp;t=1788292545" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="777 Game" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/777-game.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">777 Game</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/777-game-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.rumblerummy555.com/?code=UC0LVMPVRDK&amp;t=1788857613" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="789 Jackpots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/789-jackpots.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">789 Jackpots</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/789-jackpots-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://join789jackpots.com/?code=J7ZAL7EQVVK&amp;t=1788292167" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="ABC Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/abc-rummy.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">ABC Rummy</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/abc-rummy-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.abcrummy66.com/?code=75CAK3KXPFS&amp;t=1788291651" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="Bingo101" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/bingo101.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Bingo101</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/bingo101-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://bin1go101.com/?code=6YFGNDWY3QV&amp;t=1788292100" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="Boss Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/boss-rummy.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Boss Rummy</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/boss-rummy-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.bossrummyii.com/?code=9HFUGQNRBJ9&amp;t=1788284863" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
+<img alt="Club INR" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/club-inr.webp"/>
+</div>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Club INR</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
+<div class="w-full mt-auto space-y-1.5">
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/club-inr-new/">Details</a>
+<a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://clubinrsvip.cc/?code=9VCJZTNLM2B&amp;t=1788285734" rel="nofollow" target="_blank">Download</a>
+</div>
+</div>
+<div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
+<div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Gogo Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/gogo-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Gogo Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/gogo-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/gogo-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.gogorummy4.com/?code=8FWG6ZK6Z4N&amp;t=1788289256" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Gold Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/gold-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Gold Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/gold-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/gold-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://goldrummy26.com/?code=JLXB2B6QMTF&amp;t=1788284654" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Hi Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/hi-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Hi Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/hi-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/hi-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://yes-mahagames.com/?code=J24HTAENM5G&amp;t=1788290799" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Hindi 777" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/hindi777.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Hindi 777</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/hindi-777/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/hindi-777/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.hindi777agent5.com/?code=7LFVESBD2VS&amp;t=1787411840" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="IND Club" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/ind-club.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">IND Club</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/ind-club-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/ind-club-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://indclub99.com/?code=34UHNV9TDEU&amp;t=1788291140" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="IND Slots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/ind-slots.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">IND Slots</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/ind-slots-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/ind-slots-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.indslotsbonus.com/?code=EYMA9ENAX8S&amp;t=1788292245" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="INR Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/inr-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">INR Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/inr-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/inr-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://inrrummy.sbs/?code=JMQ15MWNGGM&amp;t=1788290102" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Jaiho 777" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-777.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho 777</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-777/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-777/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://jaiho77790.com/?code=GC2815EEHMJ&amp;t=1787409362" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Jaiho 91" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-91.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho 91</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹91 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-91/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-91/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://91jaihowin.vip/?code=C42V7RHU9S6&amp;t=1788288979" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Jaiho Arcade" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-arcade.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho Arcade</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-arcade-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-arcade-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.jaihoarcade33.com/?code=AZD1EG8MDFR&amp;t=1788291780" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Jaiho Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://jaihorummy.co/?code=E74UXLLHKBC&amp;t=1788289594" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Jaiho Slots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-slots.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho Slots</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-slots/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-slots/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.jaihoslots18.com/?code=EGPK99W7JZM&amp;t=1788287628" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Jaiho Spin" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-spin.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho Spin</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-spin-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-spin-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://3jaihospinwin.com/?code=DX1NAT15&amp;t=1788292833" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Jaiho Win" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/jaiho-win.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Jaiho Win</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-win-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/jaiho-win-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.jaihowin1.com/?code=1XN2NLPP47Z&amp;t=1788291043" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Joy Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/joy-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Joy Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/joy-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/joy-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.joyrummyapp.com/?code=J5K5TKLVJCB&amp;t=1788287675" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Love Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/love-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Love Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/love-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/love-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.loverummy88.com/?code=AFC98NSMHKT&amp;t=1788290176" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Maha Games" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/maha-games.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Maha Games</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/maha-games-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/maha-games-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://yes-mahagames.com/?code=J24HTAENM5G&amp;t=1788290799" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Max Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/max-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Max Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/max-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/max-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.maxrummy111.com/?code=QUMU89TBHLK&amp;t=1788287554" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="MBM Bet" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/mbm-bet.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">MBM Bet</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/mbm-bet-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/mbm-bet-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.mbmbet8.com/?code=GD3MUF42S36&amp;t=1788289338" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Neta VIP" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/neta-vip.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Neta VIP</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/neta-vip-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/neta-vip-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://neta6.vip/?code=DR044ADMAH5&amp;t=1788291712" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="OK Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/ok-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">OK Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/ok-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/ok-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.okrummy22.com/?code=27BWJTCZGZK&amp;t=1788271676" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy Ludo" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-ludo.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Ludo</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-ludo-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-ludo-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.rummyludo1.com/?code=UWP2DT81346&amp;t=1788284375" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy 91" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy91.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy 91</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹91 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy91-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy91-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rummy91d.com/?code=4KTTQHURP52&amp;t=1788285645" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy Joys" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummyjoys.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Joys</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummyjoys/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummyjoys/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rummyjoys.com/?code=FM19ST42FT6&amp;t=1788283951" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Saga Slots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/saga-slots.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Saga Slots</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/saga-slots-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/saga-slots-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.sagaslots77.com/?code=0QHTNT7RQKY&amp;t=1788284518" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Share Slots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/share-slots.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Share Slots</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/share-slots-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/share-slots-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://share0066.com/?code=YAZKFEL4U3A&amp;t=1788291449" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Slots Spin" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/slots-spin.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Slots Spin</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/slots-spin-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/slots-spin-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.slotsspinf.com/?code=XJBMGNKLW9D&amp;t=1788291848" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Slots Winner" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/slots-winner.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Slots Winner</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/slots-winner-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/slots-winner-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://slotswinneragent.in/?code=K4EDD88GT63&amp;t=1788293159" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Spin Crush" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/spin-crush.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Spin Crush</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin-crush/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin-crush/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEK5VL6FE8&amp;t=1788270471" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Spin Winner" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/spin-winner.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Spin Winner</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin-winner-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin-winner-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Spin101" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/spin101.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Spin101</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin101-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin101-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://spin101.win/?code=P4CXMZMPEZE&amp;t=1788292661" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Spin 777" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/spin777.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Spin 777</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin777-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/spin777-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://spin777qq.com/?code=7V9UZ5TK729&amp;t=1788285073" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="TOP RUMMY" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/top-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">TOP RUMMY</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/top-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/top-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://toprummyapp.top/?code=7K9XWEJTGD4&amp;t=1787409258" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Win Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/win-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Win Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/win-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/win-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.winrummy9.com/?code=8JTWZW3T5UM&amp;t=1788285383" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="YN777" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yn777.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">YN777</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yn777-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yn777-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.y729.com/?code=4SWSZNCDFV6&amp;t=1788289709" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono 777" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-777.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono 777</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-777-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-777-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://uonoagentnew.asia/?code=F9MG7NJYP7T&amp;t=1788290273" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Arcade" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-arcade-new.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Arcade</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-arcade-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-arcade-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://yonoarcadeapk8.com/?code=F552DZMGGWB&amp;t=1788292761" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Games" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-games-referral.webp"/>
 </div>
-<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Games</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">YonoLootZone</h4>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-games-referral-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-games-referral-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://youonogamesreferral.com/?code=DG6KTC61&amp;t=1788289931" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Rummy</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-rummy-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-rummy-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://yonorummy056.com/?code=VIPKCZFWJYX&amp;t=1788292338" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Slots" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-slots.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Slots</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹100 + Spins</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-slots-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-slots-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.yonoslotsc.com/?code=PJBJQ6G83VH&amp;t=1788292980" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono VIP" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-vip.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono VIP</h4>
-<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full"></p>
+<p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">₹550 Bonus</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-vip-new/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-vip-new/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://yonoviponline.vip/?code=3CR3QMH3UZS&amp;t=1788289496" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono 21" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-21.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono 21</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-21/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-21/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Holy Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/holy-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Holy Rummy</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/holy-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/holy-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rummy91d.com/?code=4KTTQHURP52&amp;t=1788285645" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy Modern" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-modern.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Modern</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-modern/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-modern/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.winrummy9.com/?code=8JTWZW3T5UM&amp;t=1788285383" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy Nabob" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-nabob.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Nabob</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-nabob/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-nabob/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://moneyrummytt.com/?code=T1XR6CH9G63&amp;t=1788922892" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy Wealth" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-wealth.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Wealth</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-wealth/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-wealth/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://toprummyapp.top/?code=7K9XWEJTGD4&amp;t=1787409258" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Royal Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/royal-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Royal Rummy</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/royal-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/royal-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Teen Patti Gold Yono" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/teen-patti-gold.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Teen Patti Gold Yono</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/teen-patti-gold/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/teen-patti-gold/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.y729.com/?code=4SWSZNCDFV6&amp;t=1788289709" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Teen Patti Master Yono" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/teen-patti-master.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Teen Patti Master Yono</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/teen-patti-master/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/teen-patti-master/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://youonogamesreferral.com/?code=DG6KTC61&amp;t=1788289931" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Teen Patti" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-teen-patti.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Teen Patti</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-teen-patti/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-teen-patti/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono MBM" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-mbm.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono MBM</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-mbm/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-mbm/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Slots 777" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-slots-777.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Slots 777</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-slots-777/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-slots-777/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy Most" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-most.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Most</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-most/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-most/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://www.winrummy9.com/?code=8JTWZW3T5UM&amp;t=1788285383" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Rummy Gold Star" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/rummy-gold-star.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Rummy Gold Star</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-gold-star/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/rummy-gold-star/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://rummy91d.com/?code=4KTTQHURP52&amp;t=1788285645" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="666 Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/666-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">666 Rummy</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/666-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/666-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://toprummyapp.top/?code=7K9XWEJTGD4&amp;t=1787409258" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="777 Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/777-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">777 Rummy</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/777-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/777-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="888 Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/888-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">888 Rummy</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/888-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/888-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="999 Rummy" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/999-rummy.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">999 Rummy</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/999-rummy/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/999-rummy/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Rummy 51" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-rummy-51.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Rummy 51</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-rummy-51/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-rummy-51/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://moneyrummytt.com/?code=T1XR6CH9G63&amp;t=1788922892" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Super" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-super.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Super</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-super/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-super/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
 <div class="game-card bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center text-center transition-all duration-300">
 <div class="relative w-20 h-20 mb-3 rounded-2xl overflow-hidden shadow">
+
 <img alt="Yono Winner" class="w-full h-full object-cover" width="80" height="80" loading="lazy" src="assets/yono-winner.webp"/>
 </div>
 <h4 class="font-bold text-gray-800 text-sm mb-1 truncate w-full">Yono Winner</h4>
 <p class="text-xs text-green-600 font-semibold mb-3 truncate w-full">Sign Up Bonus ₹550</p>
 <div class="w-full mt-auto space-y-1.5">
-<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-winner/index.html">Details</a>
+<a class="block w-full py-1.5 text-xs font-bold text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors" href="games/yono-winner/">Details</a>
 <a class="download-btn block w-full py-1.5 text-xs font-bold text-white rounded-lg hover:opacity-90 transition-opacity" href="https://despinwinner.com/?code=SDNUBG6QLEV&amp;t=1788293242" rel="nofollow" target="_blank">Download</a>
 </div>
 </div>
@@ -1087,13 +1308,13 @@
 <!-- Quick Access Section -->
 <section class="py-12 bg-white">
 <div class="container mx-auto px-4">
-<h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Quick Access to Yono Games</h3>
+<h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Quick Access to YonoLootZone</h3>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 <a class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-4 text-center hover:shadow-lg transition-shadow" href="guides/yono-games-search-guide.html">
 <div class="text-blue-600 font-semibold text-sm">YonoGame App Download</div>
 </a>
 <a class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-lg p-4 text-center hover:shadow-lg transition-shadow" href="all-yono-games.html">
-<div class="text-green-600 font-semibold text-sm">Yono Games APK Download</div>
+<div class="text-green-600 font-semibold text-sm">YonoLootZone APK Download</div>
 </a>
 <a class="bg-gradient-to-br from-purple-50 to-violet-100 rounded-lg p-4 text-center hover:shadow-lg transition-shadow" href="all-yono-games.html">
 <div class="text-purple-600 font-semibold text-sm">All Yono Games</div>
@@ -1104,7 +1325,7 @@
 <a class="bg-gradient-to-br from-red-50 to-pink-100 rounded-lg p-4 text-center hover:shadow-lg transition-shadow" href="guides/yono-arcade-games-guide.html">
 <div class="text-red-600 font-semibold text-sm">Yono 777 &amp; Arcade</div>
 </a>
-<a class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-lg p-4 text-center hover:shadow-lg transition-shadow border border-blue-200" href="https://t.me/+jMDOLURgOQc1ODU1" rel="noopener noreferrer" target="_blank">
+<a class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-lg p-4 text-center hover:shadow-lg transition-shadow border border-blue-200" href="https://t.me/allyonolootzone" rel="noopener noreferrer" target="_blank">
 <div class="text-blue-600 font-bold text-sm flex items-center justify-center gap-1">📢 Join Telegram</div>
 </a>
 </div>
@@ -1274,7 +1495,7 @@
 <div class="grid md:grid-cols-4 gap-8 mb-8">
 <div>
 <h4 class="text-lg font-semibold mb-4">About YonoLootZone</h4>
-<p class="text-gray-400 text-sm">Download the best online games including Yono games, Jaiho777, Rummy91 and more. Enjoy safe, secure and exciting gaming experience.</p>
+<p class="text-gray-400 text-sm">Download the best online games including YonoLootZone, Jaiho777, Rummy91 and more. Enjoy safe, secure and exciting gaming experience.</p>
 </div>
 <div>
 <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
@@ -1296,7 +1517,7 @@
 <div>
 <h4 class="text-lg font-semibold mb-4">Contact &amp; Support</h4>
 <ul class="space-y-2 text-gray-400 text-sm">
-<li><a class="hover:text-white text-blue-400 font-bold" href="https://t.me/+jMDOLURgOQc1ODU1" target="_blank">📢 Telegram Channel</a></li>
+<li><a class="hover:text-white text-blue-400 font-bold" href="https://t.me/allyonolootzone" target="_blank">📢 Telegram Channel</a></li>
 <li><a class="hover:text-white" href="about.html">About Us</a></li>
 <li><a class="hover:text-white" href="disclaimer.html">Disclaimer &amp; 18+</a></li>
 </ul>
@@ -1305,10 +1526,10 @@
 <!-- SEO topic links kept at the bottom of the footer on mobile for a cleaner home layout -->
 <section id="seo-intro" class="footer-seo py-7 mb-8 border-t border-gray-700" aria-labelledby="seo-intro-title">
 <div class="container mx-auto px-4 max-w-5xl">
-<h2 id="seo-intro-title" class="text-xl md:text-2xl font-bold text-white">Yono Game &amp; All Yono Games</h2>
+<h1 id="seo-intro-title" class="text-xl md:text-2xl font-bold text-white">Yono Game &amp; All Yono Games</h1>
 <p class="mt-2 text-gray-400 text-sm leading-6">YonoLootZone is a directory for discovering Yono Game listings, app and APK information, category pages, installation guides and updates. Browse the all-games directory or explore dedicated pages for individual games.</p>
 <div class="mt-4 grid sm:grid-cols-3 md:grid-cols-4 gap-3 text-sm">
-<a class="footer-seo-card rounded-xl border border-gray-700 p-3 hover:border-gray-500" href="all-yono-games.html"><strong class="text-white">All Yono Games</strong><span class="block text-gray-400 mt-1">72+ verified APK directory</span></a>
+<a class="footer-seo-card rounded-xl border border-gray-700 p-3 hover:border-gray-500" href="all-yono-games.html"><strong class="text-white">All Yono Games</strong><span class="block text-gray-400 mt-1">92+ verified APK directory</span></a>
 <a class="footer-seo-card rounded-xl border border-gray-700 p-3 hover:border-gray-500" href="new-yono-game.html"><strong class="text-white">New Yono Game (2026)</strong><span class="block text-gray-400 mt-1">Latest releases & new bonuses</span></a>
 <a class="footer-seo-card rounded-xl border border-gray-700 p-3 hover:border-gray-500" href="yono-game-all.html"><strong class="text-white">Yono Game All</strong><span class="block text-gray-400 mt-1">Complete APK download hub</span></a>
 <a class="footer-seo-card rounded-xl border border-gray-700 p-3 hover:border-gray-500" href="yono-game-dd.html"><strong class="text-white">Yono Game DD</strong><span class="block text-gray-400 mt-1">DD sports & ₹550 welcome bonus</span></a>
@@ -1323,7 +1544,7 @@
 </div>
 </footer>
 <script>
-var gamesData = [{"name": "Money Rummy", "link": "games/money-rummy/index.html", "image": "assets/money-rummy.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "101 Z", "link": "games/101z-new/index.html", "image": "assets/101z.webp", "bonus": "\u20b9550 Bonus"}, {"name": "567 Slots", "link": "games/567-slots-new/index.html", "image": "assets/567-slots.webp", "bonus": "\u20b9100 + Spins"}, {"name": "777 Game", "link": "games/777-game-new/index.html", "image": "assets/777-game.webp", "bonus": "\u20b9100 + Spins"}, {"name": "789 Jackpots", "link": "games/789-jackpots-new/index.html", "image": "assets/789-jackpots.webp", "bonus": "\u20b9550 Bonus"}, {"name": "ABC Rummy", "link": "games/abc-rummy-new/index.html", "image": "assets/abc-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Bingo101", "link": "games/bingo101-new/index.html", "image": "assets/bingo101.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Boss Rummy", "link": "games/boss-rummy-new/index.html", "image": "assets/boss-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Club INR", "link": "games/club-inr-new/index.html", "image": "assets/club-inr.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Dhan Game", "link": "games/dhan-game-new/index.html", "image": "assets/dhan-game.webp", "bonus": "\u20b9550 Bonus"}, {"name": "DiwaTop", "link": "games/diwatop-new/index.html", "image": "assets/diwatop.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Gogo Rummy", "link": "games/gogo-rummy-new/index.html", "image": "assets/gogo-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Gold Rummy", "link": "games/gold-rummy-new/index.html", "image": "assets/gold-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Hi Rummy", "link": "games/hi-rummy-new/index.html", "image": "assets/hi-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Hindi 777", "link": "games/hindi-777/index.html", "image": "assets/hindi777.webp", "bonus": "\u20b9100 + Spins"}, {"name": "IND Club", "link": "games/ind-club-new/index.html", "image": "assets/ind-club.webp", "bonus": "\u20b9550 Bonus"}, {"name": "IND Slots", "link": "games/ind-slots-new/index.html", "image": "assets/ind-slots.webp", "bonus": "\u20b9100 + Spins"}, {"name": "INR Rummy", "link": "games/inr-rummy-new/index.html", "image": "assets/inr-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Jaiho 777", "link": "games/jaiho-777/index.html", "image": "assets/jaiho-777.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Jaiho 91", "link": "games/jaiho-91/index.html", "image": "assets/jaiho-91.webp", "bonus": "\u20b991 Bonus"}, {"name": "Jaiho Arcade", "link": "games/jaiho-arcade-new/index.html", "image": "assets/jaiho-arcade.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Jaiho Rummy", "link": "games/jaiho-rummy-new/index.html", "image": "assets/jaiho-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Jaiho Slots", "link": "games/jaiho-slots/index.html", "image": "assets/jaiho-slots.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Jaiho Spin", "link": "games/jaiho-spin-new/index.html", "image": "assets/jaiho-spin.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Jaiho Win", "link": "games/jaiho-win-new/index.html", "image": "assets/jaiho-win.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Joy Rummy", "link": "games/joy-rummy-new/index.html", "image": "assets/joy-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Love Rummy", "link": "games/love-rummy-new/index.html", "image": "assets/love-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Maha Games", "link": "games/maha-games-new/index.html", "image": "assets/maha-games.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Max Rummy", "link": "games/max-rummy-new/index.html", "image": "assets/max-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "MBM Bet", "link": "games/mbm-bet-new/index.html", "image": "assets/mbm-bet.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Neta VIP", "link": "games/neta-vip-new/index.html", "image": "assets/neta-vip.webp", "bonus": "\u20b9550 Bonus"}, {"name": "OK Rummy", "link": "games/ok-rummy/index.html", "image": "assets/ok-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Rummy Ludo", "link": "games/rummy-ludo-new/index.html", "image": "assets/rummy-ludo.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Rummy 91", "link": "games/rummy91-new/index.html", "image": "assets/rummy91.webp", "bonus": "\u20b991 Bonus"}, {"name": "Rummy Joys", "link": "games/rummyjoys/index.html", "image": "assets/rummyjoys.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Saga Slots", "link": "games/saga-slots-new/index.html", "image": "assets/saga-slots.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Share Slots", "link": "games/share-slots-new/index.html", "image": "assets/share-slots.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Slots Spin", "link": "games/slots-spin-new/index.html", "image": "assets/slots-spin.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Slots Winner", "link": "games/slots-winner-new/index.html", "image": "assets/slots-winner.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Spin Crush", "link": "games/spin-crush/index.html", "image": "assets/spin-crush.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Spin Winner", "link": "games/spin-winner-new/index.html", "image": "assets/spin-winner.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Spin101", "link": "games/spin101-new/index.html", "image": "assets/spin101.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Spin 777", "link": "games/spin777-new/index.html", "image": "assets/spin777.webp", "bonus": "\u20b9100 + Spins"}, {"name": "TOP RUMMY", "link": "games/top-rummy/index.html", "image": "assets/top-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Win Rummy", "link": "games/win-rummy-new/index.html", "image": "assets/win-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "YN777", "link": "games/yn777-new/index.html", "image": "assets/yn777.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Yono 777", "link": "games/yono-777-new/index.html", "image": "assets/yono-777.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Yono Arcade", "link": "games/yono-arcade-new/index.html", "image": "assets/yono-arcade-new.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Yono Games", "link": "games/yono-games-referral-new/index.html", "image": "assets/yono-games-referral.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Yono Rummy", "link": "games/yono-rummy-new/index.html", "image": "assets/yono-rummy.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Yono Slots", "link": "games/yono-slots-new/index.html", "image": "assets/yono-slots.webp", "bonus": "\u20b9100 + Spins"}, {"name": "Yono VIP", "link": "games/yono-vip-new/index.html", "image": "assets/yono-vip.webp", "bonus": "\u20b9550 Bonus"}, {"name": "Yono 21", "link": "games/yono-21/index.html", "image": "assets/yono-21.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Holy Rummy", "link": "games/holy-rummy/index.html", "image": "assets/holy-rummy.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Rummy Modern", "link": "games/rummy-modern/index.html", "image": "assets/rummy-modern.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Rummy Nabob", "link": "games/rummy-nabob/index.html", "image": "assets/rummy-nabob.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Rummy Wealth", "link": "games/rummy-wealth/index.html", "image": "assets/rummy-wealth.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Royal Rummy", "link": "games/royal-rummy/index.html", "image": "assets/royal-rummy.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Teen Patti Gold Yono", "link": "games/teen-patti-gold/index.html", "image": "assets/teen-patti-gold.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Teen Patti Master Yono", "link": "games/teen-patti-master/index.html", "image": "assets/teen-patti-master.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Yono Teen Patti", "link": "games/yono-teen-patti/index.html", "image": "assets/yono-teen-patti.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Yono MBM", "link": "games/yono-mbm/index.html", "image": "assets/yono-mbm.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Yono Slots 777", "link": "games/yono-slots-777/index.html", "image": "assets/yono-slots-777.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Rummy Most", "link": "games/rummy-most/index.html", "image": "assets/rummy-most.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Rummy Gold Star", "link": "games/rummy-gold-star/index.html", "image": "assets/rummy-gold-star.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "666 Rummy", "link": "games/666-rummy/index.html", "image": "assets/666-rummy.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "777 Rummy", "link": "games/777-rummy/index.html", "image": "assets/777-rummy.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "888 Rummy", "link": "games/888-rummy/index.html", "image": "assets/888-rummy.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "999 Rummy", "link": "games/999-rummy/index.html", "image": "assets/999-rummy.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Yono Rummy 51", "link": "games/yono-rummy-51/index.html", "image": "assets/yono-rummy-51.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Yono Super", "link": "games/yono-super/index.html", "image": "assets/yono-super.webp", "bonus": "Sign Up Bonus \u20b9550"}, {"name": "Yono Winner", "link": "games/yono-winner/index.html", "image": "assets/yono-winner.webp", "bonus": "Sign Up Bonus \u20b9550"}];
+var gamesData = [{"name": "Rush Gala", "link": "games/rush-gala/", "image": "assets/rush-gala.webp", "bonus": "₹9-₹89 Free (No Deposit) + 150% Deposit Bonus"}, {"name": "DiwaBonus", "link": "games/diwa-bonus/", "image": "assets/diwa-bonus.webp", "bonus": "₹109 Random Cash + Up to 450% Bonus"}, {"name": "DiwaWow", "link": "games/diwa-wow/", "image": "assets/diwa-wow.webp", "bonus": "Up to ₹388 Cash + 1040% Deposit Bonus"}, {"name": "DiwaPlay", "link": "games/diwa-play/", "image": "assets/diwa-play.webp", "bonus": "₹109 Random Cash + Up to 450% Bonus"}, {"name": "DiwaLucky", "link": "games/diwa-lucky/", "image": "assets/diwa-lucky.webp", "bonus": "Invite Friends & Earn ₹50 + VIP Rewards"}, {"name": "DiwaX", "link": "games/diwa-x/", "image": "assets/diwa-x.webp", "bonus": "Up to ₹288 Cash + 750% Deposit Bonus"}, {"name": "DiwaKing", "link": "games/diwa-king/", "image": "assets/diwa-king.webp", "bonus": "₹109 Random Cash + Up to 450% Bonus"}, {"name": "DiwaSpin", "link": "games/diwa-spin/", "image": "assets/diwa-spin.webp", "bonus": "₹109 Random Cash + Up to 450% Bonus"}, {"name": "DiwaRummy", "link": "games/diwa-rummy/", "image": "assets/diwa-rummy.webp", "bonus": "₹109 Random Cash + Up to 450% Bonus"}, {"name": "DiwaVIP", "link": "games/diwa-vip/", "image": "assets/diwa-vip.webp", "bonus": "₹109 Random Cash + Up to 450% Bonus"}, {"name": "DiwaWin", "link": "games/diwa-win/", "image": "assets/diwa-win.webp", "bonus": "Up to ₹109 Cash + 575% Deposit Bonus"}, {"name": "Dhan Game", "link": "games/dhan-game-new/", "image": "assets/dhan-game.webp", "bonus": "Welcome Bonus up to ₹777 FREE + 886% Login Bonus"}, {"name": "DiwaTop", "link": "games/diwatop-new/", "image": "assets/diwatop.webp", "bonus": "₹109 Random Cash + Up to 450% Bonus"}, {"name": "DiwaAce", "link": "games/diwa-ace/", "image": "assets/diwa-ace.webp", "bonus": "Up to ₹388 Cash + 750% Deposit Bonus"}, {"name": "DiwaSlot", "link": "games/diwa-slot/", "image": "assets/diwa-slot.webp", "bonus": "₹108 Random Cash + Up to 450% Bonus"}, {"name": "Spin Gold", "link": "games/spin-gold/", "image": "assets/spin-gold.webp", "bonus": "₹13 Joining Bonus + ₹99 7-Days Login + 100% Cashback"}, {"name": "MQM Bet", "link": "games/mqm-bet/", "image": "assets/mqm-bet.webp", "bonus": "₹109 Random Cash + Up to 450% Deposit Bonus"}, {"name": "Rummy 77", "link": "games/rummy-77/", "image": "assets/rummy-77.webp", "bonus": "₹7 Joining Bonus + ₹406 7-Days Login + 100% Cashback"}, {"name": "123 Rummy", "link": "games/123-rummy/", "image": "assets/123-rummy.webp", "bonus": "Welcome Bonus up to ₹199 FREE + 100% Extra Bonus"}, {"name": "Jaiho Play", "link": "games/jaiho-play/", "image": "assets/jaiho-play.webp", "bonus": "FREE Welcome Bonus up to ₹99 + 200% Deposit Bonus"}, {"name": "Rummy Zip", "link": "games/rummy-zip/", "image": "assets/rummy-zip.webp", "bonus": "FREE ₹10–₹80 Welcome Bonus + 30%–100% Extra Cashback"}, {"name": "Jeet Spin", "link": "games/jeet-spin/", "image": "assets/jeet-spin.webp", "bonus": "₹5-₹55 Cash Reward + 100% Deposit Rebate"}, {"name": "Money Rummy", "link": "games/money-rummy/", "image": "assets/money-rummy.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "101 Z", "link": "games/101z-new/", "image": "assets/101z.webp", "bonus": "₹550 Bonus"}, {"name": "567 Slots", "link": "games/567-slots-new/", "image": "assets/567-slots.webp", "bonus": "₹100 + Spins"}, {"name": "777 Game", "link": "games/777-game-new/", "image": "assets/777-game.webp", "bonus": "₹100 + Spins"}, {"name": "789 Jackpots", "link": "games/789-jackpots-new/", "image": "assets/789-jackpots.webp", "bonus": "₹550 Bonus"}, {"name": "ABC Rummy", "link": "games/abc-rummy-new/", "image": "assets/abc-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Bingo101", "link": "games/bingo101-new/", "image": "assets/bingo101.webp", "bonus": "₹550 Bonus"}, {"name": "Boss Rummy", "link": "games/boss-rummy-new/", "image": "assets/boss-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Club INR", "link": "games/club-inr-new/", "image": "assets/club-inr.webp", "bonus": "₹550 Bonus"}, {"name": "Gogo Rummy", "link": "games/gogo-rummy-new/", "image": "assets/gogo-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Gold Rummy", "link": "games/gold-rummy-new/", "image": "assets/gold-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Hi Rummy", "link": "games/hi-rummy-new/", "image": "assets/hi-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Hindi 777", "link": "games/hindi-777/", "image": "assets/hindi777.webp", "bonus": "₹100 First Order Discount + Friend Invite Cash"}, {"name": "IND Club", "link": "games/ind-club-new/", "image": "assets/ind-club.webp", "bonus": "₹550 Bonus"}, {"name": "IND Slots", "link": "games/ind-slots-new/", "image": "assets/ind-slots.webp", "bonus": "₹100 + Spins"}, {"name": "INR Rummy", "link": "games/inr-rummy-new/", "image": "assets/inr-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Jaiho 777", "link": "games/jaiho-777/", "image": "assets/jaiho-777.webp", "bonus": "₹100 + Spins"}, {"name": "Jaiho 91", "link": "games/jaiho-91/", "image": "assets/jaiho-91.webp", "bonus": "₹91 Bonus"}, {"name": "Jaiho Arcade", "link": "games/jaiho-arcade-new/", "image": "assets/jaiho-arcade.webp", "bonus": "500+ Games & Welcome Rewards"}, {"name": "Jaiho Rummy", "link": "games/jaiho-rummy-new/", "image": "assets/jaiho-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Jaiho Slots", "link": "games/jaiho-slots/", "image": "assets/jaiho-slots.webp", "bonus": "₹100 + Spins"}, {"name": "Jaiho Spin", "link": "games/jaiho-spin-new/", "image": "assets/jaiho-spin.webp", "bonus": "₹550 Bonus"}, {"name": "Jaiho Win", "link": "games/jaiho-win-new/", "image": "assets/jaiho-win.webp", "bonus": "₹550 Bonus"}, {"name": "Joy Rummy", "link": "games/joy-rummy-new/", "image": "assets/joy-rummy.webp", "bonus": "Up to ₹300 Welcome Cash + 100% Deposit Boost"}, {"name": "Love Rummy", "link": "games/love-rummy-new/", "image": "assets/love-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Maha Games", "link": "games/maha-games-new/", "image": "assets/maha-games.webp", "bonus": "₹550 Bonus"}, {"name": "Max Rummy", "link": "games/max-rummy-new/", "image": "assets/max-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "MBM Bet", "link": "games/mbm-bet-new/", "image": "assets/mbm-bet.webp", "bonus": "₹550 Bonus"}, {"name": "Neta VIP", "link": "games/neta-vip-new/", "image": "assets/neta-vip.webp", "bonus": "₹550 Bonus"}, {"name": "OK Rummy", "link": "games/ok-rummy/", "image": "assets/ok-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Rummy Ludo", "link": "games/rummy-ludo-new/", "image": "assets/rummy-ludo.webp", "bonus": "Up to ₹100 Welcome Bonus (No Deposit)"}, {"name": "Rummy 91", "link": "games/rummy91-new/", "image": "assets/rummy91.webp", "bonus": "₹91 Bonus"}, {"name": "Rummy Joys", "link": "games/rummyjoys/", "image": "assets/rummyjoys.webp", "bonus": "₹550 Bonus"}, {"name": "Saga Slots", "link": "games/saga-slots-new/", "image": "assets/saga-slots.webp", "bonus": "₹100 + Spins"}, {"name": "Share Slots", "link": "games/share-slots-new/", "image": "assets/share-slots.webp", "bonus": "₹100 + Spins"}, {"name": "Slots Spin", "link": "games/slots-spin-new/", "image": "assets/slots-spin.webp", "bonus": "₹100 + Spins"}, {"name": "Slots Winner", "link": "games/slots-winner-new/", "image": "assets/slots-winner.webp", "bonus": "₹100 + Spins"}, {"name": "Spin Crush", "link": "games/spin-crush/", "image": "assets/spin-crush.webp", "bonus": "₹550 Bonus"}, {"name": "Spin Winner", "link": "games/spin-winner-new/", "image": "assets/spin-winner.webp", "bonus": "₹550 Bonus"}, {"name": "Spin101", "link": "games/spin101-new/", "image": "assets/spin101.webp", "bonus": "₹550 Bonus"}, {"name": "Spin 777", "link": "games/spin777-new/", "image": "assets/spin777.webp", "bonus": "₹100 + Spins"}, {"name": "TOP RUMMY", "link": "games/top-rummy/", "image": "assets/top-rummy.webp", "bonus": "₹8 Joining Bonus + ₹80 7-Days Login + 100% Cashback"}, {"name": "Win Rummy", "link": "games/win-rummy-new/", "image": "assets/win-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "YN777", "link": "games/yn777-new/", "image": "assets/yn777.webp", "bonus": "₹100 + Spins"}, {"name": "Yono 777", "link": "games/yono-777-new/", "image": "assets/yono-777.webp", "bonus": "₹100 + Spins"}, {"name": "Yono Arcade", "link": "games/yono-arcade-new/", "image": "assets/yono-arcade-new.webp", "bonus": "₹550 Bonus"}, {"name": "Yono Games", "link": "games/yono-games-referral-new/", "image": "assets/yono-games-referral.webp", "bonus": "₹550 Bonus"}, {"name": "Yono Rummy", "link": "games/yono-rummy-new/", "image": "assets/yono-rummy.webp", "bonus": "₹550 Bonus"}, {"name": "Yono Slots", "link": "games/yono-slots-new/", "image": "assets/yono-slots.webp", "bonus": "₹100 + Spins"}, {"name": "Yono VIP", "link": "games/yono-vip-new/", "image": "assets/yono-vip.webp", "bonus": "₹550 Bonus"}, {"name": "Yono 21", "link": "games/yono-21/", "image": "assets/yono-21.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Holy Rummy", "link": "games/holy-rummy/", "image": "assets/holy-rummy.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Rummy Modern", "link": "games/rummy-modern/", "image": "assets/rummy-modern.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Rummy Nabob", "link": "games/rummy-nabob/", "image": "assets/rummy-nabob.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Rummy Wealth", "link": "games/rummy-wealth/", "image": "assets/rummy-wealth.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Royal Rummy", "link": "games/royal-rummy/", "image": "assets/royal-rummy.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Teen Patti Gold Yono", "link": "games/teen-patti-gold/", "image": "assets/teen-patti-gold.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Teen Patti Master Yono", "link": "games/teen-patti-master/", "image": "assets/teen-patti-master.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Yono Teen Patti", "link": "games/yono-teen-patti/", "image": "assets/yono-teen-patti.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Yono MBM", "link": "games/yono-mbm/", "image": "assets/yono-mbm.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Yono Slots 777", "link": "games/yono-slots-777/", "image": "assets/yono-slots-777.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Rummy Most", "link": "games/rummy-most/", "image": "assets/rummy-most.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Rummy Gold Star", "link": "games/rummy-gold-star/", "image": "assets/rummy-gold-star.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "666 Rummy", "link": "games/666-rummy/", "image": "assets/666-rummy.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "777 Rummy", "link": "games/777-rummy/", "image": "assets/777-rummy.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "888 Rummy", "link": "games/888-rummy/", "image": "assets/888-rummy.webp", "bonus": "₹8 Joining Bonus + ₹312 7-Days Login + 100% Cashback"}, {"name": "999 Rummy", "link": "games/999-rummy/", "image": "assets/999-rummy.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Yono Rummy 51", "link": "games/yono-rummy-51/", "image": "assets/yono-rummy-51.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Yono Super", "link": "games/yono-super/", "image": "assets/yono-super.webp", "bonus": "Sign Up Bonus ₹550"}, {"name": "Yono Winner", "link": "games/yono-winner/", "image": "assets/yono-winner.webp", "bonus": "Sign Up Bonus ₹550"}];
 
 function handleSearch(inp, res){
     if(!inp || !res) return;
@@ -1377,61 +1598,37 @@ if(sb && sd) sb.addEventListener('click', function(){ sd.classList.toggle('hidde
   .footer-seo{padding-top:22px !important;padding-bottom:22px !important;margin-bottom:18px !important;}
   .footer-seo-card{padding:11px !important;}
 }
-@keyframes postBlink { 0%,100% { box-shadow:0 0 0 0 rgba(239,68,68,.12); } 50% { box-shadow:0 0 0 7px rgba(239,68,68,.22); } }
-.latest-posts-section.new-post { animation: postBlink 1.1s ease-in-out infinite; border-top: 3px solid #ef4444; }
-.latest-post-card { display:flex; gap:18px; align-items:center; text-decoration:none; color:inherit; }
-.latest-post-card img { width:180px; height:110px; object-fit:cover; border-radius:14px; flex:none; }
-@media(max-width:640px){ .latest-post-card{display:block}.latest-post-card img{width:100%;height:190px;margin-bottom:12px} }
+
 </style>
-<script>
-(function(){
-  const latestUrl='posts/latest.json?_='+Date.now();
-  const section=document.getElementById('latest-posts');
-  const card=document.getElementById('homepage-latest-post');
-  const badge=document.getElementById('latest-post-badge');
-  const navBadge=document.getElementById('nav-post-badge');
-  const mobileBadge=document.getElementById('mobile-post-badge');
-  const btn=document.getElementById('enable-post-notifications');
-  const status=document.getElementById('post-notification-status');
-  if(!card) return;
-  function esc(v){const d=document.createElement('div');d.textContent=v||'';return d.innerHTML}
-  function setNew(isNew){
-    [badge,navBadge,mobileBadge].forEach(x=>x&&x.classList.toggle('hidden',!isNew));
-    if(section) section.classList.toggle('new-post',isNew);
-  }
-  function notify(post){
-    if(!('Notification' in window) || Notification.permission!=='granted') return;
-    try{ new Notification('YonoLootZone — New Post',{body:post.title||'A new update is available.'}); }catch(e){}
-  }
-  fetch(latestUrl,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(post=>{
-    if(!post || !post.slug) { card.innerHTML='<div class="text-sm text-gray-500">No posts published yet.</div>'; return; }
-    const id=post.id || post.slug;
-    const seen=localStorage.getItem('yono_latest_post_seen');
-    const isNew=!!seen && seen!==id;
-    card.innerHTML='<a class="latest-post-card" href="posts/'+encodeURIComponent(post.slug)+'/">'+
-      (post.image?'<img src="'+esc(post.image)+'" alt="'+esc(post.imageAlt||post.title)+'" loading="lazy">':'')+
-      '<div><div class="text-xs font-bold text-pink-600 uppercase tracking-wider">'+esc(post.type||'Update')+' · '+esc(post.date||'')+'</div>'+
-      '<h3 class="text-xl md:text-2xl font-extrabold text-gray-900 mt-1">'+esc(post.title)+'</h3>'+
-      '<p class="text-gray-600 mt-2 leading-6">'+esc(post.excerpt||post.description||'')+'</p>'+
-      '<span class="inline-block mt-3 text-blue-600 font-bold">Read Full Post →</span></div></a>';
-    setNew(isNew);
-    if(isNew){ notify(post); document.title='🔴 New Post • YonoLootZone'; setTimeout(()=>{document.title='Yono Game — All Yono Games, APK & App | YonoLootZone'},6000); }
-    localStorage.setItem('yono_latest_post_seen',id);
-  }).catch(()=>{card.innerHTML='<div class="text-sm text-gray-500">Latest posts are temporarily unavailable.</div>';});
-  if(btn){
-    if(!('Notification' in window)){btn.style.display='inline-flex'; btn.textContent='🔔 Enable Notifications'; if(status) status.textContent='Notifications are not supported in this browser/device.';}
-    else if(Notification.permission==='granted'){btn.style.display='inline-flex'; btn.textContent='🔔 Notifications Enabled';}
-    btn.addEventListener('click',async()=>{
-      try{const p=await Notification.requestPermission(); if(p==='granted'){btn.textContent='🔔 Notifications Enabled'; if(status) status.textContent='You will receive a browser notification when a new post is detected while this site is open.';} else if(status) status.textContent='Notifications are not enabled in this browser.';}catch(e){}
-    });
-  }
-  setInterval(()=>{
-    fetch(latestUrl,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(post=>{
-      if(!post||!post.slug)return; const id=post.id||post.slug; const seen=localStorage.getItem('yono_latest_post_seen');
-      if(seen && seen!==id){setNew(true);notify(post);localStorage.setItem('yono_latest_post_seen',id);}
-    }).catch(()=>{});
-  },60000);
-})();
-</script>
-<script src="assets/site-config.js" defer></script></body>
+<script src="assets/site-config.js" defer></script>
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item active">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="all-yono-games.html" class="mobile-nav-item">
+      <i class="fas fa-gamepad"></i>
+      <span>Games</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-nav-item trigger-search-btn">
+      <i class="fas fa-search"></i>
+      <span>Search</span>
+    </a>
+    <a href="all-yono-games.html?cat=favorites" class="mobile-nav-item">
+      <i class="fas fa-heart"></i>
+      <span>Favorites</span>
+      <span class="mobile-nav-badge fav-count-badge" style="display:none;">0</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-nav-item theme-toggle-btn">
+      <i class="fas fa-moon"></i>
+      <span>Theme</span>
+    </a>
+  </nav>
+
+  <script>
+    window.gamesData = [{"name": "Rush Gala", "slug": "rush-gala", "category": "New Game", "image": "assets/rush-gala.webp", "url": "https://rushgala.club/?code=E74DL8BGYPP&t=1795580118", "bonus": "₹9-₹89 Free (No Deposit) + 150% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaBonus", "slug": "diwa-bonus", "category": "New Game", "image": "assets/diwa-bonus.webp", "url": "https://diwabonusshare.bet?pid=272735844&channel=2010002&pkg=com.diwabonus002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaWow", "slug": "diwa-wow", "category": "New Game", "image": "assets/diwa-wow.webp", "url": "https://diwawowshare.org?pid=451930879&channel=2010001&pkg=com.diwawow.app", "bonus": "Up to ₹388 Cash + 1040% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaPlay", "slug": "diwa-play", "category": "New Game", "image": "assets/diwa-play.webp", "url": "https://diwaplayshare.co?pid=466706687&channel=2010002&pkg=com.diwaplaywhl.app", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaLucky", "slug": "diwa-lucky", "category": "New Game", "image": "assets/diwa-lucky.webp", "url": "https://share1diwaluck.cyou?pid=353730018&channel=2010002&pkg=com.diwalucky2.app", "bonus": "Invite Friends & Earn ₹50 + VIP Rewards", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaX", "slug": "diwa-x", "category": "New Game", "image": "assets/diwa-x.webp", "url": "https://diwaxshare.io?pid=493260172&channel=2010002&pkg=com.diwax002.app", "bonus": "Up to ₹288 Cash + 750% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaKing", "slug": "diwa-king", "category": "New Game", "image": "assets/diwa-king.webp", "url": "https://diwakingshare.bet?pid=344264244&channel=2010002&pkg=com.diwaking0002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaSpin", "slug": "diwa-spin", "category": "New Game", "image": "assets/diwa-spin.webp", "url": "https://diwaspinshare.bet?pid=467079832&channel=2010002&pkg=com.diwaspin0002.com", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaRummy", "slug": "diwa-rummy", "category": "New Game", "image": "assets/diwa-rummy.webp", "url": "https://diwarummyshare.bet?pid=445630377&channel=2050001&pkg=com.diwarummy.h5", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaVIP", "slug": "diwa-vip", "category": "New Game", "image": "assets/diwa-vip.webp", "url": "https://diwavipshare.bet?pid=372006642&channel=2050001&pkg=com.diwavip.h5", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaWin", "slug": "diwa-win", "category": "New Game", "image": "assets/diwa-win.webp", "url": "https://diwawinshare.io?pid=433046975&channel=2050001&pkg=com.diwawin.h5", "bonus": "Up to ₹109 Cash + 575% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Dhan Game", "slug": "dhan-game-new", "category": "Popular", "image": "assets/dhan-game.webp", "url": "https://dhangamestrategy.com/?code=47TLBS9NPUA&t=1795581646", "bonus": "Welcome Bonus up to ₹777 FREE + 886% Login Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": "2026-11-25"}, {"name": "DiwaTop", "slug": "diwatop-new", "category": "New Game", "image": "assets/diwatop.webp", "url": "https://diwatopshare.bet?pid=457245758&channel=2010002&pkg=com.diwatopwhl.app", "bonus": "₹109 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaAce", "slug": "diwa-ace", "category": "New Game", "image": "assets/diwa-ace.webp", "url": "https://diwaaceshare.games?pid=269709231&channel=2010003&pkg=com.diwaace003.app", "bonus": "Up to ₹388 Cash + 750% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "DiwaSlot", "slug": "diwa-slot", "category": "New Game", "image": "assets/diwa-slot.webp", "url": "https://sharediwaslot.xyz?pid=363998113&channel=2010002&pkg=com.diwaslotwhl.app", "bonus": "₹108 Random Cash + Up to 450% Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Spin Gold", "slug": "spin-gold", "category": "Slots", "image": "assets/spin-gold.webp", "url": "https://spingoldu.com/?code=TBTNL33TLNC&t=1795584287", "bonus": "₹13 Joining Bonus + ₹99 7-Days Login + 100% Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "MQM Bet", "slug": "mqm-bet", "category": "New Game", "image": "assets/mqm-bet.webp", "url": "https://mqmshare1.vip?pid=496757839&channel=2010001&pkg=com.mqm.bet", "bonus": "₹109 Random Cash + Up to 450% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Rummy 77", "slug": "rummy-77", "category": "Rummy", "image": "assets/rummy-77.webp", "url": "https://rummy77bonus.vip/?code=5FNMA7HLJ9F&t=1795583916", "bonus": "₹7 Joining Bonus + ₹406 7-Days Login + 100% Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "123 Rummy", "slug": "123-rummy", "category": "Rummy", "image": "assets/123-rummy.webp", "url": "https://www.123rummy11.com/?code=HT9Y32PNM2B&t=1795582464", "bonus": "Welcome Bonus up to ₹199 FREE + 100% Extra Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Jaiho Play", "slug": "jaiho-play", "category": "New Game", "image": "assets/jaiho-play.webp", "url": "https://2m5p7z6h.jaiholink.com/?code=EGP7HX953MS&t=1795583984", "bonus": "FREE Welcome Bonus up to ₹99 + 200% Deposit Bonus", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Rummy Zip", "slug": "rummy-zip", "category": "Rummy", "image": "assets/rummy-zip.webp", "url": "https://rummyzip9.com/?code=N9G644TN&t=1795584364", "bonus": "FREE ₹10–₹80 Welcome Bonus + 30%–100% Extra Cashback", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": "2026-11-25"}, {"name": "Jeet Spin", "slug": "jeet-spin", "category": "All Games", "image": "assets/jeet-spin.webp", "url": "https://www.jeetspin18.com/?code=SYHHW8FA9ZP&t=1795580252", "bonus": "₹5-₹55 Cash Reward + 100% Deposit Rebate", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Money Rummy", "slug": "money-rummy", "category": "New Game", "image": "assets/money-rummy.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": true, "popular": true, "new_game": true, "lastUpdated": ""}, {"name": "101 Z", "slug": "101z-new", "category": "Games", "image": "assets/101z.webp", "url": "https://101zvip0.com/?code=398GYBNEZK6&t=1788855511", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "567 Slots", "slug": "567-slots-new", "category": "Slots", "image": "assets/567-slots.webp", "url": "https://join567slots.cc/?code=4NY6BK7F3FC&t=1788292545", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "777 Game", "slug": "777-game-new", "category": "Popular", "image": "assets/777-game.webp", "url": "https://www.rumblerummy555.com/?code=UC0LVMPVRDK&t=1788857613", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "789 Jackpots", "slug": "789-jackpots-new", "category": "Popular", "image": "assets/789-jackpots.webp", "url": "https://join789jackpots.com/?code=J7ZAL7EQVVK&t=1788292167", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "ABC Rummy", "slug": "abc-rummy-new", "category": "Rummy", "image": "assets/abc-rummy.webp", "url": "https://www.abcrummy66.com/?code=75CAK3KXPFS&t=1788291651", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Bingo101", "slug": "bingo101-new", "category": "Popular", "image": "assets/bingo101.webp", "url": "https://bin1go101.com/?code=6YFGNDWY3QV&t=1788292100", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Boss Rummy", "slug": "boss-rummy-new", "category": "Popular", "image": "assets/boss-rummy.webp", "url": "https://www.bossrummyii.com/?code=9HFUGQNRBJ9&t=1788284863", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Club INR", "slug": "club-inr-new", "category": "Popular", "image": "assets/club-inr.webp", "url": "https://clubinrsvip.cc/?code=9VCJZTNLM2B&t=1788285734", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Gogo Rummy", "slug": "gogo-rummy-new", "category": "Rummy", "image": "assets/gogo-rummy.webp", "url": "https://www.gogorummy4.com/?code=8FWG6ZK6Z4N&t=1788289256", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Gold Rummy", "slug": "gold-rummy-new", "category": "Popular", "image": "assets/gold-rummy.webp", "url": "https://goldrummy26.com/?code=JLXB2B6QMTF&t=1788284654", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Hi Rummy", "slug": "hi-rummy-new", "category": "Popular", "image": "assets/hi-rummy.webp", "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Hindi 777", "slug": "hindi-777", "category": "Popular", "image": "assets/hindi777.webp", "url": "https://www.hindi777agent5.com/?code=7LFEQS17695&t=1795584409", "bonus": "₹100 First Order Discount + Friend Invite Cash", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "IND Club", "slug": "ind-club-new", "category": "Popular", "image": "assets/ind-club.webp", "url": "https://indclub99.com/?code=34UHNV9TDEU&t=1788291140", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "IND Slots", "slug": "ind-slots-new", "category": "Slots", "image": "assets/ind-slots.webp", "url": "https://www.indslotsbonus.com/?code=EYMA9ENAX8S&t=1788292245", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "INR Rummy", "slug": "inr-rummy-new", "category": "Popular", "image": "assets/inr-rummy.webp", "url": "https://inrrummy.sbs/?code=JMQ15MWNGGM&t=1788290102", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho 777", "slug": "jaiho-777", "category": "Popular", "image": "assets/jaiho-777.webp", "url": "https://jaiho77790.com/?code=GC2815EEHMJ&t=1787409362", "bonus": "₹100 + Spins", "platform": "Android", "featured": true, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho 91", "slug": "jaiho-91", "category": "Popular", "image": "assets/jaiho-91.webp", "url": "https://91jaihowin.vip/?code=C42V7RHU9S6&t=1788288979", "bonus": "₹91 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Arcade", "slug": "jaiho-arcade-new", "category": "Popular", "image": "assets/jaiho-arcade.webp", "url": "https://jaihoreferral.com/?code=AZD1EG8MDFR&t=1795583225", "bonus": "500+ Games & Welcome Rewards", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Rummy", "slug": "jaiho-rummy-new", "category": "Popular", "image": "assets/jaiho-rummy.webp", "url": "https://jaihorummy.co/?code=E74UXLLHKBC&t=1788289594", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Slots", "slug": "jaiho-slots", "category": "Popular", "image": "assets/jaiho-slots.webp", "url": "https://www.jaihoslots18.com/?code=EGPK99W7JZM&t=1788287628", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Spin", "slug": "jaiho-spin-new", "category": "Spin", "image": "assets/jaiho-spin.webp", "url": "https://3jaihospinwin.com/?code=DX1NAT15&t=1788292833", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Jaiho Win", "slug": "jaiho-win-new", "category": "Popular", "image": "assets/jaiho-win.webp", "url": "https://www.jaihowin1.com/?code=1XN2NLPP47Z&t=1788291043", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Joy Rummy", "slug": "joy-rummy-new", "category": "Popular", "image": "assets/joy-rummy.webp", "url": "https://www.joyrummygold.com/?code=J5K5TKLVJCB&t=1795583154", "bonus": "Up to ₹300 Welcome Cash + 100% Deposit Boost", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Love Rummy", "slug": "love-rummy-new", "category": "Popular", "image": "assets/love-rummy.webp", "url": "https://www.loverummy88.com/?code=AFC98NSMHKT&t=1788290176", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Maha Games", "slug": "maha-games-new", "category": "Popular", "image": "assets/maha-games.webp", "url": "https://yes-mahagames.com/?code=J24HTAENM5G&t=1788290799", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Max Rummy", "slug": "max-rummy-new", "category": "Popular", "image": "assets/max-rummy.webp", "url": "https://www.maxrummy111.com/?code=QUMU89TBHLK&t=1788287554", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "MBM Bet", "slug": "mbm-bet-new", "category": "Games", "image": "assets/mbm-bet.webp", "url": "https://www.mbmbet8.com/?code=GD3MUF42S36&t=1788289338", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Neta VIP", "slug": "neta-vip-new", "category": "Popular", "image": "assets/neta-vip.webp", "url": "https://neta6.vip/?code=DR044ADMAH5&t=1788291712", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "OK Rummy", "slug": "ok-rummy", "category": "Popular", "image": "assets/ok-rummy.webp", "url": "https://www.okrummy22.com/?code=27BWJTCZGZK&t=1788271676", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Ludo", "slug": "rummy-ludo-new", "category": "Popular", "image": "assets/rummy-ludo.webp", "url": "https://www.rummyludo1.com/?code=UWP2DT81346&t=1795582723", "bonus": "Up to ₹100 Welcome Bonus (No Deposit)", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy 91", "slug": "rummy91-new", "category": "Popular", "image": "assets/rummy91.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "₹91 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Joys", "slug": "rummyjoys", "category": "Popular", "image": "assets/rummyjoys.webp", "url": "https://rummyjoys.com/?code=FM19ST42FT6&t=1788283951", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Saga Slots", "slug": "saga-slots-new", "category": "Popular", "image": "assets/saga-slots.webp", "url": "https://www.sagaslots77.com/?code=0QHTNT7RQKY&t=1788284518", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Share Slots", "slug": "share-slots-new", "category": "Popular", "image": "assets/share-slots.webp", "url": "https://share0066.com/?code=YAZKFEL4U3A&t=1788291449", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Slots Spin", "slug": "slots-spin-new", "category": "Slots", "image": "assets/slots-spin.webp", "url": "https://www.slotsspinf.com/?code=XJBMGNKLW9D&t=1788291848", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Slots Winner", "slug": "slots-winner-new", "category": "Slots", "image": "assets/slots-winner.webp", "url": "https://slotswinneragent.in/?code=K4EDD88GT63&t=1788293159", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Spin Crush", "slug": "spin-crush", "category": "Popular", "image": "assets/spin-crush.webp", "url": "https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEK5VL6FE8&t=1788270471", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Spin Winner", "slug": "spin-winner-new", "category": "Spin", "image": "assets/spin-winner.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Spin101", "slug": "spin101-new", "category": "Spin", "image": "assets/spin101.webp", "url": "https://spin101.win/?code=P4CXMZMPEZE&t=1788292661", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Spin 777", "slug": "spin777-new", "category": "Popular", "image": "assets/spin777.webp", "url": "https://spin777qq.com/?code=7V9UZ5TK729&t=1788285073", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "TOP RUMMY", "slug": "top-rummy", "category": "Popular", "image": "assets/top-rummy.webp", "url": "https://spinrummy.cx/?code=7K92BVBTMSA&t=1795582538", "bonus": "₹8 Joining Bonus + ₹80 7-Days Login + 100% Cashback", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Win Rummy", "slug": "win-rummy-new", "category": "Popular", "image": "assets/win-rummy.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "YN777", "slug": "yn777-new", "category": "Popular", "image": "assets/yn777.webp", "url": "https://www.y729.com/?code=4SWSZNCDFV6&t=1788289709", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono 777", "slug": "yono-777-new", "category": "Popular", "image": "assets/yono-777.webp", "url": "https://uonoagentnew.asia/?code=F9MG7NJYP7T&t=1788290273", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Arcade", "slug": "yono-arcade-new", "category": "Arcade", "image": "assets/yono-arcade-new.webp", "url": "https://yonoarcadeapk8.com/?code=F552DZMGGWB&t=1788292761", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono Games", "slug": "yono-games-referral-new", "category": "Popular", "image": "assets/yono-games-referral.webp", "url": "https://youonogamesreferral.com/?code=DG6KTC61&t=1788289931", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Rummy", "slug": "yono-rummy-new", "category": "Rummy", "image": "assets/yono-rummy.webp", "url": "https://yonorummy056.com/?code=VIPKCZFWJYX&t=1788292338", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono Slots", "slug": "yono-slots-new", "category": "Slots", "image": "assets/yono-slots.webp", "url": "https://www.yonoslotsc.com/?code=PJBJQ6G83VH&t=1788292980", "bonus": "₹100 + Spins", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono VIP", "slug": "yono-vip-new", "category": "Games", "image": "assets/yono-vip.webp", "url": "https://yonoviponline.vip/?code=3CR3QMH3UZS&t=1788289496", "bonus": "₹550 Bonus", "platform": "Android", "featured": false, "popular": false, "new_game": false, "lastUpdated": ""}, {"name": "Yono 21", "slug": "yono-21", "category": "Popular", "image": "assets/yono-21.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Holy Rummy", "slug": "holy-rummy", "category": "Rummy", "image": "assets/holy-rummy.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Modern", "slug": "rummy-modern", "category": "Rummy", "image": "assets/rummy-modern.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Nabob", "slug": "rummy-nabob", "category": "Rummy", "image": "assets/rummy-nabob.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Wealth", "slug": "rummy-wealth", "category": "Rummy", "image": "assets/rummy-wealth.webp", "url": "https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Royal Rummy", "slug": "royal-rummy", "category": "Rummy", "image": "assets/royal-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Teen Patti Gold Yono", "slug": "teen-patti-gold", "category": "Popular", "image": "assets/teen-patti-gold.webp", "url": "https://www.y729.com/?code=4SWSZNCDFV6&t=1788289709", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Teen Patti Master Yono", "slug": "teen-patti-master", "category": "Popular", "image": "assets/teen-patti-master.webp", "url": "https://youonogamesreferral.com/?code=DG6KTC61&t=1788289931", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Teen Patti", "slug": "yono-teen-patti", "category": "Popular", "image": "assets/yono-teen-patti.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono MBM", "slug": "yono-mbm", "category": "Popular", "image": "assets/yono-mbm.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Slots 777", "slug": "yono-slots-777", "category": "Slots", "image": "assets/yono-slots-777.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Most", "slug": "rummy-most", "category": "Rummy", "image": "assets/rummy-most.webp", "url": "https://www.winrummy9.com/?code=8JTWZW3T5UM&t=1788285383", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Rummy Gold Star", "slug": "rummy-gold-star", "category": "Rummy", "image": "assets/rummy-gold-star.webp", "url": "https://rummy91d.com/?code=4KTTQHURP52&t=1788285645", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "666 Rummy", "slug": "666-rummy", "category": "Rummy", "image": "assets/666-rummy.webp", "url": "https://toprummyapp.top/?code=7K9XWEJTGD4&t=1787409258", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "777 Rummy", "slug": "777-rummy", "category": "Rummy", "image": "assets/777-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "888 Rummy", "slug": "888-rummy", "category": "Rummy", "image": "assets/888-rummy.webp", "url": "https://rummy888vip44.com/?code=7WTPFSAW23K&t=1795584457", "bonus": "₹8 Joining Bonus + ₹312 7-Days Login + 100% Cashback", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "999 Rummy", "slug": "999-rummy", "category": "Rummy", "image": "assets/999-rummy.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Rummy 51", "slug": "yono-rummy-51", "category": "Rummy", "image": "assets/yono-rummy-51.webp", "url": "https://moneyrummytt.com/?code=T1XR6CH9G63&t=1788922892", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Super", "slug": "yono-super", "category": "Spin", "image": "assets/yono-super.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}, {"name": "Yono Winner", "slug": "yono-winner", "category": "Spin", "image": "assets/yono-winner.webp", "url": "https://despinwinner.com/?code=SDNUBG6QLEV&t=1788293242", "bonus": "Sign Up Bonus ₹550", "platform": "Android", "featured": false, "popular": true, "new_game": false, "lastUpdated": ""}];
+  </script>
+  <script src="assets/yono-core.js"></script>
+</body>
 </html>

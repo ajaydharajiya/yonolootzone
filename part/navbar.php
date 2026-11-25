@@ -15,7 +15,7 @@
       <a href="/rummy-games/">Rummy Games</a>
       <a href="/teen-patti-games/">Teen Patti</a>
       <a href="/news/">News & Bonuses</a>
-      <a href="<?php echo defined('TELEGRAM_URL') ? TELEGRAM_URL : 'https://t.me/+jMDOLURgOQc1ODU1'; ?>" target="_blank" class="nav-tg-btn">
+      <a href="<?php echo defined('TELEGRAM_URL') ? TELEGRAM_URL : 'https://t.me/allyonolootzone'; ?>" target="_blank" class="nav-tg-btn">
         ✈ Telegram
       </a>
     </nav>

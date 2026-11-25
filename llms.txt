@@ -1,0 +1,31 @@
+# YonoLootZone — Advanced Gaming Discovery Platform
+Comprehensive independent directory, reviews, and APK installation guides for verified Android gaming applications in India.
+
+> YonoLootZone operates as an independent discovery and review aggregator. All content, guides, and ratings are verified for adult players (18+) complying with Indian skill-gaming standards. No user accounts or visitor logins are required.
+
+## Main Gaming Directories & Hubs
+- [All Yono Games Directory (73 Games)](https://yonolootzone.com/all-yono-games.html): Complete directory of reviewed Android gaming apps with verified APK guides, highlights, and platform compatibility.
+- [Homepage & Top Picks](https://yonolootzone.com/): Curated showcase of trending, new, and high-bonus mobile games.
+- [New Game Releases](https://yonolootzone.com/new-yono-game.html): Newly launched titles and APK update guides.
+- [Categories Directory](https://yonolootzone.com/categories.html): Browse games by Rummy, Teen Patti, Slots, Arcade, and Casual genres.
+
+## Popular Reviewed Games
+- [Jeet Spin APK Guide](https://yonolootzone.com/games/jeet-spin/): Verified new player bonuses and Android installation.
+- [Money Rummy APK Guide](https://yonolootzone.com/games/money-rummy/): Trending real-cash rummy game reviews and UPI cashout options.
+- [101 Z APK Guide](https://yonolootzone.com/games/101z-new/): Card and arcade platform overview.
+- [789 Jackpots Guide](https://yonolootzone.com/games/789-jackpots-new/): Slots and jackpot application overview.
+- [Bingo 101 Guide](https://yonolootzone.com/games/bingo101-new/): Virtual multiplayer bingo rules and download steps.
+
+## Essential Guides & Safety Checklists
+- [Safe App Installation Checklist](https://yonolootzone.com/guides/safe-app-installation-checklist.html): Verifying permissions and protecting device security when installing Android APKs.
+- [How to Check Download Links](https://yonolootzone.com/guides/check-download-link.html): Detecting safe official download sources.
+- [Yono Games Search Guide](https://yonolootzone.com/guides/yono-games-search-guide.html): Efficient game discovery methods.
+- [Game Listing Review Policy](https://yonolootzone.com/guides/game-listing-review.html): How our editorial team audits apps.
+
+## Trust, Ethics & Legal Disclosures
+- [Disclaimer & 18+ Notice](https://yonolootzone.com/disclaimer.html): Age verification and prohibited state notices (Assam, Odisha, Telangana, Andhra Pradesh).
+- [Editorial Policy](https://yonolootzone.com/editorial-policy.html): Objective testing, malware scanning, and independent auditing standards.
+- [Privacy Policy](https://yonolootzone.com/privacy-policy.html): Browser localStorage architecture with zero visitor tracking or registration.
+- [Terms of Service](https://yonolootzone.com/terms-of-service.html): Platform usage guidelines.
+- [About Us](https://yonolootzone.com/about.html): Our mission, editorial board, and auditing standards.
+- [Contact Us](https://yonolootzone.com/contact.html): Official editorial cooperation and report feedback.
