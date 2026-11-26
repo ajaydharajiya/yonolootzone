@@ -1,0 +1,63 @@
+Options -Indexes
+DirectoryIndex index.html index.php
+
+RewriteEngine On
+
+# Canonical host and HTTPS (enforced only for production yonolootzone.com)
+RewriteCond %{HTTP_HOST} ^www\.yonolootzone\.com$ [NC]
+RewriteRule ^ https://yonolootzone.com%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^yonolootzone\.com$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://yonolootzone.com%{REQUEST_URI} [R=301,L]
+
+# Canonicalize common index-file URLs to clean directory URLs.
+RewriteRule ^index\.html$ / [R=301,L,NE]
+RewriteRule ^(.+)/index\.html$ /$1/ [R=301,L,NE]
+
+# Legacy URLs
+RewriteRule ^789-jackpots-download/?$ /games/789-jackpots-new/ [R=301,L,NE]
+RewriteRule ^yonogames-download-center\.html$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^how-to-withdraw-all-yono-games\.html$ /guides/safe-app-installation-checklist.html [R=301,L,NE]
+RewriteRule ^how-to-withdraw-yono-money\.html$ /guides/safe-app-installation-checklist.html [R=301,L,NE]
+RewriteRule ^yonogames-official-platform\.html$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^yonogame-app-download\.html$ /guides/yono-games-search-guide.html [R=301,L,NE]
+RewriteRule ^yonogames-apk-download\.html$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^yono-777-arcade-games\.html$ /guides/yono-arcade-games-guide.html [R=301,L,NE]
+RewriteRule ^all-games\.(?:html|php)$ /all-yono-games.html [R=301,L,NE]
+RewriteRule ^privacy\.html$ /privacy-policy.html [R=301,L,NE]
+RewriteRule ^admin\.html$ /admin/ [R=301,L,NE]
+
+# Protect sensitive data directories and configuration from direct browser access
+RewriteRule ^cms/data(?:/|$) - [F,L]
+RewriteRule ^cms/config\.php$ - [F,L]
+RewriteRule ^admin(?:/|$) - [L]
+
+<FilesMatch "^\.(?!well-known)">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set Link "</llms.txt>; rel=\"service-doc\""
+</IfModule>
+
+# Gzip Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/x-javascript application/json image/svg+xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
