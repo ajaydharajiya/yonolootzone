@@ -1737,3 +1737,32 @@ main {
   padding: 20px;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
 }
+
+.yono-gplay-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #000;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  border: 1px solid #333;
+  transition: opacity 0.15s ease;
+}
+.yono-gplay-badge:hover {
+  opacity: 0.85;
+}
+.yono-gplay-badge span {
+  font-size: 12px;
+  font-weight: 800;
+}
+.yono-spec-row--badge {
+  padding-top: 10px;
+  margin-top: 4px;
+  border-top: 1px solid var(--border-strong);
+}
