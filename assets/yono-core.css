@@ -1766,3 +1766,30 @@ main {
   margin-top: 4px;
   border-top: 1px solid var(--border-strong);
 }
+
+.yono-data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.yono-data-table thead th {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  padding: 10px 16px;
+}
+.yono-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.yono-data-table td, .yono-data-table th {
+  vertical-align: middle;
+}
+@media (max-width: 479px) {
+  .yono-data-table thead th,
+  .yono-data-table td {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+}
